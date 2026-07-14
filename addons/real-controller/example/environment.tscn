@@ -1,0 +1,326 @@
+[gd_scene format=3 uid="uid://dw7at47iod6ff"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l2f18"]
+albedo_color = Color(0.6805224, 0.5903386, 0.2021581, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nxyfu"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_l2f18"]
+sky_material = SubResource("ProceduralSkyMaterial_nxyfu")
+
+[sub_resource type="Environment" id="Environment_4xr67"]
+background_mode = 2
+sky = SubResource("Sky_l2f18")
+tonemap_mode = 2
+ssr_enabled = true
+glow_enabled = true
+
+[node name="Environment" type="Node3D" unique_id=1654604802]
+
+[node name="Object29" type="CSGBox3D" parent="." unique_id=1394068111]
+transform = Transform3D(0.81038946, 0, 0.58589154, 0, 1, 0, -0.58589154, 0, 0.81038946, -0.07009077, -5.7156515, -1.4205718)
+use_collision = true
+size = Vector3(15.144531, 6.993164, 21.707031)
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object31" type="CSGBox3D" parent="." unique_id=1277002017]
+transform = Transform3D(0.90089023, 0.33292776, -0.2784883, -0.34664097, 0.9379979, 7.450581e-09, 0.26122144, 0.096535474, 0.9604396, 10.1712265, -8.124451, 10.076753)
+use_collision = true
+size = Vector3(15.144531, 6.993164, 17.035645)
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object34" type="CSGBox3D" parent="." unique_id=1537217714]
+transform = Transform3D(0.9756093, 0.21421824, -0.047924787, -0.21915285, 0.937998, -0.268574, -0.012580097, 0.27252617, 0.96206605, 6.795084, -9.626152, -5.434153)
+use_collision = true
+size = Vector3(10, 6.993, 10)
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object38" type="CSGBox3D" parent="." unique_id=1655041696]
+transform = Transform3D(0.72922623, 0.34034705, 0.5936268, -0.21915284, 0.937998, -0.26857403, -0.648229, 0.06575619, 0.7586007, 12.319385, -14.338624, -3.9425693)
+use_collision = true
+size = Vector3(11.592285, 6.993, 14.106323)
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object36" type="CSGBox3D" parent="." unique_id=1607881679]
+transform = Transform3D(0.7853295, 0.57141286, 0.2382115, -0.21915287, 0.61646914, -0.75626576, -0.57898986, 0.5417131, 0.6093582, 11.841684, -8.349995, 1.9297485)
+use_collision = true
+size = Vector3(10, 6.993, 10)
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object37" type="CSGBox3D" parent="." unique_id=1306044234]
+transform = Transform3D(0.39941794, 0.76386863, 0.50692225, -0.21915288, 0.61646914, -0.75626576, -0.8901894, 0.19097266, 0.4136328, 1.5509205, -8.349995, -14.709986)
+use_collision = true
+size = Vector3(10, 6.993, 10)
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object32" type="CSGBox3D" parent="." unique_id=1602411558]
+transform = Transform3D(0.27863538, 0.25639898, -0.9255387, 0.14933845, 0.9404155, 0.30547875, 0.9487151, -0.22333574, 0.22374277, -8.276518, -6.542371, -10.388505)
+use_collision = true
+size = Vector3(15.144531, 6.993164, 17.035645)
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object30" type="CSGBox3D" parent="." unique_id=1999401258]
+transform = Transform3D(0.6326206, 0.50648034, 0.5858916, -0.62498385, 0.7806377, 0, -0.457369, -0.36617276, 0.8103894, 6.523531, -10.066664, -5.4120193)
+use_collision = true
+size = Vector3(15.144531, 3.4609375, 21.707031)
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object35" type="CSGBox3D" parent="." unique_id=43484831]
+transform = Transform3D(0.6326206, 0.50648034, 0.5858916, -0.62498385, 0.7806377, 0, -0.457369, -0.36617276, 0.8103894, 6.523531, -10.066664, -5.4120193)
+use_collision = true
+size = Vector3(15.144531, 3.4609375, 21.707031)
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object33" type="CSGBox3D" parent="." unique_id=469391928]
+transform = Transform3D(0.44722494, 0.67581135, 0.5858916, -0.833934, 0.55186415, 0, -0.3233325, -0.48859492, 0.81038934, 7.198343, -7.4605713, -5.8998923)
+use_collision = true
+size = Vector3(9.299744, 3.4609375, 21.707031)
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object24" type="CSGBox3D" parent="." unique_id=328239096]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.38858, -50.30772, -54.143562)
+use_collision = true
+size = Vector3(892.04004, 2, 808.25)
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object4" type="CSGCylinder3D" parent="." unique_id=1419949652]
+transform = Transform3D(93.343025, 35.8759, 0, -35.8759, 93.343025, 0, 0, 0, 100, 62.21582, 1.5233994, 305.4097)
+use_collision = true
+radius = 1.965
+sides = 5
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object5" type="CSGCylinder3D" parent="." unique_id=1715475687]
+transform = Transform3D(-25.570257, -29.797878, -86.41791, -8.454576, 90.121544, -28.573301, 91.019165, -7.072091e-07, -26.931725, -175.38327, 4.8161545, 281.71213)
+use_collision = true
+radius = 1.965
+height = 2.65
+sides = 5
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object6" type="CSGCylinder3D" parent="." unique_id=928261102]
+transform = Transform3D(-26.750147, 11.003626, -90.4055, 3.1220672, 94.28003, 10.551418, 91.01916, -7.0720904e-07, -26.93172, -74.71199, 4.889824, 403.38083)
+use_collision = true
+radius = 1.965
+height = 1.5
+sides = 3
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object7" type="CSGCylinder3D" parent="." unique_id=1547468547]
+transform = Transform3D(45.188038, 17.367785, -87.500854, -35.875896, 93.34302, 0, 81.67594, 31.391718, 48.410725, -299.83118, 1.5233994, 177.6017)
+use_collision = true
+radius = 1.965
+sides = 5
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object8" type="CSGCylinder3D" parent="." unique_id=1664675852]
+transform = Transform3D(-92.02129, -14.425367, -18.270048, -8.454574, 90.12153, -28.573298, 21.688845, -26.073399, -88.65425, -394.11905, 4.8161545, -41.771713)
+use_collision = true
+radius = 1.965
+height = 2.65
+sides = 5
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object9" type="CSGCylinder3D" parent="." unique_id=1112470060]
+transform = Transform3D(-92.59249, 5.3269362, -20.200472, 3.1220672, 94.28003, 10.551418, 20.656431, 9.628267, -92.14344, -451.8445, 4.889824, 105.21721)
+use_collision = true
+radius = 1.965
+height = 1.5
+sides = 3
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object10" type="CSGCylinder3D" parent="." unique_id=2131372918]
+transform = Transform3D(-68.03186, -26.147682, -68.4687, -35.87589, 93.34301, 1.4427521e-06, 63.910755, 24.563765, -72.88371, -369.5952, 1.5233994, -209.17955)
+use_collision = true
+radius = 1.965
+sides = 5
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object25" type="CSGCylinder3D" parent="." unique_id=1255110573]
+transform = Transform3D(-68.03186, -26.147682, -68.4687, -35.87589, 93.34301, 1.4427521e-06, 63.910755, 24.563765, -72.88371, -106.95117, 1.5233994, 80.936325)
+use_collision = true
+radius = 1.965
+sides = 5
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object26" type="CSGCylinder3D" parent="." unique_id=2031426448]
+transform = Transform3D(-18.946331, -7.281931, 97.918365, -35.875885, 93.343, 2.8197157e-06, -91.39996, -35.129086, -20.297527, 82.910095, -58.144157, -139.04964)
+use_collision = true
+radius = 1.965
+height = 1.255
+sides = 5
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object11" type="CSGCylinder3D" parent="." unique_id=2008764991]
+transform = Transform3D(-43.68309, 21.717804, 81.424385, -8.454575, 90.12152, -28.573296, -83.845764, -20.40222, -39.540382, -180.19873, 4.8161545, -354.5889)
+use_collision = true
+radius = 1.965
+height = 2.65
+sides = 5
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object12" type="CSGCylinder3D" parent="." unique_id=976883484]
+transform = Transform3D(-42.823135, -8.019849, 84.33069, 3.1220672, 94.28003, 10.551418, -84.65361, 7.5340405, -42.270634, -336.8767, 4.889824, -374.33728)
+use_collision = true
+radius = 1.965
+height = 1.5
+sides = 3
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object27" type="CSGCylinder3D" parent="." unique_id=1102320999]
+transform = Transform3D(-42.823135, -8.019849, 84.33069, 3.1220672, 94.28003, 10.551418, -84.65361, 7.5340405, -42.270634, -125.66551, -15.426796, -463.773)
+use_collision = true
+radius = 1.965
+height = 1.5
+sides = 3
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object13" type="CSGCylinder3D" parent="." unique_id=1201477297]
+transform = Transform3D(-87.36199, -33.57712, 35.220093, -35.875885, 93.343, 2.8197153e-06, -32.875504, -12.635517, -93.59241, -34.03119, 1.5233994, -505.78796)
+use_collision = true
+radius = 1.965
+sides = 5
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object14" type="CSGCylinder3D" parent="." unique_id=2120787696]
+transform = Transform3D(55.98887, 27.888563, 71.39525, -8.4545765, 90.12153, -28.5733, -76.18119, 10.494846, 55.64254, 179.99725, 4.8161545, -399.92618)
+use_collision = true
+radius = 1.965
+height = 2.65
+sides = 5
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object15" type="CSGCylinder3D" parent="." unique_id=1518973171]
+transform = Transform3D(57.093147, -10.29856, 75.12733, 3.1220672, 94.28003, 10.551419, -75.7656, -3.8754864, 57.04695, 128.62842, 4.889824, -549.25543)
+use_collision = true
+radius = 1.965
+height = 1.5
+sides = 3
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object16" type="CSGCylinder3D" parent="." unique_id=1830156270]
+transform = Transform3D(-61.8039, 16.44048, 70.141235, -8.454574, 90.12153, -28.573298, -71.5444, -24.852047, -57.215195, 364.6881, 4.8161545, -470.85663)
+use_collision = true
+radius = 1.965
+height = 2.65
+sides = 5
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object17" type="CSGCylinder3D" parent="." unique_id=175533590]
+transform = Transform3D(66.03572, 26.1588, 62.966717, -8.454575, 90.12152, -28.573298, -67.65801, 14.2699375, 65.02742, 539.08734, 4.8161545, -251.43465)
+use_collision = true
+radius = 1.965
+height = 2.65
+sides = 5
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object18" type="CSGCylinder3D" parent="." unique_id=1863003315]
+transform = Transform3D(23.144012, 8.895269, 96.87735, -35.87588, 93.342995, 3.0692008e-06, -90.42825, -34.75562, 24.794582, 608.1717, 1.5233994, -96.986755)
+use_collision = true
+radius = 1.965
+sides = 5
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object19" type="CSGCylinder3D" parent="." unique_id=266649194]
+transform = Transform3D(81.83696, -7.388264, -47.51772, -8.454576, 90.12153, -28.5733, 47.33962, 28.867413, 77.04182, 526.3024, 4.8161545, 127.317345)
+use_collision = true
+radius = 1.965
+height = 2.65
+sides = 5
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object20" type="CSGCylinder3D" parent="." unique_id=71972253]
+transform = Transform3D(81.54439, 2.7283025, -48.506413, 3.1220675, 94.28003, 10.551418, 48.48265, -10.660023, 80.90486, 669.13293, 4.889824, 59.956913)
+use_collision = true
+radius = 1.965
+height = 1.5
+sides = 3
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object28" type="CSGCylinder3D" parent="." unique_id=837092468]
+transform = Transform3D(81.54439, 2.7283025, -48.506413, 3.1220675, 94.28003, 10.551418, 48.48265, -10.660023, 80.90486, 583.1564, 4.889824, 241.65442)
+use_collision = true
+radius = 1.965
+height = 1.5
+sides = 3
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object21" type="CSGCylinder3D" parent="." unique_id=598167215]
+transform = Transform3D(91.36675, 35.116333, 20.468414, -35.87589, 93.34301, 5.5727032e-06, -19.105825, -7.343231, 97.88279, 484.0243, 1.5233994, 333.32382)
+use_collision = true
+radius = 1.965
+sides = 5
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object22" type="CSGCylinder3D" parent="." unique_id=1120529390]
+transform = Transform3D(-6.3987103, -29.167006, -90.10078, -8.454578, 90.12153, -28.5733, 94.32596, 6.0991554, -8.673159, 246.60507, 4.8161545, 358.76068)
+use_collision = true
+radius = 1.965
+height = 2.65
+sides = 5
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object23" type="CSGCylinder3D" parent="." unique_id=146912691]
+transform = Transform3D(-7.553623, 10.770655, -94.00393, 3.1220677, 94.28003, 10.55142, 94.56742, -2.2522683, -7.856947, 370.04858, 4.889824, 457.24768)
+use_collision = true
+radius = 1.965
+height = 1.5
+sides = 3
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=75655507]
+environment = SubResource("Environment_4xr67")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1635349267]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
