@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://c6lnr20syymhg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ydjff"]
+albedo_color = Color(0.51, 0.25211, 0.091800004, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3nw0"]
+albedo_color = Color(0.50980395, 0.2509804, 0.09019608, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ptvb"]
+albedo_color = Color(0.23029497, 0.39, 0.1443, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5k216"]
+albedo_color = Color(0.23137255, 0.3882353, 0.14509805, 1)
+
+[node name="Tree" type="MeshInstance3D" unique_id=1961468551]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=13729014]
+transform = Transform3D(2.8945823, 0, 0.7882853, 0, 3, 0, -0.7882853, 0, 2.8945823, 0.17084026, 1.0238421, 0)
+radius = 0.255
+height = 0.68
+sides = 4
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_ydjff")
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="." unique_id=1278624270]
+transform = Transform3D(2.8945823, 0, 0.7882853, 0, 3, 0, -0.7882853, 0, 2.8945823, 0.17084026, 2.0511296, 0)
+radius = 0.14
+height = 0.72
+sides = 4
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_x3nw0")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="." unique_id=15459620]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 2.799909, 0)
+radius = 0.515
+height = 0.695
+sides = 6
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_8ptvb")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="." unique_id=1686336682]
+transform = Transform3D(2.2563477, 0, -1.9770925, 0, 3, 0, 1.9770925, 0, 2.2563477, 0, 4.3976636, 0)
+radius = 0.435
+height = 0.83
+sides = 6
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_5k216")
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="." unique_id=896477831]
+transform = Transform3D(0.6945814, 0, -2.9184854, 0, 3, 0, 2.9184854, 0, 0.6945814, 0, 6.115385, 0)
+radius = 0.29
+height = 0.975
+sides = 6
+cone = true
+smooth_faces = false
+material = SubResource("StandardMaterial3D_5k216")
