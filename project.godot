@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="igu-game-jam-2026"
-run/main_scene="uid://d0nk4vuu48k3"
+run/main_scene="uid://dvcnlm1psogpu"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
