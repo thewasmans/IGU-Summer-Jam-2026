@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://dvcnlm1psogpu"]
 
 [ext_resource type="PackedScene" uid="uid://dasabj0i5wtrx" path="res://addons/real-controller/character.tscn" id="1_o5qli"]
-[ext_resource type="PackedScene" uid="uid://c6lnr20syymhg" path="res://content/prefabs/tree.tscn" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://b8wujo8yiyd4t" path="res://scripts/main.gd" id="1_sugp2"]
+[ext_resource type="Resource" uid="uid://dcckexgblr3de" path="res://data/game_data.tres" id="2_0wfyh"]
+[ext_resource type="PackedScene" path="res://content/prefabs/interract_area.tscn" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://crr60jpduoeeu" path="res://scripts/managers/game_managers.gd" id="3_tipki"]
+[ext_resource type="Script" uid="uid://wrkponuspoej" path="res://scripts/managers/game_ui_manager.gd" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dgxh18nboxsck" path="res://content/prefabs/ui/game_ui.tscn" id="5_tbgi4"]
+[ext_resource type="Script" uid="uid://s6bqv6auquhi" path="res://scripts/managers/interract_area_manager.gd" id="7_85g3d"]
+[ext_resource type="PackedScene" uid="uid://c6lnr20syymhg" path="res://content/prefabs/tree.tscn" id="8_85g3d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxyfu"]
 albedo_color = Color(0.1148968, 0.11489681, 0.1148968, 1)
@@ -26,12 +33,29 @@ tonemap_mode = 2
 ssr_enabled = true
 glow_enabled = true
 
-[node name="Main" type="Node3D" unique_id=1718919748]
+[node name="Main" type="Node" unique_id=813424586 node_paths=PackedStringArray("game_manager")]
+script = ExtResource("1_sugp2")
+game_manager = NodePath("Global/GameManager")
 
 [node name="Global" type="Node" parent="." unique_id=1992404025]
 
-[node name="Character5" parent="Global" unique_id=1913778194 instance=ExtResource("1_o5qli")]
+[node name="PlayerCharacter" parent="Global" unique_id=1913778194 instance=ExtResource("1_o5qli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2000885, -1.0499265, -6.7876606)
+
+[node name="GameManager" type="Node" parent="Global" unique_id=1036846449 node_paths=PackedStringArray("game_ui_manager", "area_interract_manager")]
+script = ExtResource("3_tipki")
+game_data = ExtResource("2_0wfyh")
+game_ui_manager = NodePath("GameUIManager")
+area_interract_manager = NodePath("InterractAreaManager")
+
+[node name="GameUIManager" type="Node" parent="Global/GameManager" unique_id=29183224 node_paths=PackedStringArray("root_scene")]
+script = ExtResource("4_jyhfs")
+game_ui_prefab = ExtResource("5_tbgi4")
+root_scene = NodePath("../../..")
+
+[node name="InterractAreaManager" type="Node" parent="Global/GameManager" unique_id=890133322 node_paths=PackedStringArray("level")]
+script = ExtResource("7_85g3d")
+level = NodePath("../../../Level")
 
 [node name="Level" type="Node" parent="." unique_id=1175036900]
 
@@ -291,6 +315,15 @@ transform = Transform3D(-0.797584, 0, -0.6032079, 0, 1, 0, 0.6032079, 0, -0.7975
 use_collision = true
 size = Vector3(11.158478, 0.9730835, 1.0440674)
 material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="InterractArea" parent="Level" unique_id=1019318091 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4492378, -1.7872602, -11.35088)
+
+[node name="InterractArea2" parent="Level" unique_id=1372098463 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.728088, -1.7872602, -7.53622)
+
+[node name="InterractArea3" parent="Level" unique_id=1863945794 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.519009, -1.7872602, -10.580996)
 
 [node name="Environment" type="Node" parent="." unique_id=1654604802]
 
@@ -600,25 +633,25 @@ environment = SubResource("Environment_4xr67")
 
 [node name="Trees" type="Node3D" parent="Environment" unique_id=1992827763]
 
-[node name="Tree" parent="Environment/Trees" unique_id=110916129 instance=ExtResource("2_0wfyh")]
+[node name="Tree" parent="Environment/Trees" unique_id=110916129 instance=ExtResource("8_85g3d")]
 transform = Transform3D(1.171, 0, 0, 0, 1.171, 0, 0, 0, 1.171, 79.400566, -19.567118, -97.59551)
 
-[node name="Tree2" parent="Environment/Trees" unique_id=1961468551 instance=ExtResource("2_0wfyh")]
+[node name="Tree2" parent="Environment/Trees" unique_id=1961468551 instance=ExtResource("8_85g3d")]
 transform = Transform3D(1, 0, 0, 0, 0.9814536, -0.19169982, 0, 0.19169982, 0.9814536, 105.9658, -14.605895, -117.60089)
 
-[node name="Tree3" parent="Environment/Trees" unique_id=320178893 instance=ExtResource("2_0wfyh")]
+[node name="Tree3" parent="Environment/Trees" unique_id=320178893 instance=ExtResource("8_85g3d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.400566, -31.089266, -59.955925)
 
-[node name="Tree5" parent="Environment/Trees" unique_id=602295518 instance=ExtResource("2_0wfyh")]
+[node name="Tree5" parent="Environment/Trees" unique_id=602295518 instance=ExtResource("8_85g3d")]
 transform = Transform3D(0.8856693, -0.46431658, 0, 0.46431658, 0.8856693, 0, 0, 0, 1, 42.810036, -27.206417, -121.65912)
 
-[node name="Tree4" parent="Environment/Trees" unique_id=219207417 instance=ExtResource("2_0wfyh")]
+[node name="Tree4" parent="Environment/Trees" unique_id=219207417 instance=ExtResource("8_85g3d")]
 transform = Transform3D(1.552, 0, 0, 0, 1.523216, -0.29751813, 0, 0.29751813, 1.523216, 105.9658, -25.333914, -81.34545)
 
-[node name="Tree6" parent="Environment/Trees" unique_id=1005909259 instance=ExtResource("2_0wfyh")]
+[node name="Tree6" parent="Environment/Trees" unique_id=1005909259 instance=ExtResource("8_85g3d")]
 transform = Transform3D(1.552, 0, 0, 0, 1.5370165, 0.21513826, 0, -0.21513826, 1.5370165, 13.847748, -2.5414457, -0.8194637)
 
-[node name="Tree7" parent="Environment/Trees" unique_id=1695289436 instance=ExtResource("2_0wfyh")]
+[node name="Tree7" parent="Environment/Trees" unique_id=1695289436 instance=ExtResource("8_85g3d")]
 transform = Transform3D(1.167, 0, 0, 0, 1.0602291, 0.4876509, 0, -0.4876509, 1.0602291, -3.7306685, -5.363121, -26.33987)
 
 [node name="Lighting" type="Node" parent="." unique_id=1348945069]

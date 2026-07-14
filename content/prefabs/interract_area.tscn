@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cafo435mv01vl"]
+
+[ext_resource type="Script" uid="uid://ktr6g66bx3rb" path="res://scripts/interract_area.gd" id="1_ei2m1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vgdrb"]
+radius = 1.0
+
+[node name="InterractArea" type="Area3D" unique_id=1019318091 groups=["AreaInterract"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_ei2m1")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="." unique_id=1971436032]
+shape = SubResource("SphereShape3D_vgdrb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
