@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://007ij1bo7kis" path="res://content/assetpackage/logsAndTrees/shelf_1a.fbx" id="11_xikvu"]
 [ext_resource type="PackedScene" uid="uid://uj3w3rl2rptt" path="res://content/assetpackage/pandazale_lowpoly_asset_bundle/cheminey.glb" id="12_8x5ro"]
 [ext_resource type="PackedScene" uid="uid://b38xedrr84lm3" path="res://content/assetpackage/logsAndTrees/chair_1a.fbx" id="13_xgmtd"]
+[ext_resource type="PackedScene" uid="uid://bl31vub83we1s" path="res://content/assetpackage/Low_Poly_Winter_Cabine/Snow_mound_A.fbx" id="14_gykgp"]
+[ext_resource type="PackedScene" uid="uid://d4kg32mv1e5sw" path="res://content/assetpackage/Low_Poly_Winter_Cabine/cabin_Floor.fbx" id="15_km402"]
+[ext_resource type="PackedScene" uid="uid://dy6l4sws1bwij" path="res://content/assetpackage/Low_Poly_Winter_Cabine/cabin_Window.fbx" id="16_xikvu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mr6o4"]
 albedo_texture = ExtResource("2_84oni")
@@ -131,3 +134,36 @@ transform = Transform3D(-2.1855694e-08, 0, -0.25, 0, 0.5, 0, 0.5, 0, -1.0927847e
 
 [node name="chair_1a" parent="." unique_id=1881257828 instance=ExtResource("13_xgmtd")]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -2, 0.85571575, 2)
+
+[node name="Snow_mound_A" parent="." unique_id=1977234391 instance=ExtResource("14_gykgp")]
+transform = Transform3D(-1.9273219, 0, 1.5607147, 0, 2.99, 0, -1.5607147, 0, -1.9273219, -10.5, 0, 0)
+
+[node name="cabin_Floor" parent="." unique_id=62957239 instance=ExtResource("15_km402")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -4)
+
+[node name="cabin_Floor2" parent="." unique_id=1373006840 instance=ExtResource("15_km402")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.325)
+
+[node name="cabin_Floor3" parent="." unique_id=806848452 instance=ExtResource("15_km402")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 3.345)
+
+[node name="cabin_Floor4" parent="." unique_id=347813111 instance=ExtResource("15_km402")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 7.01)
+
+[node name="cabin_Floor4" parent="cabin_Floor4" unique_id=1491393304 instance=ExtResource("15_km402")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.28, 0, -6.99)
+
+[node name="cabin_Window" parent="." unique_id=615777874 instance=ExtResource("16_xikvu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.635, -1.5, 2, -6)
+
+[node name="cabin_Window2" parent="." unique_id=1519564033 instance=ExtResource("16_xikvu")]
+transform = Transform3D(-0.9999997, 0, 5.5513446e-08, 0, 0.99999976, 0, -8.742275e-08, 0, -0.6349998, -1.5, 2, 5.945)
+
+[node name="cabin_Window4" parent="." unique_id=287085050 instance=ExtResource("16_xikvu")]
+transform = Transform3D(-4.371138e-08, 0, -0.6349998, 0, 0.9999999, 0, 0.9999997, 0, -2.7756723e-08, 4, 2, 3.9450002)
+
+[node name="cabin_Window5" parent="." unique_id=1202105973 instance=ExtResource("16_xikvu")]
+transform = Transform3D(-4.371138e-08, 0, -0.6349998, 0, 0.9999999, 0, 0.9999997, 0, -2.7756723e-08, 4, 2, -3.5549998)
+
+[node name="cabin_Window3" parent="." unique_id=1488326062 instance=ExtResource("16_xikvu")]
+transform = Transform3D(1.3113413e-07, 0, 0.6349998, 0, 0.9999999, 0, -0.9999997, 0, 8.3270166e-08, -4.7316575, 2, 3.4450002)
