@@ -1,22 +1,24 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://dhdv3e54beb3k"]
 
-[ext_resource type="Script" path="res://scripts/ui/phone_ui.gd" id="1_phoneui"]
+[ext_resource type="Script" uid="uid://bf6m0yt38m0cb" path="res://scripts/ui/phone_ui.gd" id="1_phoneui"]
 [ext_resource type="Script" path="res://scripts/ui/phone_app.gd" id="2_homeapp"]
 [ext_resource type="Script" path="res://scripts/ui/phone_messages_app.gd" id="3_msgapp"]
+[ext_resource type="Script" uid="uid://vrrm36kqn1d7" path="res://scripts/ui/phone_secours_app.gd" id="4_secoursapp"]
+[ext_resource type="Script" path="res://scripts/ui/phone_geoloc_app.gd" id="5_geolocapp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_body"]
 bg_color = Color(0.07, 0.07, 0.09, 0.96)
-corner_radius_top_left = 24
-corner_radius_top_right = 24
-corner_radius_bottom_right = 24
-corner_radius_bottom_left = 24
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.2, 0.2, 0.24, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
 
-[node name="PhoneUI" type="Control" node_paths=PackedStringArray("app_name_label", "home_app", "messages_app")]
+[node name="PhoneUI" type="Control" unique_id=1887879878 node_paths=PackedStringArray("app_name_label", "home_app", "messages_app", "secours_app", "geoloc_app", "geoloc_icon")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,11 +27,14 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_phoneui")
-app_name_label = NodePath("Body/Header")
+app_name_label = NodePath("Body/VBoxContainer/Header")
 home_app = NodePath("Body/Apps/Home")
 messages_app = NodePath("Body/Apps/Messages")
+secours_app = NodePath("Body/Apps/Secours")
+geoloc_app = NodePath("Body/Apps/Geoloc")
+geoloc_icon = NodePath("Body/VBoxContainer/GeolocIcon")
 
-[node name="Body" type="Panel" parent="."]
+[node name="Body" type="Panel" parent="." unique_id=582610286]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -45,19 +50,45 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_body")
 
-[node name="Header" type="Label" parent="Body"]
+[node name="VBoxContainer" type="HBoxContainer" parent="Body" unique_id=1062184125]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
+offset_left = 12.0
 offset_top = 24.0
-offset_bottom = 64.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 24
-text = "Accueil"
+offset_right = 348.0
+offset_bottom = 58.0
+
+[node name="Header" type="Label" parent="Body/VBoxContainer" unique_id=1371267853]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 15
+text = "🧭"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Apps" type="Control" parent="Body"]
+[node name="GeolocIcon" type="Label" parent="Body/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "📍"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible = false
+
+[node name="Header2" type="Label" parent="Body/VBoxContainer" unique_id=102440066]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Header3" type="Label" parent="Body/VBoxContainer" unique_id=116720696]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 15
+text = " 🔋 100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Apps" type="Control" parent="Body" unique_id=876452269]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,7 +99,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Home" type="Control" parent="Body/Apps" node_paths=PackedStringArray()]
+[node name="Home" type="Control" parent="Body/Apps" unique_id=2112276678]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -79,7 +110,7 @@ mouse_filter = 2
 script = ExtResource("2_homeapp")
 app_name = "Accueil"
 
-[node name="Label" type="Label" parent="Body/Apps/Home"]
+[node name="Label" type="Label" parent="Body/Apps/Home" unique_id=1688298051]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -91,7 +122,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Messages" type="Control" parent="Body/Apps" node_paths=PackedStringArray("message_label", "hint_label")]
+[node name="Messages" type="Control" parent="Body/Apps" unique_id=310802204 node_paths=PackedStringArray("message_label", "hint_label")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -100,11 +131,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("3_msgapp")
-app_name = "Messages"
 message_label = NodePath("MessageLabel")
 hint_label = NodePath("HintLabel")
+app_name = "Messages"
 
-[node name="MessageLabel" type="Label" parent="Body/Apps/Messages"]
+[node name="MessageLabel" type="Label" parent="Body/Apps/Messages" unique_id=1429997279]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -117,7 +148,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="HintLabel" type="Label" parent="Body/Apps/Messages"]
+[node name="HintLabel" type="Label" parent="Body/Apps/Messages" unique_id=365379855]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -127,11 +158,91 @@ offset_top = -40.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 14
-text = ""
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Footer" type="Label" parent="Body"]
+[node name="Secours" type="Control" parent="Body/Apps" unique_id=1590433112 node_paths=PackedStringArray("message_label", "hint_label")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("4_secoursapp")
+delay_per_character = 0.1
+max_delay = 10.0
+message_label = NodePath("MessageLabel")
+hint_label = NodePath("HintLabel")
+app_name = "Secours"
+
+[node name="MessageLabel" type="Label" parent="Body/Apps/Secours" unique_id=1506889876]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Aucun réseau disponible"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HintLabel" type="Label" parent="Body/Apps/Secours" unique_id=1872980262]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "Indisponible"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Geoloc" type="Control" parent="Body/Apps" node_paths=PackedStringArray("message_label", "hint_label")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("5_geolocapp")
+message_label = NodePath("MessageLabel")
+hint_label = NodePath("HintLabel")
+app_name = "Géolocalisation"
+
+[node name="MessageLabel" type="Label" parent="Body/Apps/Geoloc"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Appuie sur [ E ] pour activer la géolocalisation"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HintLabel" type="Label" parent="Body/Apps/Geoloc"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Footer" type="Label" parent="Body" unique_id=118428970]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
