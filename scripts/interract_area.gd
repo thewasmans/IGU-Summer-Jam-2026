@@ -64,6 +64,7 @@ func _complete_interract():
 
 func area_locked_by_fact() -> bool:
 	for fact in locked_by_facts:
-		if Facts.get_fact(fact) == false:
+		var test: Variant = Facts.get_fact(fact)
+		if test == false:
 			return true
 	return false

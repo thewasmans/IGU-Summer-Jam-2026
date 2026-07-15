@@ -20,3 +20,5 @@ func _on_timer_timeout() -> void:
 			part.emitting = true
 		await get_tree().create_timer(1).timeout
 		player_character.shake_camera(storm_shake_trauma)
+		await get_tree().create_timer(10).timeout
+		Facts.set_fact("events/storm_happend", true)
