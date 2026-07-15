@@ -94,6 +94,7 @@ func _ready() -> void:
 	spring_arm.spring_length = target_camera_distance
 	if character:
 		character.visible = camera_mode == CameraMode.THIRD_PERSON
+	%AnimationTree.active = true
 
 func _physics_process(delta: float) -> void:
 	_handle_gravity_and_jump(delta)

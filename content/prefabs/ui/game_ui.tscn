@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://chfxvwlqr0oqm" path="res://scripts/ui/game_ui.gd" id="1_7e7t2"]
 
-[node name="GameUi" type="Control" unique_id=137618360 node_paths=PackedStringArray("label_interract")]
+[node name="GameUi" type="Control" unique_id=137618360 node_paths=PackedStringArray("label_interract", "progress_interract")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +12,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_7e7t2")
 label_interract = NodePath("CanInterractLabel")
+progress_interract = NodePath("HSlider")
 
 [node name="CanInterractLabel" type="Label" parent="." unique_id=537411474]
 layout_mode = 1
@@ -29,3 +30,20 @@ grow_vertical = 0
 text = " [ E ] Interract"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HSlider" type="ProgressBar" parent="." unique_id=854424491]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -134.5
+offset_top = -27.0
+offset_right = 134.5
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 1.0
+value = 0.1
+show_percentage = false

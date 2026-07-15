@@ -1,0 +1,147 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/phone_ui.gd" id="1_phoneui"]
+[ext_resource type="Script" path="res://scripts/ui/phone_app.gd" id="2_homeapp"]
+[ext_resource type="Script" path="res://scripts/ui/phone_messages_app.gd" id="3_msgapp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_body"]
+bg_color = Color(0.07, 0.07, 0.09, 0.96)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.2, 0.2, 0.24, 1)
+
+[node name="PhoneUI" type="Control" node_paths=PackedStringArray("app_name_label", "home_app", "messages_app")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_phoneui")
+app_name_label = NodePath("Body/Header")
+home_app = NodePath("Body/Apps/Home")
+messages_app = NodePath("Body/Apps/Messages")
+
+[node name="Body" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -320.0
+offset_right = 180.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_body")
+
+[node name="Header" type="Label" parent="Body"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 24.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Accueil"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Apps" type="Control" parent="Body"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 72.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Home" type="Control" parent="Body/Apps" node_paths=PackedStringArray()]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_homeapp")
+app_name = "Accueil"
+
+[node name="Label" type="Label" parent="Body/Apps/Home"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Écran d'accueil"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Messages" type="Control" parent="Body/Apps" node_paths=PackedStringArray("message_label", "hint_label")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_msgapp")
+app_name = "Messages"
+message_label = NodePath("MessageLabel")
+hint_label = NodePath("HintLabel")
+
+[node name="MessageLabel" type="Label" parent="Body/Apps/Messages"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Appuie sur [ E ] pour envoyer un message"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HintLabel" type="Label" parent="Body/Apps/Messages"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = ""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Footer" type="Label" parent="Body"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -48.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "[ TAB ] App suivante    [ E ] Interagir    [ P ] Fermer"
+horizontal_alignment = 1
+vertical_alignment = 1

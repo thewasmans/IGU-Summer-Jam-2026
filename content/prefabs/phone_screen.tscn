@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://dxf48xgpl7rj1"]
+
+[ext_resource type="Shader" uid="uid://cgbhs40fnpcp3" path="res://content/shaders/phone_screen.gdshader" id="1_31nf5"]
+[ext_resource type="Texture2D" uid="uid://byxwfoglmdn1f" path="res://content/sprites/phone_background.jpg" id="1_hf1pt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6sq3d"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_31nf5"]
+shader = ExtResource("1_31nf5")
+shader_parameter/image = ExtResource("1_hf1pt")
+shader_parameter/something = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slh8r"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hf1pt"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31nf5"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="PhoneScreen" type="Panel" unique_id=1725317772]
+offset_right = 261.0
+offset_bottom = 514.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6sq3d")
+
+[node name="Panel" type="Panel" parent="." unique_id=1584672494]
+material = SubResource("ShaderMaterial_31nf5")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = -4.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_slh8r")
+
+[node name="Status Bar" type="HBoxContainer" parent="." unique_id=1550295120]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -103.5
+offset_top = 14.0
+offset_right = 103.5
+offset_bottom = 42.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Status Bar" unique_id=828687856]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+text = "20:00"
+
+[node name="Label2" type="Label" parent="Status Bar" unique_id=388917360]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+
+[node name="Label3" type="Label" parent="Status Bar" unique_id=1749795179]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+text = "100%"
+
+[node name="Camera" type="Panel" parent="." unique_id=1392522579]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -10.5
+offset_top = 22.0
+offset_right = 10.5
+offset_bottom = 43.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hf1pt")
+
+[node name="Apps" type="FlowContainer" parent="." unique_id=2049864792]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 113.0
+offset_right = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 40
+alignment = 1
+
+[node name="App" type="Panel" parent="Apps" unique_id=1015749140]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_31nf5")
+
+[node name="App2" type="Panel" parent="Apps" unique_id=146697485]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_31nf5")
+
+[node name="App3" type="Panel" parent="Apps" unique_id=172521471]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_31nf5")
+
+[node name="App4" type="Panel" parent="Apps" unique_id=603022485]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_31nf5")
+
+[node name="App5" type="Panel" parent="Apps" unique_id=270847157]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_31nf5")
+
+[node name="App6" type="Panel" parent="Apps" unique_id=382353477]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_31nf5")
+
+[node name="App - Message" type="Control" parent="." unique_id=69759326]
+visible = false
+anchors_preset = 0
+offset_left = 27.0
+offset_top = 54.0
+offset_right = 236.0
+offset_bottom = 482.0
+
+[node name="VFlowContainer" type="ScrollContainer" parent="App - Message" unique_id=1698876096]
+layout_mode = 0
+offset_right = 205.0
+offset_bottom = 404.0
+scroll_vertical = 71
+
+[node name="Control" type="VBoxContainer" parent="App - Message/VFlowContainer" unique_id=2031968892]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 38
+
+[node name="Label" type="Label" parent="App - Message/VFlowContainer/Control" unique_id=1336733493]
+custom_minimum_size = Vector2(205, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Hey I need help ! Please save me"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="App - Message/VFlowContainer/Control" unique_id=77957345]
+custom_minimum_size = Vector2(205, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Ok we will send a team to rescue. But before we need more information.
+
+Did you have an GPS system to localise ?"
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="App - Message/VFlowContainer/Control" unique_id=1742883077]
+custom_minimum_size = Vector2(205, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "I don't no, I will check"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="App - Message/VFlowContainer/Control" unique_id=1063232688]
+custom_minimum_size = Vector2(205, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "I've found the application"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="Label6" type="Label" parent="App - Message/VFlowContainer/Control" unique_id=798325703]
+custom_minimum_size = Vector2(205, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Ok now open the application and start the geolocalisaiton"
+autowrap_mode = 2

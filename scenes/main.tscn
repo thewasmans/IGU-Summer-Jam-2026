@@ -3,13 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://dasabj0i5wtrx" path="res://addons/real-controller/character.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://b8wujo8yiyd4t" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="Resource" uid="uid://dcckexgblr3de" path="res://data/game_data.tres" id="2_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://cafo435mv01vl" path="res://content/prefabs/interract_area.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://d4ns6gu2nax6j" path="res://content/prefabs/interract_area.tscn" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://crr60jpduoeeu" path="res://scripts/managers/game_managers.gd" id="3_tipki"]
 [ext_resource type="Script" uid="uid://wrkponuspoej" path="res://scripts/managers/game_ui_manager.gd" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dgxh18nboxsck" path="res://content/prefabs/ui/game_ui.tscn" id="5_tbgi4"]
 [ext_resource type="Script" uid="uid://s6bqv6auquhi" path="res://scripts/managers/interract_area_manager.gd" id="7_85g3d"]
 [ext_resource type="PackedScene" uid="uid://c6lnr20syymhg" path="res://content/prefabs/tree.tscn" id="8_85g3d"]
-[ext_resource type="Script" uid="uid://bxyuxeblwpp0w" path="res://scenes/timer.gd" id="9_stormtm"]
+[ext_resource type="Script" uid="uid://cnmsvxm3kfpr7" path="res://scripts/managers/phone_manager.gd" id="10_phonemgr"]
+[ext_resource type="PackedScene" path="res://content/prefabs/ui/phone.tscn" id="11_phonescn"]
 
 [sub_resource type="Curve" id="Curve_choun"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -65,13 +66,12 @@ particles = [NodePath("Global/StormTimer/GPUParticles3D"), NodePath("Global/Stor
 [node name="Global" type="Node" parent="." unique_id=1992404025]
 
 [node name="PlayerCharacter" parent="Global" unique_id=1913778194 instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2000885, -1.0499265, -6.7876606)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2000885, 4.8317327, -6.7876606)
 
 [node name="StormTimer" type="Timer" parent="Global" unique_id=730841255]
 wait_time = 5.0
 one_shot = true
 autostart = true
-script = ExtResource("9_stormtm")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Global/StormTimer" unique_id=1619829034]
 transform = Transform3D(0.827365, 0, 0.5616647, 0, 1, 0, -0.5616647, 0, 0.827365, 2.4485483, 0, 2.0066245)
@@ -115,11 +115,12 @@ amount = 100
 process_material = SubResource("ParticleProcessMaterial_eb6dy")
 draw_pass_1 = SubResource("SphereMesh_trceg")
 
-[node name="GameManager" type="Node" parent="Global" unique_id=1036846449 node_paths=PackedStringArray("game_ui_manager", "area_interract_manager")]
+[node name="GameManager" type="Node" parent="Global" unique_id=1036846449 node_paths=PackedStringArray("game_ui_manager", "area_interract_manager", "phone_manager")]
 script = ExtResource("3_tipki")
 game_data = ExtResource("2_0wfyh")
 game_ui_manager = NodePath("GameUIManager")
 area_interract_manager = NodePath("InterractAreaManager")
+phone_manager = NodePath("PhoneManager")
 
 [node name="GameUIManager" type="Node" parent="Global/GameManager" unique_id=29183224 node_paths=PackedStringArray("root_scene")]
 script = ExtResource("4_jyhfs")
@@ -130,6 +131,12 @@ root_scene = NodePath("../../..")
 script = ExtResource("7_85g3d")
 level = NodePath("../../../Level")
 
+[node name="PhoneManager" type="Node" parent="Global/GameManager" unique_id=273692394 node_paths=PackedStringArray("root_scene", "player_character")]
+script = ExtResource("10_phonemgr")
+phone_ui_prefab = ExtResource("11_phonescn")
+root_scene = NodePath("../../..")
+player_character = NodePath("../../PlayerCharacter")
+
 [node name="Level" type="Node" parent="." unique_id=1175036900]
 
 [node name="Floor" type="CSGBox3D" parent="Level" unique_id=287915530]
@@ -139,7 +146,7 @@ size = Vector3(15, 0.5, 15)
 material = SubResource("StandardMaterial3D_nxyfu")
 
 [node name="Floor8" type="CSGCylinder3D" parent="Level" unique_id=378867022]
-transform = Transform3D(-2.9802322e-08, 0.7972363, -0.6036673, 1, 3.8075996e-09, -3.5981373e-08, 2.980232e-08, -0.6036674, -0.7972363, -0.89817446, 12.343968, -8.833979)
+transform = Transform3D(-2.9802322e-08, 0.7972363, -0.6036673, 1, 3.8075996e-09, -3.5981373e-08, 2.980232e-08, -0.6036674, -0.7972363, -0.8981537, 12.346525, -8.833699)
 use_collision = true
 radius = 10.115
 height = 17.135742
@@ -147,23 +154,16 @@ sides = 3
 smooth_faces = false
 material = SubResource("StandardMaterial3D_nxyfu")
 
-[node name="Floor2" type="CSGBox3D" parent="Level" unique_id=552367387]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, -0.89817435, 3.0463846, -8.833979)
-visible = false
-use_collision = true
-size = Vector3(15, 0.5, 15)
-material = SubResource("StandardMaterial3D_nxyfu")
-
-[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Level" unique_id=2122908135]
-transform = Transform3D(0.5717738, 0, -0.82041126, 0, 1, 0, 0.82041126, 0, 0.5717738, -5.3796644, -2.3583884, -4.2162366)
-use_collision = true
-polygon = PackedVector2Array(-5.2852902, 0.30008674, -5.3405366, 5.503047, 3.78748, 0.05004978)
-depth = 3.14
-
 [node name="Object2" type="CSGBox3D" parent="Level" unique_id=1939968055]
 transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, -6.450666, -1.4352009, -4.6512055)
 use_collision = true
 size = Vector3(14.932129, 1, 1.0440674)
+material = SubResource("StandardMaterial3D_l2f18")
+
+[node name="Object3" type="CSGBox3D" parent="Level" unique_id=718602629]
+transform = Transform3D(-0.540843, 0.26814747, 0.7972363, 0.44419742, 0.8959289, 0, -0.71426713, 0.35413033, -0.6036674, -4.1447344, -0.35065627, -4.544411)
+use_collision = true
+size = Vector3(13.248779, 1, 2.8330078)
 material = SubResource("StandardMaterial3D_l2f18")
 
 [node name="Object14" type="CSGBox3D" parent="Level" unique_id=470000648]
@@ -394,9 +394,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4492378, -1.7872602, -11.35
 
 [node name="InterractArea2" parent="Level" unique_id=1372098463 instance=ExtResource("3_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.728088, -1.7872602, -7.53622)
+interract_type = "Stay"
 
 [node name="InterractArea3" parent="Level" unique_id=1863945794 instance=ExtResource("3_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.519009, -1.7872602, -10.580996)
+interract_type = "Entered"
 
 [node name="Environment" type="Node" parent="." unique_id=1654604802]
 
