@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://007ij1bo7kis"
-path="res://.godot/imported/shelf_1a.fbx-c2d8e0e48f0f9b95ba4f5dbc2096483f.scn"
+uid="uid://kd6rjld1furf"
+path="res://.godot/imported/wood_wall_mini.glb-6f7542bef2f6a2b585c1bb9442721146.scn"
 
 [deps]
 
-source_file="res://content/assetpackage/logsAndTrees/shelf_1a.fbx"
-dest_files=["res://.godot/imported/shelf_1a.fbx-c2d8e0e48f0f9b95ba4f5dbc2096483f.scn"]
+source_file="res://content/assetpackage/pandazale_lowpoly_asset_bundle/wood_wall_mini.glb"
+dest_files=["res://.godot/imported/wood_wall_mini.glb-6f7542bef2f6a2b585c1bb9442721146.scn"]
 
 [params]
 
@@ -30,7 +30,7 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=true
+animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
@@ -38,7 +38,5 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
-fbx/naming_version=2
+gltf/naming_version=2
+gltf/embedded_image_handling=1
