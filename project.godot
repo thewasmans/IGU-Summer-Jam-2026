@@ -15,6 +15,10 @@ run/main_scene="uid://dvcnlm1psogpu"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Facts="*res://scripts/autoload/facts.gd"
+
 [dotnet]
 
 project/assembly_name="igu-game-jam-2026"
