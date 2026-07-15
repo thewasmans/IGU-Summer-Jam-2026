@@ -1,5 +1,6 @@
 ## A first-person character controller with camera controls, movement, sprinting, and jumping.
 ## Requires a CameraPivot (Node3D) and Camera3D as children, and a character mesh as a child node.
+class_name Character
 extends CharacterBody3D
 
 enum CameraMode {
@@ -58,6 +59,21 @@ enum CameraMode {
 ## Allow switching between camera modes with V key.
 @export var allow_camera_mode_switch: bool = false
 
+## Camera Shake Settings
+## -----------------------------------------------------------------------------
+## Used to simulate an earthquake/storm hitting the camera. Call shake_camera() to trigger it.
+
+@export_group("Camera Shake")
+## Maximum positional offset (in meters) applied to the camera at full shake trauma.
+@export_range(0.0, 2.0, 0.01) var shake_max_offset: float = 0.35
+## Maximum rotational offset (in radians) applied to the camera at full shake trauma.
+@export_range(0.0, 1.0, 0.01) var shake_max_rotation: float = 0.2
+## How fast the shake trauma fades out, in trauma units per second.
+@export_range(0.05, 5.0, 0.05) var shake_decay: float = 0.35
+
+# 0 = no shake, 1 = maximum shake. Decays over time; shake amount uses trauma^2 so it hits hard then tapers off quickly.
+var _shake_trauma: float = 0.0
+
 var input_dir: Vector2 = Vector2.ZERO
 var input_strength: float = 0.0
 var direction: Vector3 = Vector3.ZERO
@@ -83,6 +99,7 @@ func _physics_process(delta: float) -> void:
 	_handle_gravity_and_jump(delta)
 	_handle_camera_transition(delta)
 	_handle_controller_camera(delta)
+	_apply_camera_shake(delta)
 
 	if frozen:
 		handle_frozen_movement()
@@ -150,6 +167,25 @@ func _handle_camera_transition(delta: float) -> void:
 		character.visible = transition_progress > visibility_threshold
 	elif character:
 		character.visible = camera_mode == CameraMode.THIRD_PERSON
+
+## Adds shake trauma, triggering (or intensifying) the camera shake. 1.0 = maximum "earthquake" shake.
+func shake_camera(trauma_amount: float = 1.0) -> void:
+	_shake_trauma = clampf(_shake_trauma + trauma_amount, 0.0, 1.0)
+
+## Applies a decaying random offset to the camera, on top of the player's look input.
+func _apply_camera_shake(delta: float) -> void:
+	if _shake_trauma <= 0.0:
+		return
+	_shake_trauma = maxf(_shake_trauma - shake_decay * delta, 0.0)
+	var power := _shake_trauma * _shake_trauma
+	camera_3d.h_offset = randf_range(-1.0, 1.0) * shake_max_offset * power
+	camera_3d.v_offset = randf_range(-1.0, 1.0) * shake_max_offset * power
+	camera_3d.rotation.x = randf_range(-1.0, 1.0) * shake_max_rotation * power
+	camera_3d.rotation.z = randf_range(-1.0, 1.0) * shake_max_rotation * power
+	if _shake_trauma == 0.0:
+		camera_3d.h_offset = 0.0
+		camera_3d.v_offset = 0.0
+		camera_3d.rotation = Vector3.ZERO
 
 ## Updates camera mode (sets target for smooth transition).
 func _update_camera_mode() -> void:
