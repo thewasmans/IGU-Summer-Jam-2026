@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dgxh18nboxsck" path="res://content/prefabs/ui/game_ui.tscn" id="5_tbgi4"]
 [ext_resource type="Script" uid="uid://s6bqv6auquhi" path="res://scripts/managers/interract_area_manager.gd" id="7_85g3d"]
 [ext_resource type="PackedScene" uid="uid://c6lnr20syymhg" path="res://content/prefabs/tree.tscn" id="8_85g3d"]
+[ext_resource type="Script" uid="uid://cnmsvxm3kfpr7" path="res://scripts/managers/phone_manager.gd" id="10_phonemgr"]
+[ext_resource type="PackedScene" path="res://content/prefabs/ui/phone.tscn" id="11_phonescn"]
 
 [sub_resource type="Curve" id="Curve_choun"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -113,11 +115,12 @@ amount = 100
 process_material = SubResource("ParticleProcessMaterial_eb6dy")
 draw_pass_1 = SubResource("SphereMesh_trceg")
 
-[node name="GameManager" type="Node" parent="Global" unique_id=1036846449 node_paths=PackedStringArray("game_ui_manager", "area_interract_manager")]
+[node name="GameManager" type="Node" parent="Global" unique_id=1036846449 node_paths=PackedStringArray("game_ui_manager", "area_interract_manager", "phone_manager")]
 script = ExtResource("3_tipki")
 game_data = ExtResource("2_0wfyh")
 game_ui_manager = NodePath("GameUIManager")
 area_interract_manager = NodePath("InterractAreaManager")
+phone_manager = NodePath("PhoneManager")
 
 [node name="GameUIManager" type="Node" parent="Global/GameManager" unique_id=29183224 node_paths=PackedStringArray("root_scene")]
 script = ExtResource("4_jyhfs")
@@ -127,6 +130,12 @@ root_scene = NodePath("../../..")
 [node name="InterractAreaManager" type="Node" parent="Global/GameManager" unique_id=890133322 node_paths=PackedStringArray("level")]
 script = ExtResource("7_85g3d")
 level = NodePath("../../../Level")
+
+[node name="PhoneManager" type="Node" parent="Global/GameManager" unique_id=273692394 node_paths=PackedStringArray("root_scene", "player_character")]
+script = ExtResource("10_phonemgr")
+phone_ui_prefab = ExtResource("11_phonescn")
+root_scene = NodePath("../../..")
+player_character = NodePath("../../PlayerCharacter")
 
 [node name="Level" type="Node" parent="." unique_id=1175036900]
 

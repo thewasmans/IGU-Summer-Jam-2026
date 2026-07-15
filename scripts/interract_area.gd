@@ -21,7 +21,7 @@ var interract_started: bool
 var completed: bool
 
 func _unhandled_input(event: InputEvent) -> void:
-	if can_interract and not completed:
+	if can_interract and not completed and not Facts.get_fact("phone_open", false):
 		if interract_type == "Pressed":
 			if event.is_action_pressed("action_interract"):
 				_complete_interract()
