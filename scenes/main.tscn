@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://dgxh18nboxsck" path="res://content/prefabs/ui/game_ui.tscn" id="5_tbgi4"]
 [ext_resource type="Script" uid="uid://s6bqv6auquhi" path="res://scripts/managers/interract_area_manager.gd" id="7_85g3d"]
 [ext_resource type="PackedScene" uid="uid://c6lnr20syymhg" path="res://content/prefabs/tree.tscn" id="8_85g3d"]
-[ext_resource type="Script" uid="uid://bxyuxeblwpp0w" path="res://scenes/timer.gd" id="9_stormtm"]
 
 [sub_resource type="Curve" id="Curve_choun"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -71,7 +70,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2000885, 4.8317327, -6.7876
 wait_time = 5.0
 one_shot = true
 autostart = true
-script = ExtResource("9_stormtm")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Global/StormTimer" unique_id=1619829034]
 transform = Transform3D(0.827365, 0, 0.5616647, 0, 1, 0, -0.5616647, 0, 0.827365, 2.4485483, 0, 2.0066245)
