@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ktr6g66bx3rb" path="res://scripts/interract_area.gd" id="1_ei2m1"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vgdrb"]
-radius = 1.0
+radius = 2.0279512
 
 [node name="InterractArea" type="Area3D" unique_id=1019318091 groups=["AreaInterract"]]
 collision_layer = 2
@@ -16,6 +16,7 @@ shape = SubResource("SphereShape3D_vgdrb")
 
 [node name="Timer" type="Timer" parent="." unique_id=1845399552]
 unique_name_in_owner = true
+one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
