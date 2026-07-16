@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b40roipepjvt0"]
 
-[ext_resource type="PackedScene" uid="uid://kd6rjld1furf" path="res://content/assetpackage/pandazale_lowpoly_asset_bundle/wood_wall_mini.glb" id="1_lsjkn"]
-[ext_resource type="PackedScene" uid="uid://bqrhwxs4as2kc" path="res://content/assetpackage/pandazale_lowpoly_asset_bundle/wood_wall.glb" id="1_m4jb3"]
+[ext_resource type="PackedScene" uid="uid://kd6rjld1furf" path="res://content/models_3d/wood_wall_mini.glb" id="1_lsjkn"]
+[ext_resource type="PackedScene" uid="uid://bqrhwxs4as2kc" path="res://content/models_3d/wood_wall.glb" id="1_m4jb3"]
 [ext_resource type="Texture2D" uid="uid://s3ywu7vyjisx" path="res://content/assetpackage/pandazale_lowpoly_asset_bundle/grid_orange_512x512.png" id="2_84oni"]
 [ext_resource type="PackedScene" uid="uid://dasabj0i5wtrx" path="res://addons/real-controller/character.tscn" id="4_rm63a"]
 [ext_resource type="PackedScene" uid="uid://c3sgdetoyge8d" path="res://content/assetpackage/logsAndTrees/Table_1a.fbx" id="5_8x5ro"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://doeh8fnt8k7v" path="res://content/assetpackage/logsAndTrees/log_2b.fbx" id="9_gykgp"]
 [ext_resource type="PackedScene" uid="uid://cffdot3nhntjg" path="res://content/assetpackage/logsAndTrees/door_2a.fbx" id="10_km402"]
 [ext_resource type="PackedScene" uid="uid://007ij1bo7kis" path="res://content/assetpackage/logsAndTrees/shelf_1a.fbx" id="11_xikvu"]
-[ext_resource type="PackedScene" uid="uid://uj3w3rl2rptt" path="res://content/assetpackage/pandazale_lowpoly_asset_bundle/cheminey.glb" id="12_8x5ro"]
+[ext_resource type="PackedScene" uid="uid://uj3w3rl2rptt" path="res://content/models_3d/cheminey.glb" id="12_8x5ro"]
 [ext_resource type="PackedScene" uid="uid://b38xedrr84lm3" path="res://content/assetpackage/logsAndTrees/chair_1a.fbx" id="13_xgmtd"]
 [ext_resource type="PackedScene" uid="uid://bl31vub83we1s" path="res://content/assetpackage/Low_Poly_Winter_Cabine/Snow_mound_A.fbx" id="14_gykgp"]
 [ext_resource type="PackedScene" uid="uid://d4kg32mv1e5sw" path="res://content/assetpackage/Low_Poly_Winter_Cabine/cabin_Floor.fbx" id="15_km402"]
@@ -31,31 +31,31 @@ uv1_world_triplanar = true
 
 [node name="LevelCabine" type="Node3D" unique_id=1393006050]
 
-[node name="wood_wall" parent="." unique_id=638663945 instance=ExtResource("1_m4jb3")]
+[node name="wood_wall" parent="." unique_id=1884783908 instance=ExtResource("1_m4jb3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.5, -6.025)
 
-[node name="wood_wall2" parent="." unique_id=1552459117 instance=ExtResource("1_m4jb3")]
+[node name="wood_wall2" parent="." unique_id=389277132 instance=ExtResource("1_m4jb3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -6.025)
 
-[node name="wood_wall3" parent="." unique_id=1889959598 instance=ExtResource("1_m4jb3")]
+[node name="wood_wall3" parent="." unique_id=236911885 instance=ExtResource("1_m4jb3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.5, 5.9750004)
 
-[node name="wood_wall4" parent="." unique_id=1155003544 instance=ExtResource("1_m4jb3")]
+[node name="wood_wall4" parent="." unique_id=2068052885 instance=ExtResource("1_m4jb3")]
 transform = Transform3D(0.9999937, -0.002532946, -0.002507602, 0.0025267862, 0.9999938, -0.0024590245, 0.002513809, 0.0024526794, 0.9999939, 2, 0.5, 5.9750004)
 
-[node name="wood_wall5" parent="." unique_id=1504539290 instance=ExtResource("1_m4jb3")]
+[node name="wood_wall5" parent="." unique_id=414927561 instance=ExtResource("1_m4jb3")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.25, 0.5, 0.7250004)
 
-[node name="wood_wall7" parent="." unique_id=2121848323 instance=ExtResource("1_m4jb3")]
+[node name="wood_wall7" parent="." unique_id=1447912616 instance=ExtResource("1_m4jb3")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.25, 0.5, 3.7250004)
 
-[node name="wood_wall6" parent="." unique_id=767942164 instance=ExtResource("1_m4jb3")]
+[node name="wood_wall6" parent="." unique_id=144946329 instance=ExtResource("1_m4jb3")]
 transform = Transform3D(0.002513765, 0.0024526792, 0.9999939, 0.0025267862, 0.9999938, -0.0024590245, -0.9999937, 0.002532946, 0.002507558, 4.25, 0.5, -3.7749996)
 
-[node name="wood_wall8" parent="." unique_id=580935314 instance=ExtResource("1_m4jb3")]
+[node name="wood_wall8" parent="." unique_id=932424771 instance=ExtResource("1_m4jb3")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.75, 0.5, 3.7250004)
 
-[node name="wood_wall9" parent="." unique_id=1208115179 instance=ExtResource("1_m4jb3")]
+[node name="wood_wall9" parent="." unique_id=1583020681 instance=ExtResource("1_m4jb3")]
 transform = Transform3D(0.002513765, 0.0024526792, 0.9999939, 0.0025267862, 0.9999938, -0.0024590245, -0.9999937, 0.002532946, 0.002507558, -4.75, 0.5, -3.7749996)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=884997824]
@@ -69,16 +69,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 0)
 size = Vector3(2, 1, 4)
 material = SubResource("StandardMaterial3D_3eron")
 
-[node name="wood_wall_mini" parent="." unique_id=1641905217 instance=ExtResource("1_lsjkn")]
+[node name="wood_wall_mini" parent="." unique_id=1872881472 instance=ExtResource("1_lsjkn")]
 transform = Transform3D(2.365, 0, 0, 0, 1.825, 0, 0, 0, 1, -5.5, 0.5, 1.5)
 
-[node name="wood_wall_mini4" parent="." unique_id=393649405 instance=ExtResource("1_lsjkn")]
+[node name="wood_wall_mini4" parent="." unique_id=1128756819 instance=ExtResource("1_lsjkn")]
 transform = Transform3D(-4.2400046e-08, 0, 1, 0, 1.825, 0, -0.97, 0, -4.371139e-08, -6.5, 0.5, 1)
 
-[node name="wood_wall_mini5" parent="." unique_id=861314482 instance=ExtResource("1_lsjkn")]
+[node name="wood_wall_mini5" parent="." unique_id=819729747 instance=ExtResource("1_lsjkn")]
 transform = Transform3D(-4.2400043e-08, 0, 1, 0, 1.825, 0, -0.97, 0, -4.371139e-08, -6.5, 0.5, -1)
 
-[node name="wood_wall_mini2" parent="." unique_id=1332482893 instance=ExtResource("1_lsjkn")]
+[node name="wood_wall_mini2" parent="." unique_id=1943810347 instance=ExtResource("1_lsjkn")]
 transform = Transform3D(2.365, 0, 0, 0, 1.825, 0, 0, 0, 1, -5.5, 0.5, -1.5)
 
 [node name="Character" parent="." unique_id=1913778194 instance=ExtResource("4_rm63a")]

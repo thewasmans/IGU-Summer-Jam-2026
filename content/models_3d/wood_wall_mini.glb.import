@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://uj3w3rl2rptt"
-path="res://.godot/imported/cheminey.glb-dd8b9f667e7c0fd14c1f4d6c53a1f364.scn"
+uid="uid://kd6rjld1furf"
+path="res://.godot/imported/wood_wall_mini.glb-34d241752a54171064b341c40a07b2db.scn"
 
 [deps]
 
-source_file="res://content/assetpackage/pandazale_lowpoly_asset_bundle/cheminey.glb"
-dest_files=["res://.godot/imported/cheminey.glb-dd8b9f667e7c0fd14c1f4d6c53a1f364.scn"]
+source_file="res://content/models_3d/wood_wall_mini.glb"
+dest_files=["res://.godot/imported/wood_wall_mini.glb-34d241752a54171064b341c40a07b2db.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://kd6rjld1furf"
-path="res://.godot/imported/wood_wall_mini.glb-6f7542bef2f6a2b585c1bb9442721146.scn"
+uid="uid://bqrhwxs4as2kc"
+path="res://.godot/imported/wood_wall.glb-4d7d2fcbd9caee51be77624218473098.scn"
 
 [deps]
 
-source_file="res://content/assetpackage/pandazale_lowpoly_asset_bundle/wood_wall_mini.glb"
-dest_files=["res://.godot/imported/wood_wall_mini.glb-6f7542bef2f6a2b585c1bb9442721146.scn"]
+source_file="res://content/models_3d/wood_wall.glb"
+dest_files=["res://.godot/imported/wood_wall.glb-4d7d2fcbd9caee51be77624218473098.scn"]
 
 [params]
 
