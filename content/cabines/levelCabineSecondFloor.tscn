@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dnommavuf8agg"]
 
-[ext_resource type="PackedScene" uid="uid://b40roipepjvt0" path="res://content/cabines/levelCabine.tscn" id="1_mvi1d"]
 [ext_resource type="PackedScene" uid="uid://d4kg32mv1e5sw" path="res://content/assetpackage/Low_Poly_Winter_Cabine/cabin_Floor.fbx" id="2_fl0mi"]
 [ext_resource type="PackedScene" uid="uid://bqrhwxs4as2kc" path="res://content/models_3d/wood_wall.glb" id="3_i6e5a"]
 [ext_resource type="PackedScene" uid="uid://kd6rjld1furf" path="res://content/models_3d/wood_wall_mini.glb" id="4_0rehq"]
@@ -24,9 +23,6 @@ size = Vector3(0.96585083, 0.49414063, 0.3822937)
 size = Vector3(3.0239258, 1.1401825, 0.55311584)
 
 [node name="levelCabineSecondFloor" type="Node3D" unique_id=679240696]
-
-[node name="LevelCabine" parent="." unique_id=1393006050 instance=ExtResource("1_mvi1d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041398764, 0.53743505, -0.0029540062)
 
 [node name="floor" type="Node3D" parent="." unique_id=219154543]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4326131, 0)
@@ -141,6 +137,4 @@ transform = Transform3D(-4.2400046e-08, 0, 1, 0, 1.825, 0, -0.97, 0, -4.371139e-
 transform = Transform3D(1, 0, 0, 0, 2.55, 0, 0, 0, 1, -1.0119609, -0.15507405, 0.18698883)
 shape = SubResource("BoxShape3D_a11yn")
 
-[editable path="LevelCabine"]
-[editable path="LevelCabine/walls/wood_wall"]
 [editable path="walls/wood_wall"]
