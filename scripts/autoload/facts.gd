@@ -17,8 +17,14 @@ func get_fact(fact_key: String, default_value: Variant = null) -> Variant:
 func has_fact(fact_key: String) -> bool:
 	return _facts.has(fact_key)
 
+func get_all_facts() -> Dictionary:
+	return _facts.duplicate()
+
 func listen_fact(fact_key: String, callback: Callable) -> void:
 	fact_changed.connect(func(changed_key: String, value: Variant, previous_value: Variant) -> void:
 		if changed_key == fact_key:
 			callback.call(value, previous_value)
 	)
+	
+func remove_listen_fact(callback: Callable) -> void:
+	fact_changed.disconnect(callback)
