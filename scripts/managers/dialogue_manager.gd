@@ -56,7 +56,7 @@ func _finish_dialogue(dialogue: Dialogue) -> void:
 	dialogue_completed.emit(dialogue)
 
 static func _dialogue_fact_key(dialogue: Dialogue) -> String:
-	return "dialogue/%s_completed" % dialogue.dialogue_id
+	return "dialogues/%s/dialogue_completed" % dialogue.dialogue_id
 
 static func _entry_fact_key(dialogue: Dialogue, entry_index: int) -> String:
-	return "dialogue/%s_entry_%d_completed" % [dialogue.dialogue_id, entry_index]
+	return "dialogues/%s/entry_%d_completed" % [dialogue.dialogue_id, entry_index]
