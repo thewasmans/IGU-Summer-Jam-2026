@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://chfxvwlqr0oqm" path="res://scripts/ui/game_ui.gd" id="1_7e7t2"]
 
-[node name="GameUi" type="Control" unique_id=137618360 node_paths=PackedStringArray("label_interract", "progress_interract")]
+[node name="GameUi" type="Control" unique_id=137618360 node_paths=PackedStringArray("label_interract", "progress_interract", "dialogue_box", "dialogue_speaker_label", "dialogue_text_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,6 +13,9 @@ mouse_filter = 2
 script = ExtResource("1_7e7t2")
 label_interract = NodePath("CanInterractLabel")
 progress_interract = NodePath("HSlider")
+dialogue_box = NodePath("DialogueBox")
+dialogue_speaker_label = NodePath("DialogueBox/MarginContainer/VBoxContainer/SpeakerLabel")
+dialogue_text_label = NodePath("DialogueBox/MarginContainer/VBoxContainer/TextLabel")
 
 [node name="CanInterractLabel" type="Label" parent="." unique_id=537411474]
 layout_mode = 1
@@ -47,3 +50,39 @@ grow_vertical = 0
 max_value = 1.0
 value = 0.1
 show_percentage = false
+
+[node name="DialogueBox" type="PanelContainer" parent="." unique_id=612044821]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogueBox" unique_id=612044822]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueBox/MarginContainer" unique_id=612044823]
+layout_mode = 2
+
+[node name="SpeakerLabel" type="Label" parent="DialogueBox/MarginContainer/VBoxContainer" unique_id=612044824]
+layout_mode = 2
+text = "Speaker"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 18
+
+[node name="TextLabel" type="Label" parent="DialogueBox/MarginContainer/VBoxContainer" unique_id=612044825]
+layout_mode = 2
+text = "Dialogue text"
+horizontal_alignment = 1
+autowrap_mode = 3
