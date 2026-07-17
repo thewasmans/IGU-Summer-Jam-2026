@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://bilbs6sia8q7"]
 
-[ext_resource type="PackedScene" uid="uid://dnommavuf8agg" path="res://scenes/levelCabineSecondFloor.tscn" id="1_l2pt1"]
-[ext_resource type="PackedScene" uid="uid://b40roipepjvt0" path="res://scenes/levelCabine.tscn" id="2_384ki"]
+[ext_resource type="PackedScene" uid="uid://dnommavuf8agg" path="res://content/cabines/levelCabineSecondFloor.tscn" id="1_l2pt1"]
+[ext_resource type="PackedScene" uid="uid://b40roipepjvt0" path="res://content/cabines/levelCabine.tscn" id="2_384ki"]
 
 [node name="House" type="Node3D" unique_id=1508929104]
 
 [node name="levelCabineSecondFloor" parent="." unique_id=679240696 instance=ExtResource("1_l2pt1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013208866, -4.7683716e-07, -0.008959293)
 
 [node name="LevelCabine" parent="." unique_id=1393006050 instance=ExtResource("2_384ki")]

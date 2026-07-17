@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dnommavuf8agg"]
 
-[ext_resource type="PackedScene" uid="uid://b40roipepjvt0" path="res://scenes/levelCabine.tscn" id="1_mvi1d"]
+[ext_resource type="PackedScene" uid="uid://b40roipepjvt0" path="res://content/cabines/levelCabine.tscn" id="1_mvi1d"]
 [ext_resource type="PackedScene" uid="uid://d4kg32mv1e5sw" path="res://content/assetpackage/Low_Poly_Winter_Cabine/cabin_Floor.fbx" id="2_fl0mi"]
 [ext_resource type="PackedScene" uid="uid://bqrhwxs4as2kc" path="res://content/models_3d/wood_wall.glb" id="3_i6e5a"]
 [ext_resource type="PackedScene" uid="uid://kd6rjld1furf" path="res://content/models_3d/wood_wall_mini.glb" id="4_0rehq"]
