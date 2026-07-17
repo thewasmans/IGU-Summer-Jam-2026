@@ -73,6 +73,7 @@ particles = [NodePath("Global/StormTimer/GPUParticles3D"), NodePath("Global/Stor
 
 [node name="PlayerCharacter" parent="Global" unique_id=1913778194 instance=ExtResource("1_o5qli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2041013, 4.845208, -6.7919865)
+camera_mode = 0
 
 [node name="StormTimer" type="Timer" parent="Global" unique_id=730841255]
 wait_time = 5.0
