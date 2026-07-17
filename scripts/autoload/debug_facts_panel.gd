@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-const TOGGLE_KEY := KEY_F
+const TOGGLE_KEY := KEY_F1
 
 var _panel: PanelContainer
 var _tree: Tree
@@ -76,7 +76,7 @@ func _build_ui() -> void:
 	margin.add_child(vbox)
 
 	var title: Label = Label.new()
-	title.text = "Facts debug panel (F to toggle)"
+	title.text = "Facts debug panel (F1 to toggle)"
 	vbox.add_child(title)
 
 	_tree = Tree.new()
