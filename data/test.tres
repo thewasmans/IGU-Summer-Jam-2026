@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogueEntry" format=3 uid="uid://cwxpu74ofvm8h"]
+
+[ext_resource type="Script" uid="uid://b73k7tiran3rj" path="res://scripts/data/dialogue_entry.gd" id="1_qpmhy"]
+
+[resource]
+script = ExtResource("1_qpmhy")
+text = "Oh... fuck !"

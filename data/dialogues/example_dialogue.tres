@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://qvyo21uafyv4"]
+
+[ext_resource type="Script" uid="uid://dgkt1fcechioc" path="res://scripts/data/dialogue.gd" id="1_dlg"]
+[ext_resource type="Script" uid="uid://b73k7tiran3rj" path="res://scripts/data/dialogue_entry.gd" id="2_entry"]
+
+[sub_resource type="Resource" id="Resource_entry1"]
+script = ExtResource("2_entry")
+speaker_name = "Narrateur"
+text = "Bienvenue dans la vallée. Une tempête approche à l'horizon."
+
+[sub_resource type="Resource" id="Resource_entry2"]
+script = ExtResource("2_entry")
+speaker_name = "Alice"
+timecode = 3.0
+text = "On ferait mieux de rentrer avant qu'elle n'arrive."
+
+[sub_resource type="Resource" id="Resource_entry3"]
+script = ExtResource("2_entry")
+speaker_name = "Bob"
+timecode = 6.0
+text = "T'inquiète, on a le temps."
+
+[resource]
+script = ExtResource("1_dlg")
+dialogue_id = "intro"
+duration = 9.0
+entries = Array[ExtResource("2_entry")]([SubResource("Resource_entry1"), SubResource("Resource_entry2"), SubResource("Resource_entry3")])
