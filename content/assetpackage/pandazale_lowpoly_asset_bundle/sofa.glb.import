@@ -37,6 +37,16 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Prop_Sofa_02_E_PandaMat_0": {
+"generate/physics": true,
+"physics/shape_type": 3,
+"primitive/height": 47.25,
+"primitive/position": Vector3(0, 0, 10),
+"primitive/size": Vector3(200, 100, 100)
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
