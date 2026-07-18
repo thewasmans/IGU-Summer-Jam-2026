@@ -24,6 +24,10 @@ DebugFactsPanel="*res://scripts/autoload/debug_facts_panel.gd"
 
 project/assembly_name="igu-game-jam-2026"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/apply_collision_scale_tool/plugin.cfg")
+
 [global_group]
 
 AreaInterract="Content only all area interract"
