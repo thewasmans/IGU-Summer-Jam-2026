@@ -245,7 +245,7 @@ transform = Transform3D(-0.9996215, -0.008430755, -0.026184289, -0.007922175, 0.
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -2, 0.9471812, 2)
 
 [node name="sofa2" parent="cabin_Decoration" unique_id=1649351831 instance=ExtResource("18_4plgl")]
-transform = Transform3D(-4.371139e-08, 0, 1.2, 0, 1.2, 0, -1, 0, -5.2453668e-08, 0.63592005, 1.2650001, 0.07051754)
+transform = Transform3D(-4.371139e-08, 0, 1.2, 0, 1.2, 0, -1, 0, -5.2453668e-08, 0.63592005, 1.2650001, 0.24701357)
 
 [node name="Snow_mound_A" parent="cabin_Decoration" unique_id=1977234391 instance=ExtResource("14_gykgp")]
 transform = Transform3D(-1.9273219, 0, 1.5607147, 0, 2.99, 0, -1.5607147, 0, -1.9273219, -10.5, 0, 0)
@@ -268,7 +268,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.5513363, 3)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -1.5105515, 1.535023, 2.8287969)
 
 [node name="cheminey" parent="interractible" unique_id=1222840615 instance=ExtResource("12_8x5ro")]
-transform = Transform3D(-2.1855694e-08, 0, -0.25, 0, 0.5, 0, 0.5, 0, -1.0927847e-08, 3.6270895, 0.74874985, 0.12021923)
+transform = Transform3D(-2.1855694e-08, 0, -0.25, 0, 0.5, 0, 0.5, 0, -1.0927847e-08, 3.6270895, 0.74874985, 0.29671526)
 
 [node name="door_2a" parent="interractible" unique_id=1220266129 instance=ExtResource("10_km402")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1.2, 0, -1, 0, -4.371139e-08, -6.4068913, 1.7801716, 0)
