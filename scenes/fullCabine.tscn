@@ -6,6 +6,17 @@
 [node name="House" type="Node3D" unique_id=1508929104]
 
 [node name="levelCabineSecondFloor" parent="." unique_id=679240696 instance=ExtResource("1_l2pt1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013208866, -4.7683716e-07, -0.008959293)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013208866, -0.2952168, -0.008959293)
 
 [node name="LevelCabine" parent="." unique_id=1393006050 instance=ExtResource("2_384ki")]
+
+[node name="CollisionShape3D" parent="LevelCabine/stairs/StaticBody3D" parent_id_path=PackedInt32Array(1393006050, 687140569) index="0" unique_id=1593409236]
+transform = Transform3D(7.4605837, -0.0013757441, 0, 0.25674915, 0.039976332, 0, 0, 0, 1.9500002, 0.221, 0.091, 0)
+
+[node name="wood_wall4" parent="LevelCabine/walls" parent_id_path=PackedInt32Array(1393006050, 1822209895) index="3" unique_id=282136507]
+transform = Transform3D(0.9999936, -0.002532952, -0.0025075958, 0.002526786, 0.99999374, -0.0024590313, 0.002513809, 0.0024526794, 0.9999938, 1.9987874, 0.7355201, 5.9750004)
+
+[editable path="levelCabineSecondFloor"]
+[editable path="levelCabineSecondFloor/walls/wood_wall"]
+[editable path="LevelCabine"]
+[editable path="LevelCabine/walls/wood_wall"]

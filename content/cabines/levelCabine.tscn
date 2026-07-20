@@ -24,7 +24,7 @@
 [sub_resource type="BoxMesh" id="BoxMesh_iup76"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xqkrv"]
-size = Vector3(0.9972, 1, 1)
+size = Vector3(0.96343696, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4plgl"]
 size = Vector3(2.539795, 1, 1)
