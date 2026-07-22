@@ -13,9 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bl31vub83we1s" path="res://content/assetpackage/Low_Poly_Winter_Cabine/Snow_mound_A.fbx" id="14_gykgp"]
 [ext_resource type="PackedScene" uid="uid://d4kg32mv1e5sw" path="res://content/assetpackage/Low_Poly_Winter_Cabine/cabin_Floor.fbx" id="15_km402"]
 [ext_resource type="PackedScene" uid="uid://dy6l4sws1bwij" path="res://content/assetpackage/Low_Poly_Winter_Cabine/cabin_Window.fbx" id="16_xikvu"]
-[ext_resource type="PackedScene" uid="uid://bmqa3h84afi1" path="res://content/assetpackage/pandazale_lowpoly_asset_bundle/matches.glb" id="17_xikvu"]
 [ext_resource type="PackedScene" uid="uid://d2lovdvev1hsr" path="res://content/assetpackage/pandazale_lowpoly_asset_bundle/sofa.glb" id="18_4plgl"]
-[ext_resource type="PackedScene" uid="uid://ctvff3w1ldouo" path="res://content/assetpackage/pandazale_lowpoly_asset_bundle/matches_p1.glb" id="18_et2o8"]
 [ext_resource type="PackedScene" uid="uid://y54rd528reu4" path="res://content/assetpackage/pandazale_lowpoly_asset_bundle/mirror.glb" id="19_iup76"]
 [ext_resource type="PackedScene" uid="uid://db4fy5602hdjt" path="res://content/assetpackage/lineAcross_NV/woodboard_1a.fbx" id="20_4plgl"]
 [ext_resource type="PackedScene" uid="uid://dmjmst47o6jgi" path="res://content/assetpackage/lineAcross_NV/chair_2a.fbx" id="21_cy1is"]
@@ -256,12 +254,6 @@ transform = Transform3D(0.113042355, 0, 0.16498916, 0, 0.2, 0, -0.16498916, 0, 0
 
 [node name="mirror" parent="interractible" unique_id=1739704568 instance=ExtResource("19_iup76")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2, 2, 5.8143444)
-
-[node name="matches" parent="interractible" unique_id=2134449503 instance=ExtResource("17_xikvu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.5513363, 3)
-
-[node name="matches_p2" parent="interractible" unique_id=1927892405 instance=ExtResource("18_et2o8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -1.5105515, 1.535023, 2.8287969)
 
 [node name="cheminey" parent="interractible" unique_id=1222840615 instance=ExtResource("12_8x5ro")]
 transform = Transform3D(-2.1855694e-08, 0, -0.25, 0, 0.5, 0, 0.5, 0, -1.0927847e-08, 3.7013636, 0.74874985, 0.29671526)

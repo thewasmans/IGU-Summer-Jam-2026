@@ -11,7 +11,6 @@ func _ready():
 func _on_short_range_player_completed():
 	dialogue_manager.play_dialogue(dlg_phase_one_short_range)
 
-
 func _on_mid_range_player_completed():
 	dialogue_manager.play_dialogue(dlg_phase_one_mid_range)
 

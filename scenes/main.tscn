@@ -11,13 +11,20 @@
 [ext_resource type="PackedScene" uid="uid://c6lnr20syymhg" path="res://content/prefabs/tree.tscn" id="8_85g3d"]
 [ext_resource type="Script" path="res://scripts/managers/phone_manager.gd" id="10_phonemgr"]
 [ext_resource type="PackedScene" uid="uid://dhdv3e54beb3k" path="res://content/prefabs/ui/phone.tscn" id="11_phonescn"]
+[ext_resource type="Script" uid="uid://c3vlsntanyngq" path="res://scripts/managers/network_area_manager.gd" id="12_0ld40"]
 [ext_resource type="Script" uid="uid://c7q2eyvtg62ib" path="res://scripts/managers/dialogue_manager.gd" id="12_dialoguemgr"]
 [ext_resource type="Script" uid="uid://dio5cq40sjdic" path="res://scenes/phase_one.gd" id="12_dp3eg"]
 [ext_resource type="Script" uid="uid://b73k7tiran3rj" path="res://scripts/data/dialogue_entry.gd" id="13_0ld40"]
 [ext_resource type="Script" uid="uid://l2ivlccydw7q" path="res://scenes/audio_points.gd" id="13_a8y0u"]
 [ext_resource type="Resource" uid="uid://qvyo21uafyv4" path="res://data/dialogues/example_dialogue.tres" id="13_exdlg"]
 [ext_resource type="Script" uid="uid://dgkt1fcechioc" path="res://scripts/data/dialogue.gd" id="14_gqmmt"]
+[ext_resource type="PackedScene" uid="uid://bia87jkwlhl87" path="res://content/prefabs/network_area.tscn" id="18_2wyq8"]
+[ext_resource type="PackedScene" uid="uid://bmqa3h84afi1" path="res://content/assetpackage/pandazale_lowpoly_asset_bundle/matches.glb" id="18_jscy8"]
+[ext_resource type="Script" uid="uid://c253ox7r2df7u" path="res://scenes/audio_points_phase_two.gd" id="18_og1vs"]
+[ext_resource type="Script" uid="uid://d24e2dgq7xohs" path="res://scenes/start_fire.gd" id="18_pm3ni"]
+[ext_resource type="PackedScene" uid="uid://bqbhdejealmmw" path="res://content/vfx/FireParticles.tscn" id="18_y6deb"]
 [ext_resource type="PackedScene" uid="uid://bilbs6sia8q7" path="res://scenes/fullCabine.tscn" id="18_yc10j"]
+[ext_resource type="PackedScene" uid="uid://ctvff3w1ldouo" path="res://content/assetpackage/pandazale_lowpoly_asset_bundle/matches_p1.glb" id="19_pm3ni"]
 
 [sub_resource type="Curve" id="Curve_choun"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -54,11 +61,8 @@ radius = 1.1942432
 [sub_resource type="SphereShape3D" id="SphereShape3D_og1vs"]
 radius = 0.84571964
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_ya4ey"]
-radius = 5.702407
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_eb6dy"]
-radius = 9.668942
+[sub_resource type="SphereShape3D" id="SphereShape3D_2wyq8"]
+radius = 1.2183136
 
 [sub_resource type="Resource" id="Resource_og1vs"]
 script = ExtResource("13_0ld40")
@@ -120,11 +124,46 @@ radius = 5.205635
 [sub_resource type="SphereShape3D" id="SphereShape3D_jscy8"]
 radius = 15.780549
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_fv21b"]
+
+[sub_resource type="Resource" id="Resource_yq6so"]
+script = ExtResource("14_gqmmt")
+metadata/_custom_type_script = "uid://dgkt1fcechioc"
+
+[sub_resource type="Resource" id="Resource_fv21b"]
+script = ExtResource("14_gqmmt")
+metadata/_custom_type_script = "uid://dgkt1fcechioc"
+
+[sub_resource type="Resource" id="Resource_tel4y"]
+script = ExtResource("14_gqmmt")
+metadata/_custom_type_script = "uid://dgkt1fcechioc"
+
+[sub_resource type="Resource" id="Resource_qkpxi"]
+script = ExtResource("14_gqmmt")
+metadata/_custom_type_script = "uid://dgkt1fcechioc"
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_dp3eg"]
 radius = 7.476927
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0ld40"]
 radius = 15.780549
+
+[sub_resource type="Resource" id="Resource_vxglm"]
+script = ExtResource("14_gqmmt")
+metadata/_custom_type_script = "uid://dgkt1fcechioc"
+
+[sub_resource type="Resource" id="Resource_2f3dj"]
+script = ExtResource("14_gqmmt")
+metadata/_custom_type_script = "uid://dgkt1fcechioc"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vxglm"]
+radius = 0.63962346
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2f3dj"]
+radius = 1.0149171
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yq6so"]
+radius = 1.5175233
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4xr67"]
 albedo_color = Color(0.6805224, 0.5903386, 0.2021581, 1)
@@ -203,13 +242,14 @@ amount = 100
 process_material = SubResource("ParticleProcessMaterial_eb6dy")
 draw_pass_1 = SubResource("SphereMesh_trceg")
 
-[node name="GameManager" type="Node" parent="Global" unique_id=1036846449 node_paths=PackedStringArray("game_ui_manager", "area_interract_manager", "phone_manager", "dialogue_manager")]
+[node name="GameManager" type="Node" parent="Global" unique_id=1036846449 node_paths=PackedStringArray("game_ui_manager", "area_interract_manager", "phone_manager", "dialogue_manager", "network_area_manager")]
 script = ExtResource("3_tipki")
 game_data = ExtResource("2_0wfyh")
 game_ui_manager = NodePath("GameUIManager")
 area_interract_manager = NodePath("InterractAreaManager")
 phone_manager = NodePath("PhoneManager")
 dialogue_manager = NodePath("DialogueManager")
+network_area_manager = NodePath("NetworkManager")
 
 [node name="GameUIManager" type="Node" parent="Global/GameManager" unique_id=29183224 node_paths=PackedStringArray("root_scene")]
 script = ExtResource("4_jyhfs")
@@ -229,6 +269,10 @@ player_character = NodePath("../../PlayerCharacter")
 [node name="DialogueManager" type="Node" parent="Global/GameManager" unique_id=475930188]
 script = ExtResource("12_dialoguemgr")
 
+[node name="NetworkManager" type="Node" parent="Global/GameManager" unique_id=755656800 node_paths=PackedStringArray("level")]
+script = ExtResource("12_0ld40")
+level = NodePath("../../../Level")
+
 [node name="Level" type="Node" parent="." unique_id=1175036900]
 
 [node name="PhaseOne" type="Node" parent="Level" unique_id=1477848284]
@@ -239,6 +283,7 @@ dlg_phase_one = SubResource("Resource_jscy8")
 
 [node name="WindowsClear" parent="Level/PhaseOne/WindowSights" unique_id=1019318091 instance=ExtResource("3_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.683752, 2.830499, 6.2394342)
+interract_type = "Stay"
 locked_by_facts = Array[String](["events/storm_happend"])
 
 [node name="CollisionShape" parent="Level/PhaseOne/WindowSights/WindowsClear" index="0" unique_id=1971436032]
@@ -260,34 +305,41 @@ shape = SubResource("SphereShape3D_og1vs")
 
 [node name="Geoloc" type="Node" parent="Level/PhaseOne" unique_id=62120266]
 
-[node name="AreaGeoloc" parent="Level/PhaseOne/Geoloc" unique_id=1863945794 instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35213518, -1.7872602, -16.399822)
-visible = false
-interract_type = "Entered"
-locked_by_facts = Array[String](["events/storm_happend", "geoloc_activated"])
-
-[node name="CollisionShape" parent="Level/PhaseOne/Geoloc/AreaGeoloc" index="0" unique_id=1971436032]
-shape = SubResource("SphereShape3D_ya4ey")
-
-[node name="AreaGeoloc2" parent="Level/PhaseOne/Geoloc" unique_id=403828527 instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.937962, -1.7872602, -9.010808)
-visible = false
+[node name="Geoloc1" parent="Level/PhaseOne/Geoloc" unique_id=1210290174 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2774125, 2.5279655, 2.3294775)
 interract_type = "Wait"
+stay_time = 3.0
 locked_by_facts = Array[String](["events/storm_happend", "geoloc_activated"])
 
-[node name="CollisionShape" parent="Level/PhaseOne/Geoloc/AreaGeoloc2" index="0" unique_id=1971436032]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.152645, 0, 7.7116857)
-shape = SubResource("SphereShape3D_eb6dy")
+[node name="CollisionShape" parent="Level/PhaseOne/Geoloc/Geoloc1" index="0" unique_id=1971436032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44556034, 0.25998235, 1.4540555)
+shape = SubResource("SphereShape3D_2wyq8")
+disabled = true
+debug_color = Color(0.1333332, 1, 0, 0.41960785)
 
-[node name="AreaGeoloc3" parent="Level/PhaseOne/Geoloc" unique_id=2134281181 instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.148125, 6.9661093, -22.25585)
-visible = false
+[node name="Geoloc2" parent="Level/PhaseOne/Geoloc" unique_id=585894228 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.883669, 5.7816095, 2.3294775)
 interract_type = "Wait"
+stay_time = 3.0
 locked_by_facts = Array[String](["events/storm_happend", "geoloc_activated"])
 
-[node name="CollisionShape" parent="Level/PhaseOne/Geoloc/AreaGeoloc3" index="0" unique_id=1971436032]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.152645, 0, 7.7116857)
-shape = SubResource("SphereShape3D_eb6dy")
+[node name="CollisionShape" parent="Level/PhaseOne/Geoloc/Geoloc2" index="0" unique_id=1971436032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44556034, 0.25998235, 1.4540555)
+shape = SubResource("SphereShape3D_2wyq8")
+disabled = true
+debug_color = Color(0.1333332, 1, 0, 0.41960785)
+
+[node name="Geoloc3" parent="Level/PhaseOne/Geoloc" unique_id=437341342 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.600645, 5.674672, -3.7756252)
+interract_type = "Wait"
+stay_time = 3.0
+locked_by_facts = Array[String](["events/storm_happend", "geoloc_activated"])
+
+[node name="CollisionShape" parent="Level/PhaseOne/Geoloc/Geoloc3" index="0" unique_id=1971436032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44556034, 0.25998235, 1.4540555)
+shape = SubResource("SphereShape3D_2wyq8")
+disabled = true
+debug_color = Color(0.1333332, 1, 0, 0.41960785)
 
 [node name="AudioPointsPhaseOne" type="Node" parent="Level/PhaseOne" unique_id=162049499 node_paths=PackedStringArray("dialogue_manager")]
 script = ExtResource("13_a8y0u")
@@ -322,11 +374,23 @@ locked_by_facts = Array[String](["events/storm_happend"])
 [node name="CollisionShape" parent="Level/PhaseOne/AudioPointsPhaseOne/LongRange" index="0" unique_id=1971436032]
 shape = SubResource("SphereShape3D_jscy8")
 
+[node name="NetworkArea" parent="Level" unique_id=484343088 instance=ExtResource("18_2wyq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6165469, 1.5174468, 0)
+
+[node name="CollisionShape3D" parent="Level/NetworkArea" index="0" unique_id=638583066]
+shape = SubResource("SphereShape3D_fv21b")
+
 [node name="PhaseTwo" type="Node" parent="Level" unique_id=972905351]
 script = ExtResource("12_dp3eg")
 dlg_phase_one = SubResource("Resource_jscy8")
 
-[node name="AudioPointsPhaseTwo" type="Node" parent="Level/PhaseTwo" unique_id=2105419458]
+[node name="AudioPointsPhaseTwo" type="Node" parent="Level/PhaseTwo" unique_id=2105419458 node_paths=PackedStringArray("dialogue_manager")]
+script = ExtResource("18_og1vs")
+dlg_intro = SubResource("Resource_yq6so")
+dlg_phase_two_short_range = SubResource("Resource_fv21b")
+dlg_phase_two_mid_range = SubResource("Resource_tel4y")
+dlg_phase_two_long_range = SubResource("Resource_qkpxi")
+dialogue_manager = NodePath("../../../Global/GameManager/DialogueManager")
 
 [node name="ShortRange" parent="Level/PhaseTwo/AudioPointsPhaseTwo" unique_id=670692781 instance=ExtResource("3_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2025032, 2.5239825, -4.0970497)
@@ -356,13 +420,40 @@ locked_by_facts = Array[String](["events/phase_one_completed"])
 visible = false
 locked_by_facts = Array[String](["events/phase_one_completed", "fuse_found"])
 
-[node name="StartFire" type="Node" parent="Level/PhaseTwo" unique_id=667940132]
+[node name="StartFire" type="Node" parent="Level/PhaseTwo" unique_id=667940132 node_paths=PackedStringArray("dialogue_manager")]
+script = ExtResource("18_pm3ni")
+dlg_found_matches = SubResource("Resource_vxglm")
+dlg_start_fire = SubResource("Resource_2f3dj")
+dialogue_manager = NodePath("../../../Global/GameManager/DialogueManager")
 
 [node name="GetMatches" parent="Level/PhaseTwo/StartFire" unique_id=1370098698 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7757028, 4.7493296, 1.4820682)
 locked_by_facts = Array[String](["events/phase_one_completed"])
 
-[node name="StartFire" parent="Level/PhaseTwo/StartFire" unique_id=2064342831 instance=ExtResource("3_sugp2")]
+[node name="CollisionShape" parent="Level/PhaseTwo/StartFire/GetMatches" index="0" unique_id=1971436032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16296816, 0)
+shape = SubResource("SphereShape3D_vxglm")
+debug_color = Color(0.98037297, 0.14118505, 1.92523e-07, 0.41960785)
+
+[node name="FullMatches" type="Node3D" parent="Level/PhaseTwo/StartFire/GetMatches" unique_id=2030685056]
+transform = Transform3D(0.94832367, 0, 0.31730464, 0, 1, 0, -0.31730464, 0, 0.94832367, 0.03896606, -0.12377167, -0.18930101)
+
+[node name="matches" parent="Level/PhaseTwo/StartFire/GetMatches/FullMatches" unique_id=2134449503 instance=ExtResource("18_jscy8")]
+
+[node name="matches_p2" parent="Level/PhaseTwo/StartFire/GetMatches/FullMatches" unique_id=1927892405 instance=ExtResource("19_pm3ni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.00022435188, -0.01889038, -0.1078136)
+
+[node name="StartFireplace" parent="Level/PhaseTwo/StartFire" unique_id=2064342831 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.695077, 2.2433865, 0.488)
 locked_by_facts = Array[String](["events/phase_one_completed", "matches_found"])
+
+[node name="CollisionShape" parent="Level/PhaseTwo/StartFire/StartFireplace" index="0" unique_id=1971436032]
+shape = SubResource("SphereShape3D_2f3dj")
+debug_color = Color(0.84764665, 0.33763492, 0.4413959, 0.41960785)
+
+[node name="FireParticles" parent="Level/PhaseTwo/StartFire/StartFireplace" unique_id=2068084199 instance=ExtResource("18_y6deb")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.94072676, 0.34154153, 0.008759886)
+visible = false
 
 [node name="PhaseThree" type="Node" parent="Level" unique_id=1105790316]
 script = ExtResource("12_dp3eg")
@@ -394,7 +485,14 @@ shape = SubResource("SphereShape3D_0ld40")
 [node name="LeaveHouse" type="Node" parent="Level/PhaseThree" unique_id=1197561599]
 
 [node name="InterractArea" parent="Level/PhaseThree/LeaveHouse" unique_id=1589449427 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8357244, 2.38246, 0)
+interract_type = "Stay"
+stay_time = 3.0
 locked_by_facts = Array[String](["events/phase_two_completed"])
+
+[node name="CollisionShape" parent="Level/PhaseThree/LeaveHouse/InterractArea" index="0" unique_id=1971436032]
+shape = SubResource("SphereShape3D_yq6so")
+debug_color = Color(0.8616228, 0.35947904, 0.0782335, 0.41960785)
 
 [node name="FindMirror" type="Node" parent="Level/PhaseThree" unique_id=474687028]
 
@@ -756,19 +854,28 @@ shadow_enabled = true
 [connection signal="player_completed" from="Level/PhaseOne/AudioPointsPhaseOne/ShortRange" to="Level/PhaseOne/AudioPointsPhaseOne" method="_on_short_range_player_completed"]
 [connection signal="player_completed" from="Level/PhaseOne/AudioPointsPhaseOne/MidRange" to="Level/PhaseOne/AudioPointsPhaseOne" method="_on_mid_range_player_completed"]
 [connection signal="player_completed" from="Level/PhaseOne/AudioPointsPhaseOne/LongRange" to="Level/PhaseOne/AudioPointsPhaseOne" method="_on_long_range_player_completed"]
+[connection signal="player_completed" from="Level/PhaseTwo/AudioPointsPhaseTwo/ShortRange" to="Level/PhaseTwo/AudioPointsPhaseTwo" method="_on_short_range_player_completed"]
+[connection signal="player_completed" from="Level/PhaseTwo/AudioPointsPhaseTwo/MidRange" to="Level/PhaseTwo/AudioPointsPhaseTwo" method="_on_mid_range_player_completed"]
+[connection signal="player_completed" from="Level/PhaseTwo/AudioPointsPhaseTwo/LongRange" to="Level/PhaseTwo/AudioPointsPhaseTwo" method="_on_long_range_player_completed"]
+[connection signal="player_completed" from="Level/PhaseTwo/StartFire/GetMatches" to="Level/PhaseTwo/StartFire" method="_on_get_matches_player_completed"]
+[connection signal="player_completed" from="Level/PhaseTwo/StartFire/StartFireplace" to="Level/PhaseTwo/StartFire" method="_on_start_fireplace_player_completed"]
 
 [editable path="Level/PhaseOne/WindowSights/WindowsClear"]
 [editable path="Level/PhaseOne/WindowSights/WindowsClear2"]
 [editable path="Level/PhaseOne/WindowSights/WindowsClear3"]
-[editable path="Level/PhaseOne/Geoloc/AreaGeoloc"]
-[editable path="Level/PhaseOne/Geoloc/AreaGeoloc2"]
-[editable path="Level/PhaseOne/Geoloc/AreaGeoloc3"]
+[editable path="Level/PhaseOne/Geoloc/Geoloc1"]
+[editable path="Level/PhaseOne/Geoloc/Geoloc2"]
+[editable path="Level/PhaseOne/Geoloc/Geoloc3"]
 [editable path="Level/PhaseOne/AudioPointsPhaseOne/ShortRange"]
 [editable path="Level/PhaseOne/AudioPointsPhaseOne/MidRange"]
 [editable path="Level/PhaseOne/AudioPointsPhaseOne/LongRange"]
+[editable path="Level/NetworkArea"]
 [editable path="Level/PhaseTwo/AudioPointsPhaseTwo/ShortRange"]
 [editable path="Level/PhaseTwo/AudioPointsPhaseTwo/MidRange"]
 [editable path="Level/PhaseTwo/AudioPointsPhaseTwo/LongRange"]
+[editable path="Level/PhaseTwo/StartFire/GetMatches"]
+[editable path="Level/PhaseTwo/StartFire/StartFireplace"]
 [editable path="Level/PhaseThree/AudioPointsPhaseThree/ShortRange"]
 [editable path="Level/PhaseThree/AudioPointsPhaseThree/MidRange"]
 [editable path="Level/PhaseThree/AudioPointsPhaseThree/LongRange"]
+[editable path="Level/PhaseThree/LeaveHouse/InterractArea"]

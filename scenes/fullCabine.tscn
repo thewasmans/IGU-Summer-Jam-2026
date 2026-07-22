@@ -36,11 +36,20 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.7
 [node name="Rack" parent="levelCabineSecondFloor" index="3" unique_id=1188715162]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0.16447473, 4.179539, -3.5955834)
 
+[node name="cardboard_box3" parent="levelCabineSecondFloor/cardboardAlignment" parent_id_path=PackedInt32Array(679240696, 1255324620) index="3" unique_id=308337174]
+transform = Transform3D(1.3353189, 0, 0.68331754, 0, 1.4999999, 0, -0.68331754, 0, 1.3353189, -0.22659934, 0.50023985, -0.30266356)
+
 [node name="cardboard_box" parent="levelCabineSecondFloor/cardboardAlignment3" parent_id_path=PackedInt32Array(679240696, 1566421242) index="1" unique_id=808472624]
 transform = Transform3D(-0.29561895, 0, 1.9780322, 0, 2, 0, -1.9780322, 0, -0.29561895, -1.095964, -0.036552906, 1.2644495)
 
 [node name="cardboard_box3" parent="levelCabineSecondFloor/cardboardAlignment3" parent_id_path=PackedInt32Array(679240696, 1566421242) index="4" unique_id=2145258324]
 transform = Transform3D(0.47595716, 0, 1.4224858, 0, 1.5, 0, -1.4224858, 0, 0.47595716, -1.1594076, 0.48108912, 1.1845435)
+
+[node name="cardboard_box3" parent="levelCabineSecondFloor/cardboardAlignment4" parent_id_path=PackedInt32Array(679240696, 683212868) index="4" unique_id=764609281]
+transform = Transform3D(1.335319, 0, 0.68331754, 0, 1.5, 0, -0.68331754, 0, 1.335319, -0.22659926, 0.47983122, -0.30266428)
+
+[node name="cardboard_box3" parent="levelCabineSecondFloor/cardboardAlignment2" parent_id_path=PackedInt32Array(679240696, 1352478522) index="2" unique_id=862208179]
+transform = Transform3D(1.3353192, 0, 0.6833176, 0, 1.5, 0, -0.6833176, 0, 1.3353192, -0.22659925, 0.5008993, -0.30266356)
 
 [node name="cabin_Floor3" parent="levelCabineSecondFloor/ceiling" parent_id_path=PackedInt32Array(679240696, 450298207) index="2" unique_id=1996003052]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005, 0.5, 2.847)
@@ -66,13 +75,7 @@ transform = Transform3D(-4.371139e-08, 0, 1.2, 0, 1.2, 0, -1, 0, -5.2453668e-08,
 [node name="mirror" parent="LevelCabine/interractible" parent_id_path=PackedInt32Array(1393006050, 975462014) index="2" unique_id=1739704568]
 transform = Transform3D(-0.6041335, -0.15681799, 0.78130037, -0.030933548, 0.9843214, 0.17364815, -0.796282, 0.0807383, -0.5995128, 1.3965137, 1.0049376, 5.4067087)
 
-[node name="matches" parent="LevelCabine/interractible" parent_id_path=PackedInt32Array(1393006050, 975462014) index="3" unique_id=2134449503]
-transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -1.4928814, 3.6091774, 1.2361269)
-
-[node name="matches_p2" parent="LevelCabine/interractible" parent_id_path=PackedInt32Array(1393006050, 975462014) index="4" unique_id=1927892405]
-transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -1.4925888, 3.5928636, 1.0649233)
-
-[node name="cheminey" parent="LevelCabine/interractible" parent_id_path=PackedInt32Array(1393006050, 975462014) index="5" unique_id=1222840615]
+[node name="cheminey" parent="LevelCabine/interractible" parent_id_path=PackedInt32Array(1393006050, 975462014) index="3" unique_id=1222840615]
 transform = Transform3D(-2.1855694e-08, 0, -0.25, 0, 0.5, 0, 0.5, 0, -1.0927847e-08, 3.6270895, 0.74874985, 0.43381298)
 
 [node name="cabin_Floor" parent="LevelCabine/floor" parent_id_path=PackedInt32Array(1393006050, 1181123491) index="0" unique_id=1288370707]
@@ -95,6 +98,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.1499999, 0.24775654, 0.3813972
 
 [node name="cardboard_box3" parent="LevelCabine/cardboardMix" parent_id_path=PackedInt32Array(1393006050, 988556977) index="2" unique_id=589133493]
 transform = Transform3D(0.113203235, 0, -1.1426077, 0, 0.74999994, 0, 0.9935719, 0, 0.13018373, 0.24775654, -0.091833115, 0.15793034)
+
+[node name="cardboard_box" parent="LevelCabine/cardboardMix2" parent_id_path=PackedInt32Array(1393006050, 420088739) index="1" unique_id=125227780]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.1499999, 0.09306359, 0.39707845, 0.07270634)
 
 [editable path="levelCabineSecondFloor"]
 [editable path="levelCabineSecondFloor/walls/wood_wall"]
