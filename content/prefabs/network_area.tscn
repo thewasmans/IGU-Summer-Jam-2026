@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bia87jkwlhl87"]
+
+[ext_resource type="Script" uid="uid://dpbae2rqgmab0" path="res://scripts/network_area.gd" id="1_l58vr"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_myv5g"]
+
+[node name="NetworkArea" type="Area3D" unique_id=484343088 groups=["NetworkArea"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_l58vr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=638583066]
+shape = SubResource("SphereShape3D_myv5g")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
