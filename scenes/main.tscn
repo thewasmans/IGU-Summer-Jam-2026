@@ -45,6 +45,15 @@ rings = 1
 script = ExtResource("14_gqmmt")
 metadata/_custom_type_script = "uid://dgkt1fcechioc"
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_pm3ni"]
+radius = 1.1100162
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_y6deb"]
+radius = 1.1942432
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_og1vs"]
+radius = 0.84571964
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_ya4ey"]
 radius = 5.702407
 
@@ -228,6 +237,27 @@ dlg_phase_one = SubResource("Resource_jscy8")
 
 [node name="WindowSights" type="Node" parent="Level/PhaseOne" unique_id=865403160]
 
+[node name="WindowsClear" parent="Level/PhaseOne/WindowSights" unique_id=1019318091 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.683752, 2.830499, 6.2394342)
+locked_by_facts = Array[String](["events/storm_happend"])
+
+[node name="CollisionShape" parent="Level/PhaseOne/WindowSights/WindowsClear" index="0" unique_id=1971436032]
+shape = SubResource("SphereShape3D_pm3ni")
+
+[node name="WindowsClear2" parent="Level/PhaseOne/WindowSights" unique_id=224084624 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2028875, 6.2739334, 4.2008657)
+locked_by_facts = Array[String](["events/storm_happend"])
+
+[node name="CollisionShape" parent="Level/PhaseOne/WindowSights/WindowsClear2" index="0" unique_id=1971436032]
+shape = SubResource("SphereShape3D_y6deb")
+
+[node name="WindowsClear3" parent="Level/PhaseOne/WindowSights" unique_id=1119149771 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.549932, 6.4196143, -4.634324)
+locked_by_facts = Array[String](["events/storm_happend"])
+
+[node name="CollisionShape" parent="Level/PhaseOne/WindowSights/WindowsClear3" index="0" unique_id=1971436032]
+shape = SubResource("SphereShape3D_og1vs")
+
 [node name="Geoloc" type="Node" parent="Level/PhaseOne" unique_id=62120266]
 
 [node name="AreaGeoloc" parent="Level/PhaseOne/Geoloc" unique_id=1863945794 instance=ExtResource("3_sugp2")]
@@ -259,7 +289,7 @@ locked_by_facts = Array[String](["events/storm_happend", "geoloc_activated"])
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.152645, 0, 7.7116857)
 shape = SubResource("SphereShape3D_eb6dy")
 
-[node name="AudioPoints" type="Node" parent="Level/PhaseOne" unique_id=162049499 node_paths=PackedStringArray("dialogue_manager")]
+[node name="AudioPointsPhaseOne" type="Node" parent="Level/PhaseOne" unique_id=162049499 node_paths=PackedStringArray("dialogue_manager")]
 script = ExtResource("13_a8y0u")
 dlg_intro = SubResource("Resource_2wyq8")
 dlg_phase_one_short_range = SubResource("Resource_0ld40")
@@ -267,81 +297,117 @@ dlg_phase_one_mid_range = SubResource("Resource_yc10j")
 dlg_phase_one_long_range = SubResource("Resource_y6deb")
 dialogue_manager = NodePath("../../../Global/GameManager/DialogueManager")
 
-[node name="ShortRange" parent="Level/PhaseOne/AudioPoints" unique_id=50122330 instance=ExtResource("3_sugp2")]
+[node name="ShortRange" parent="Level/PhaseOne/AudioPointsPhaseOne" unique_id=50122330 instance=ExtResource("3_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.517182, 5.8963737, -0.09028864)
 interract_type = "Entered"
+locked_by_facts = Array[String](["events/storm_happend"])
 
-[node name="CollisionShape" parent="Level/PhaseOne/AudioPoints/ShortRange" index="0" unique_id=1971436032]
+[node name="CollisionShape" parent="Level/PhaseOne/AudioPointsPhaseOne/ShortRange" index="0" unique_id=1971436032]
 shape = SubResource("SphereShape3D_gqmmt")
 
-[node name="MidRange" parent="Level/PhaseOne/AudioPoints" unique_id=322102780 instance=ExtResource("3_sugp2")]
+[node name="MidRange" parent="Level/PhaseOne/AudioPointsPhaseOne" unique_id=322102780 instance=ExtResource("3_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.517182, 6.7361293, -0.09028864)
 interract_type = "Entered"
+locked_by_facts = Array[String](["events/storm_happend"])
 
-[node name="CollisionShape" parent="Level/PhaseOne/AudioPoints/MidRange" index="0" unique_id=1971436032]
+[node name="CollisionShape" parent="Level/PhaseOne/AudioPointsPhaseOne/MidRange" index="0" unique_id=1971436032]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6309786, 2.1614213, 0)
 shape = SubResource("SphereShape3D_yc10j")
 
-[node name="LongRange" parent="Level/PhaseOne/AudioPoints" unique_id=1693311682 instance=ExtResource("3_sugp2")]
+[node name="LongRange" parent="Level/PhaseOne/AudioPointsPhaseOne" unique_id=1693311682 instance=ExtResource("3_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.517182, 5.8963737, -0.09028864)
 interract_type = "Entered"
+locked_by_facts = Array[String](["events/storm_happend"])
 
-[node name="CollisionShape" parent="Level/PhaseOne/AudioPoints/LongRange" index="0" unique_id=1971436032]
+[node name="CollisionShape" parent="Level/PhaseOne/AudioPointsPhaseOne/LongRange" index="0" unique_id=1971436032]
 shape = SubResource("SphereShape3D_jscy8")
 
 [node name="PhaseTwo" type="Node" parent="Level" unique_id=972905351]
 script = ExtResource("12_dp3eg")
 dlg_phase_one = SubResource("Resource_jscy8")
 
-[node name="AudioPoints" type="Node" parent="Level/PhaseTwo" unique_id=2105419458 node_paths=PackedStringArray("dialogue_manager")]
-script = ExtResource("13_a8y0u")
-dialogue_manager = NodePath("../../../Global/GameManager/DialogueManager")
+[node name="AudioPointsPhaseTwo" type="Node" parent="Level/PhaseTwo" unique_id=2105419458]
 
-[node name="ShortRange" parent="Level/PhaseTwo/AudioPoints" unique_id=670692781 instance=ExtResource("3_sugp2")]
+[node name="ShortRange" parent="Level/PhaseTwo/AudioPointsPhaseTwo" unique_id=670692781 instance=ExtResource("3_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2025032, 2.5239825, -4.0970497)
 interract_type = "Entered"
 
-[node name="MidRange" parent="Level/PhaseTwo/AudioPoints" unique_id=1019318091 instance=ExtResource("3_sugp2")]
+[node name="MidRange" parent="Level/PhaseTwo/AudioPointsPhaseTwo" unique_id=464381228 instance=ExtResource("3_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2025032, 2.5239825, -4.0970497)
 interract_type = "Entered"
 
-[node name="CollisionShape" parent="Level/PhaseTwo/AudioPoints/MidRange" index="0" unique_id=1971436032]
+[node name="CollisionShape" parent="Level/PhaseTwo/AudioPointsPhaseTwo/MidRange" index="0" unique_id=1971436032]
 shape = SubResource("SphereShape3D_dp3eg")
 
-[node name="LongRange" parent="Level/PhaseTwo/AudioPoints" unique_id=1671639877 instance=ExtResource("3_sugp2")]
+[node name="LongRange" parent="Level/PhaseTwo/AudioPointsPhaseTwo" unique_id=1671639877 instance=ExtResource("3_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2025032, 2.5239825, -4.0970497)
 interract_type = "Entered"
 
-[node name="CollisionShape" parent="Level/PhaseTwo/AudioPoints/LongRange" index="0" unique_id=1971436032]
+[node name="CollisionShape" parent="Level/PhaseTwo/AudioPointsPhaseTwo/LongRange" index="0" unique_id=1971436032]
 shape = SubResource("SphereShape3D_0ld40")
+
+[node name="StartElectricity" type="Node" parent="Level/PhaseTwo" unique_id=1477820576]
+
+[node name="GetFuse" parent="Level/PhaseTwo/StartElectricity" unique_id=794491187 instance=ExtResource("3_sugp2")]
+visible = false
+locked_by_facts = Array[String](["events/phase_one_completed"])
+
+[node name="StartElectricity" parent="Level/PhaseTwo/StartElectricity" unique_id=1693342070 instance=ExtResource("3_sugp2")]
+visible = false
+locked_by_facts = Array[String](["events/phase_one_completed", "fuse_found"])
+
+[node name="StartFire" type="Node" parent="Level/PhaseTwo" unique_id=667940132]
+
+[node name="GetMatches" parent="Level/PhaseTwo/StartFire" unique_id=1370098698 instance=ExtResource("3_sugp2")]
+locked_by_facts = Array[String](["events/phase_one_completed"])
+
+[node name="StartFire" parent="Level/PhaseTwo/StartFire" unique_id=2064342831 instance=ExtResource("3_sugp2")]
+locked_by_facts = Array[String](["events/phase_one_completed", "matches_found"])
 
 [node name="PhaseThree" type="Node" parent="Level" unique_id=1105790316]
 script = ExtResource("12_dp3eg")
 dlg_phase_one = SubResource("Resource_jscy8")
 
-[node name="AudioPoints" type="Node" parent="Level/PhaseThree" unique_id=1579709902 node_paths=PackedStringArray("dialogue_manager")]
-script = ExtResource("13_a8y0u")
-dialogue_manager = NodePath("../../../Global/GameManager/DialogueManager")
+[node name="AudioPointsPhaseThree" type="Node" parent="Level/PhaseThree" unique_id=1579709902]
 
-[node name="ShortRange" parent="Level/PhaseThree/AudioPoints" unique_id=1481125690 instance=ExtResource("3_sugp2")]
+[node name="ShortRange" parent="Level/PhaseThree/AudioPointsPhaseThree" unique_id=1481125690 instance=ExtResource("3_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7603054, 2.5239825, 3.6678934)
 interract_type = "Entered"
+locked_by_facts = Array[String](["events/phase_two_completed"])
 
-[node name="MidRange" parent="Level/PhaseThree/AudioPoints" unique_id=695308502 instance=ExtResource("3_sugp2")]
+[node name="MidRange" parent="Level/PhaseThree/AudioPointsPhaseThree" unique_id=695308502 instance=ExtResource("3_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7603054, 2.5239825, 3.6678934)
 interract_type = "Entered"
+locked_by_facts = Array[String](["events/phase_two_completed"])
 
-[node name="CollisionShape" parent="Level/PhaseThree/AudioPoints/MidRange" index="0" unique_id=1971436032]
+[node name="CollisionShape" parent="Level/PhaseThree/AudioPointsPhaseThree/MidRange" index="0" unique_id=1971436032]
 shape = SubResource("SphereShape3D_dp3eg")
 
-[node name="LongRange" parent="Level/PhaseThree/AudioPoints" unique_id=1766382807 instance=ExtResource("3_sugp2")]
+[node name="LongRange" parent="Level/PhaseThree/AudioPointsPhaseThree" unique_id=1766382807 instance=ExtResource("3_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7603054, 2.5239825, 3.6678934)
 interract_type = "Entered"
+locked_by_facts = Array[String](["events/phase_two_completed"])
 
-[node name="CollisionShape" parent="Level/PhaseThree/AudioPoints/LongRange" index="0" unique_id=1971436032]
+[node name="CollisionShape" parent="Level/PhaseThree/AudioPointsPhaseThree/LongRange" index="0" unique_id=1971436032]
 shape = SubResource("SphereShape3D_0ld40")
 
+[node name="LeaveHouse" type="Node" parent="Level/PhaseThree" unique_id=1197561599]
+
+[node name="InterractArea" parent="Level/PhaseThree/LeaveHouse" unique_id=1589449427 instance=ExtResource("3_sugp2")]
+locked_by_facts = Array[String](["events/phase_two_completed"])
+
+[node name="FindMirror" type="Node" parent="Level/PhaseThree" unique_id=474687028]
+
+[node name="InterractArea" parent="Level/PhaseThree/FindMirror" unique_id=23025472 instance=ExtResource("3_sugp2")]
+locked_by_facts = Array[String](["events/phase_two_completed"])
+
+[node name="PlaceMirror" type="Node" parent="Level/PhaseThree" unique_id=1976382926]
+
+[node name="InterractArea" parent="Level/PhaseThree/PlaceMirror" unique_id=2091978469 instance=ExtResource("3_sugp2")]
+locked_by_facts = Array[String](["events/phase_two_completed", "mirror_found"])
+
 [node name="House" parent="." unique_id=1508929104 instance=ExtResource("18_yc10j")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.010369778, 0, 0.031618595)
 
 [node name="Environment" type="Node" parent="." unique_id=1654604802]
 
@@ -686,20 +752,23 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [connection signal="timeout" from="Global/StormTimer" to="." method="_on_timer_timeout"]
-[connection signal="player_completed" from="Level/PhaseOne/AudioPoints/ShortRange" to="Level/PhaseOne" method="_on_short_range_player_completed"]
-[connection signal="player_completed" from="Level/PhaseOne/AudioPoints/ShortRange" to="Level/PhaseOne/AudioPoints" method="_on_short_range_player_completed"]
-[connection signal="player_completed" from="Level/PhaseOne/AudioPoints/MidRange" to="Level/PhaseOne/AudioPoints" method="_on_mid_range_player_completed"]
-[connection signal="player_completed" from="Level/PhaseOne/AudioPoints/LongRange" to="Level/PhaseOne/AudioPoints" method="_on_long_range_player_completed"]
+[connection signal="player_completed" from="Level/PhaseOne/AudioPointsPhaseOne/ShortRange" to="Level/PhaseOne" method="_on_short_range_player_completed"]
+[connection signal="player_completed" from="Level/PhaseOne/AudioPointsPhaseOne/ShortRange" to="Level/PhaseOne/AudioPointsPhaseOne" method="_on_short_range_player_completed"]
+[connection signal="player_completed" from="Level/PhaseOne/AudioPointsPhaseOne/MidRange" to="Level/PhaseOne/AudioPointsPhaseOne" method="_on_mid_range_player_completed"]
+[connection signal="player_completed" from="Level/PhaseOne/AudioPointsPhaseOne/LongRange" to="Level/PhaseOne/AudioPointsPhaseOne" method="_on_long_range_player_completed"]
 
+[editable path="Level/PhaseOne/WindowSights/WindowsClear"]
+[editable path="Level/PhaseOne/WindowSights/WindowsClear2"]
+[editable path="Level/PhaseOne/WindowSights/WindowsClear3"]
 [editable path="Level/PhaseOne/Geoloc/AreaGeoloc"]
 [editable path="Level/PhaseOne/Geoloc/AreaGeoloc2"]
 [editable path="Level/PhaseOne/Geoloc/AreaGeoloc3"]
-[editable path="Level/PhaseOne/AudioPoints/ShortRange"]
-[editable path="Level/PhaseOne/AudioPoints/MidRange"]
-[editable path="Level/PhaseOne/AudioPoints/LongRange"]
-[editable path="Level/PhaseTwo/AudioPoints/ShortRange"]
-[editable path="Level/PhaseTwo/AudioPoints/MidRange"]
-[editable path="Level/PhaseTwo/AudioPoints/LongRange"]
-[editable path="Level/PhaseThree/AudioPoints/ShortRange"]
-[editable path="Level/PhaseThree/AudioPoints/MidRange"]
-[editable path="Level/PhaseThree/AudioPoints/LongRange"]
+[editable path="Level/PhaseOne/AudioPointsPhaseOne/ShortRange"]
+[editable path="Level/PhaseOne/AudioPointsPhaseOne/MidRange"]
+[editable path="Level/PhaseOne/AudioPointsPhaseOne/LongRange"]
+[editable path="Level/PhaseTwo/AudioPointsPhaseTwo/ShortRange"]
+[editable path="Level/PhaseTwo/AudioPointsPhaseTwo/MidRange"]
+[editable path="Level/PhaseTwo/AudioPointsPhaseTwo/LongRange"]
+[editable path="Level/PhaseThree/AudioPointsPhaseThree/ShortRange"]
+[editable path="Level/PhaseThree/AudioPointsPhaseThree/MidRange"]
+[editable path="Level/PhaseThree/AudioPointsPhaseThree/LongRange"]

@@ -391,25 +391,25 @@ transform = Transform3D(0.72472197, -0.36796245, 0.02724461, -0.004621185, -0.11
 [node name="cardboardMix" type="Node3D" parent="." unique_id=988556977]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.85687256, 1.8863497, 0.51807535)
 
-[node name="cardboard_box2" parent="cardboardMix" unique_id=1379309779 instance=ExtResource("25_dkio3")]
+[node name="cardboard_box2" parent="cardboardMix" unique_id=877185987 instance=ExtResource("25_dkio3")]
 transform = Transform3D(1.0229783, 0, -0.7313656, 0, 1.5, 0, 1.0970485, 0, 0.68198556, -0.0011008382, 0.0034503937, -0.38488817)
 
-[node name="cardboard_box" parent="cardboardMix" unique_id=1952205725 instance=ExtResource("25_dkio3")]
+[node name="cardboard_box" parent="cardboardMix" unique_id=1352337335 instance=ExtResource("25_dkio3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 0, 0.3813973, -0.41209757)
 
-[node name="cardboard_box3" parent="cardboardMix" unique_id=1584230269 instance=ExtResource("25_dkio3")]
+[node name="cardboard_box3" parent="cardboardMix" unique_id=589133493 instance=ExtResource("25_dkio3")]
 transform = Transform3D(0.11320324, 0, -1.1426077, 0, 0.75, 0, 0.9935719, 0, 0.13018373, 0, -0.091833115, 0.15793031)
 
 [node name="cardboardMix2" type="Node3D" parent="." unique_id=420088739]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -4.2557755, 0.9353125, -1.9600443)
 
-[node name="cardboard_box2" parent="cardboardMix2" unique_id=1184556244 instance=ExtResource("25_dkio3")]
+[node name="cardboard_box2" parent="cardboardMix2" unique_id=1553033236 instance=ExtResource("25_dkio3")]
 transform = Transform3D(0.9512257, 0, 0.7732097, 0, 1.5, 0, -1.1598146, 0, 0.63415045, -0.001101017, 0.0034503937, -0.38488817)
 
-[node name="cardboard_box" parent="cardboardMix2" unique_id=605826022 instance=ExtResource("25_dkio3")]
+[node name="cardboard_box" parent="cardboardMix2" unique_id=125227780 instance=ExtResource("25_dkio3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 0.09306383, 0.41690457, 0.07270634)
 
-[node name="cardboard_box3" parent="cardboardMix2" unique_id=123785423 instance=ExtResource("25_dkio3")]
+[node name="cardboard_box3" parent="cardboardMix2" unique_id=1328582492 instance=ExtResource("25_dkio3")]
 transform = Transform3D(1.2990382, 0, -0.75, 0, 1.5, 0, 0.75, 0, 1.2990382, 0.13299847, 0.016431928, 0.15916824)
 
 [editable path="walls/wood_wall"]

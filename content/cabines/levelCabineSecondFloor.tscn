@@ -233,47 +233,68 @@ transform = Transform3D(-0.9999984, 0.0017453282, -8.742278e-08, 0.0017453282, 0
 [node name="cardboardAlignment" type="Node3D" parent="." unique_id=1255324620]
 transform = Transform3D(-0.7241718, 0, -0.68961954, 0, 1, 0, 0.68961954, 0, -0.7241718, 3.0654736, 4.4031863, 2.2940056)
 
-[node name="cardboard_box4" parent="cardboardAlignment" unique_id=1379309779 instance=ExtResource("9_6r3y5")]
+[node name="cardboard_box4" parent="cardboardAlignment" unique_id=877185987 instance=ExtResource("9_6r3y5")]
 transform = Transform3D(2.221681, 0, -0.35585552, 0, 1.76, 0, 0.35585552, 0, 2.221681, 0.015335798, -0.06877327, 0.48979688)
 
-[node name="cardboard_box" parent="cardboardAlignment" unique_id=406925270 instance=ExtResource("9_6r3y5")]
+[node name="cardboard_box" parent="cardboardAlignment" unique_id=525940916 instance=ExtResource("9_6r3y5")]
 transform = Transform3D(2.0000002, 0, 0, 0, 2, 0, 0, 0, 2.0000002, -0.2632817, -0.036552906, -0.2768495)
 
-[node name="cardboard_box2" parent="cardboardAlignment" unique_id=1109024929 instance=ExtResource("9_6r3y5")]
+[node name="cardboard_box2" parent="cardboardAlignment" unique_id=335370683 instance=ExtResource("9_6r3y5")]
 transform = Transform3D(1.7279743, 0, -0.27677655, 0, 1.773, 0, 0.27677655, 0, 1.7279743, 0.019851923, 0.47127438, 0.41919446)
 
-[node name="cardboard_box3" parent="cardboardAlignment" unique_id=1037394415 instance=ExtResource("9_6r3y5")]
+[node name="cardboard_box3" parent="cardboardAlignment" unique_id=308337174 instance=ExtResource("9_6r3y5")]
 transform = Transform3D(1.335319, 0, 0.68331754, 0, 1.5, 0, -0.68331754, 0, 1.335319, -0.22659922, 0.5346012, -0.30266356)
 
 [node name="cardboardAlignment3" type="Node3D" parent="." unique_id=1566421242]
 transform = Transform3D(0.47531712, 0, -0.8798145, 0, 1, 0, 0.8798145, 0, 0.47531712, -2.0670862, 4.4031863, -4.892052)
 
-[node name="cardboard_box4" parent="cardboardAlignment3" unique_id=65633864 instance=ExtResource("9_6r3y5")]
+[node name="cardboard_box4" parent="cardboardAlignment3" unique_id=79305397 instance=ExtResource("9_6r3y5")]
 transform = Transform3D(2.221681, 0, -0.35585552, 0, 1.76, 0, 0.35585552, 0, 2.221681, 0.015335798, -0.06877327, 0.48979688)
 
-[node name="cardboard_box" parent="cardboardAlignment3" unique_id=426611501 instance=ExtResource("9_6r3y5")]
+[node name="cardboard_box" parent="cardboardAlignment3" unique_id=808472624 instance=ExtResource("9_6r3y5")]
 transform = Transform3D(2.0000002, 0, 0, 0, 2, 0, 0, 0, 2.0000002, -0.2632817, -0.036552906, -0.2768495)
 
-[node name="cardboard_box2" parent="cardboardAlignment3" unique_id=352599329 instance=ExtResource("9_6r3y5")]
+[node name="cardboard_box2" parent="cardboardAlignment3" unique_id=396271515 instance=ExtResource("9_6r3y5")]
 transform = Transform3D(1.7279743, 0, -0.27677655, 0, 1.773, 0, 0.27677655, 0, 1.7279743, 0.019851923, 0.47127438, 0.41919446)
 
-[node name="cardboard_box5" parent="cardboardAlignment3" unique_id=615330603 instance=ExtResource("9_6r3y5")]
+[node name="cardboard_box5" parent="cardboardAlignment3" unique_id=1833012084 instance=ExtResource("9_6r3y5")]
 transform = Transform3D(1.7279743, 0, -0.27677655, 0, 1.773, 0, 0.27677655, 0, 1.7279743, 0.019851923, 0.47127438, 0.41919446)
 
-[node name="cardboard_box3" parent="cardboardAlignment3" unique_id=156621517 instance=ExtResource("9_6r3y5")]
+[node name="cardboard_box3" parent="cardboardAlignment3" unique_id=2145258324 instance=ExtResource("9_6r3y5")]
+transform = Transform3D(1.335319, 0, 0.68331754, 0, 1.5, 0, -0.68331754, 0, 1.335319, -0.22659922, 0.5346012, -0.30266356)
+
+[node name="cardboardAlignment4" type="Node3D" parent="." unique_id=683212868]
+transform = Transform3D(0.18395135, 0, 0.9829353, 0, 1, 0, -0.9829353, 0, 0.18395135, -2.0670862, 4.4031863, -0.39759612)
+
+[node name="cardboard_box4" parent="cardboardAlignment4" unique_id=349511197 instance=ExtResource("9_6r3y5")]
+transform = Transform3D(2.221681, 0, -0.35585552, 0, 1.76, 0, 0.35585552, 0, 2.221681, 0.015335798, -0.06877327, 0.48979688)
+
+[node name="cardboard_box" parent="cardboardAlignment4" unique_id=1998045167 instance=ExtResource("9_6r3y5")]
+transform = Transform3D(2.0000002, 0, 0, 0, 2, 0, 0, 0, 2.0000002, -0.2632817, -0.036552906, -0.2768495)
+
+[node name="cardboard_box2" parent="cardboardAlignment4" unique_id=1058289156 instance=ExtResource("9_6r3y5")]
+transform = Transform3D(1.7279743, 0, -0.27677655, 0, 1.773, 0, 0.27677655, 0, 1.7279743, 0.019851923, 0.47127438, 0.41919446)
+
+[node name="cardboard_box5" parent="cardboardAlignment4" unique_id=623373685 instance=ExtResource("9_6r3y5")]
+transform = Transform3D(1.7279743, 0, -0.27677655, 0, 1.773, 0, 0.27677655, 0, 1.7279743, 0.019851923, 0.47127438, 0.41919446)
+
+[node name="cardboard_box3" parent="cardboardAlignment4" unique_id=764609281 instance=ExtResource("9_6r3y5")]
 transform = Transform3D(1.335319, 0, 0.68331754, 0, 1.5, 0, -0.68331754, 0, 1.335319, -0.22659922, 0.5346012, -0.30266356)
 
 [node name="cardboardAlignment2" type="Node3D" parent="." unique_id=1352478522]
 transform = Transform3D(0.9979235, 0, -0.0644103, 0, 1, 0, 0.0644103, 0, 0.9979235, -0.501972, 4.4031863, 1.5176976)
 
-[node name="cardboard_box4" parent="cardboardAlignment2" unique_id=1965975276 instance=ExtResource("9_6r3y5")]
+[node name="cardboard_box4" parent="cardboardAlignment2" unique_id=1683481064 instance=ExtResource("9_6r3y5")]
 transform = Transform3D(2.221681, 0, -0.35585564, 0, 1.76, 0, 0.35585564, 0, 2.221681, -1.5308192, -0.06877327, -0.36929083)
 
-[node name="cardboard_box" parent="cardboardAlignment2" unique_id=1501305623 instance=ExtResource("9_6r3y5")]
+[node name="cardboard_box" parent="cardboardAlignment2" unique_id=812758432 instance=ExtResource("9_6r3y5")]
 transform = Transform3D(2.0000002, 0, 0, 0, 2, 0, 0, 0, 2.0000002, -0.2632817, -0.036552906, -0.2768495)
 
-[node name="cardboard_box3" parent="cardboardAlignment2" unique_id=2078362608 instance=ExtResource("9_6r3y5")]
+[node name="cardboard_box3" parent="cardboardAlignment2" unique_id=862208179 instance=ExtResource("9_6r3y5")]
 transform = Transform3D(1.335319, 0, 0.68331754, 0, 1.5, 0, -0.68331754, 0, 1.335319, -0.22659922, 0.5346012, -0.30266356)
+
+[node name="cardboard_box5" parent="cardboardAlignment2" unique_id=309869468 instance=ExtResource("9_6r3y5")]
+transform = Transform3D(-0.53999555, 0, 1.3994311, 0, 1.5, 0, -1.3994311, 0, -0.53999555, -0.48094362, -0.084863186, -1.6595026)
 
 [node name="hideChimney" type="Node3D" parent="." unique_id=1630266785]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5852184)

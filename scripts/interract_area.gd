@@ -25,6 +25,7 @@ var completed: bool
 
 func _ready():
 	Facts.set_fact(str(get_path()) + "_completed", "false")
+	Facts.get_fact("")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if can_interract and not completed and not area_locked_by_fact():
