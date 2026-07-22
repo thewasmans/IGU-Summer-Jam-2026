@@ -16,7 +16,6 @@ metadata/_custom_type_script = "uid://dgkt1fcechioc"
 radius = 0.9760721
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_sk8ot"]
-radius = 2.187586
 
 [node name="House" type="Node3D" unique_id=1508929104]
 
@@ -154,7 +153,6 @@ shape = SubResource("SphereShape3D_vgdrb")
 one_shot = true
 
 [node name="InterractArea" parent="Level/PhaseOne/AudioPoints" unique_id=1019318091 instance=ExtResource("4_saj5v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.758708, 0)
 
 [node name="CollisionShape" parent="Level/PhaseOne/AudioPoints/InterractArea" index="0" unique_id=1971436032]
 shape = SubResource("SphereShape3D_sk8ot")

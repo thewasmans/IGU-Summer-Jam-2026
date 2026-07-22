@@ -15,7 +15,7 @@ func _ready() -> void:
 	game_manager.initialize()
 	for part in particles:
 		part.emitting = false
-	game_manager.dialogue_manager.play_dialogue(example_dialogue)
+	##game_manager.dialogue_manager.play_dialogue(example_dialogue)
 
 func _on_timer_timeout() -> void:
 	if player_character:
