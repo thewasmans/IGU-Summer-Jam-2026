@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dhdv3e54beb3k"]
 
 [ext_resource type="Script" uid="uid://bf6m0yt38m0cb" path="res://scripts/ui/phone_ui.gd" id="1_phoneui"]
-[ext_resource type="Script" path="res://scripts/ui/phone_app.gd" id="2_homeapp"]
+[ext_resource type="Script" uid="uid://wy4j0eqloyrn" path="res://scripts/ui/phone_app.gd" id="2_homeapp"]
 [ext_resource type="Script" path="res://scripts/ui/phone_messages_app.gd" id="3_msgapp"]
 [ext_resource type="Script" uid="uid://vrrm36kqn1d7" path="res://scripts/ui/phone_secours_app.gd" id="4_secoursapp"]
-[ext_resource type="Script" path="res://scripts/ui/phone_geoloc_app.gd" id="5_geolocapp"]
+[ext_resource type="Script" uid="uid://ykkjxep141d5" path="res://scripts/ui/phone_geoloc_app.gd" id="5_geolocapp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_body"]
 bg_color = Color(0.07, 0.07, 0.09, 0.96)
@@ -18,7 +18,7 @@ corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 
-[node name="PhoneUI" type="Control" unique_id=1887879878 node_paths=PackedStringArray("app_name_label", "home_app", "messages_app", "secours_app", "geoloc_app", "geoloc_icon")]
+[node name="PhoneUI" type="Control" unique_id=1887879878 node_paths=PackedStringArray("app_name_label", "home_app", "messages_app", "secours_app", "geoloc_app", "geoloc_icon", "network_icon")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,6 +33,7 @@ messages_app = NodePath("Body/Apps/Messages")
 secours_app = NodePath("Body/Apps/Secours")
 geoloc_app = NodePath("Body/Apps/Geoloc")
 geoloc_icon = NodePath("Body/VBoxContainer/GeolocIcon")
+network_icon = NodePath("Body/VBoxContainer/Header2")
 
 [node name="Body" type="Panel" parent="." unique_id=582610286]
 layout_mode = 1
@@ -65,15 +66,16 @@ text = "🧭"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GeolocIcon" type="Label" parent="Body/VBoxContainer"]
+[node name="GeolocIcon" type="Label" parent="Body/VBoxContainer" unique_id=291944388]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "📍"
 horizontal_alignment = 1
 vertical_alignment = 1
-visible = false
 
 [node name="Header2" type="Label" parent="Body/VBoxContainer" unique_id=102440066]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 15
@@ -203,7 +205,7 @@ text = "Indisponible"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Geoloc" type="Control" parent="Body/Apps" node_paths=PackedStringArray("message_label", "hint_label")]
+[node name="Geoloc" type="Control" parent="Body/Apps" unique_id=905902310 node_paths=PackedStringArray("message_label", "hint_label")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -216,7 +218,7 @@ message_label = NodePath("MessageLabel")
 hint_label = NodePath("HintLabel")
 app_name = "Géolocalisation"
 
-[node name="MessageLabel" type="Label" parent="Body/Apps/Geoloc"]
+[node name="MessageLabel" type="Label" parent="Body/Apps/Geoloc" unique_id=415552117]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -229,7 +231,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="HintLabel" type="Label" parent="Body/Apps/Geoloc"]
+[node name="HintLabel" type="Label" parent="Body/Apps/Geoloc" unique_id=1249392416]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0

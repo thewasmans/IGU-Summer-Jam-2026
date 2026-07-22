@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dpbae2rqgmab0" path="res://scripts/network_area.gd" id="1_l58vr"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_myv5g"]
+radius = 3.2782276
 
 [node name="NetworkArea" type="Area3D" unique_id=484343088 groups=["NetworkArea"]]
 collision_layer = 2
