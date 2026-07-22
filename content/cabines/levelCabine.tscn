@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://kd6rjld1furf" path="res://content/models_3d/wood_wall_mini.glb" id="1_lsjkn"]
 [ext_resource type="PackedScene" uid="uid://bqrhwxs4as2kc" path="res://content/models_3d/wood_wall.glb" id="1_m4jb3"]
-[ext_resource type="PackedScene" uid="uid://dasabj0i5wtrx" path="res://addons/real-controller/character.tscn" id="4_rm63a"]
 [ext_resource type="PackedScene" uid="uid://c3sgdetoyge8d" path="res://content/assetpackage/lineAcross_NV/Table_1a.fbx" id="5_8x5ro"]
 [ext_resource type="PackedScene" uid="uid://b7wasq44by8kx" path="res://content/assetpackage/lineAcross_NV/Table_3a.fbx" id="6_xgmtd"]
 [ext_resource type="PackedScene" uid="uid://coqnhpfx2eeo2" path="res://content/assetpackage/lineAcross_NV/wood_4b.fbx" id="7_0ftje"]
@@ -50,14 +49,6 @@ size = Vector3(0.96585083, 0.49414063, 0.3822937)
 size = Vector3(3.0239258, 1.1401825, 0.55311584)
 
 [node name="LevelCabine" type="Node3D" unique_id=1393006050]
-
-[node name="Character" parent="." unique_id=1913778194 instance=ExtResource("4_rm63a")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -1.4025723, 1.4521143, 5.072934)
-floor_max_angle = 0.61086524
-jump_velocity = 3.3
-tilt_limit = 1.0
-camera_mode = 0
-camera_distance = 0.0
 
 [node name="stairs" type="Node3D" parent="." unique_id=586754996]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.75, -2.1969187, 0.71483994, -4.8490267)

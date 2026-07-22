@@ -12,8 +12,12 @@
 [ext_resource type="Script" path="res://scripts/managers/phone_manager.gd" id="10_phonemgr"]
 [ext_resource type="PackedScene" uid="uid://dhdv3e54beb3k" path="res://content/prefabs/ui/phone.tscn" id="11_phonescn"]
 [ext_resource type="Script" uid="uid://c7q2eyvtg62ib" path="res://scripts/managers/dialogue_manager.gd" id="12_dialoguemgr"]
+[ext_resource type="Script" uid="uid://dio5cq40sjdic" path="res://scenes/phase_one.gd" id="12_dp3eg"]
+[ext_resource type="Script" uid="uid://b73k7tiran3rj" path="res://scripts/data/dialogue_entry.gd" id="13_0ld40"]
 [ext_resource type="Script" uid="uid://l2ivlccydw7q" path="res://scenes/audio_points.gd" id="13_a8y0u"]
 [ext_resource type="Resource" uid="uid://qvyo21uafyv4" path="res://data/dialogues/example_dialogue.tres" id="13_exdlg"]
+[ext_resource type="Script" uid="uid://dgkt1fcechioc" path="res://scripts/data/dialogue.gd" id="14_gqmmt"]
+[ext_resource type="PackedScene" uid="uid://bilbs6sia8q7" path="res://scenes/fullCabine.tscn" id="18_yc10j"]
 
 [sub_resource type="Curve" id="Curve_choun"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -36,6 +40,10 @@ turbulence_influence_max = 0.102000006
 [sub_resource type="SphereMesh" id="SphereMesh_trceg"]
 radial_segments = 4
 rings = 1
+
+[sub_resource type="Resource" id="Resource_jscy8"]
+script = ExtResource("14_gqmmt")
+metadata/_custom_type_script = "uid://dgkt1fcechioc"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ya4ey"]
 radius = 5.702407
@@ -76,7 +84,7 @@ example_dialogue = ExtResource("13_exdlg")
 [node name="Global" type="Node" parent="." unique_id=1992404025]
 
 [node name="PlayerCharacter" parent="Global" unique_id=1913778194 instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2041013, 4.845208, -6.7919865)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68959403, 1.75739, 4.0902157)
 camera_mode = 0
 
 [node name="StormTimer" type="Timer" parent="Global" unique_id=730841255]
@@ -154,43 +162,55 @@ script = ExtResource("12_dialoguemgr")
 
 [node name="Level" type="Node" parent="." unique_id=1175036900]
 
-[node name="Geoloc" type="Node" parent="Level" unique_id=62120266]
+[node name="PhaseOne" type="Node" parent="Level" unique_id=1477848284]
+script = ExtResource("12_dp3eg")
+dlg_phase_one = SubResource("Resource_jscy8")
 
-[node name="AreaGeoloc" parent="Level/Geoloc" unique_id=1863945794 instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35213518, -1.7872602, -16.399822)
-interract_type = "Entered"
-locked_by_facts = Array[String](["events/storm_happend", "geoloc_activated"])
-
-[node name="CollisionShape" parent="Level/Geoloc/AreaGeoloc" index="0" unique_id=1971436032]
-shape = SubResource("SphereShape3D_ya4ey")
-
-[node name="AreaGeoloc2" parent="Level/Geoloc" unique_id=1019318091 instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.937962, -1.7872602, -9.010808)
-interract_type = "Wait"
-locked_by_facts = Array[String](["events/storm_happend", "geoloc_activated"])
-
-[node name="CollisionShape" parent="Level/Geoloc/AreaGeoloc2" index="0" unique_id=1971436032]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.152645, 0, 7.7116857)
-shape = SubResource("SphereShape3D_eb6dy")
-
-[node name="AreaGeoloc3" parent="Level/Geoloc" unique_id=2134281181 instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.148125, 6.9661093, -22.25585)
-interract_type = "Wait"
-locked_by_facts = Array[String](["events/storm_happend", "geoloc_activated"])
-
-[node name="CollisionShape" parent="Level/Geoloc/AreaGeoloc3" index="0" unique_id=1971436032]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.152645, 0, 7.7116857)
-shape = SubResource("SphereShape3D_eb6dy")
-
-[node name="AudioPoints" type="Node" parent="Level/Geoloc" unique_id=2105419458 node_paths=PackedStringArray("dialogue_manager")]
+[node name="AudioPoints" type="Node" parent="Level/PhaseOne" unique_id=2105419458 node_paths=PackedStringArray("dialogue_manager")]
 script = ExtResource("13_a8y0u")
 dlg_phase_one = ExtResource("13_exdlg")
 dialogue_manager = NodePath("../../../Global/GameManager/DialogueManager")
 
-[node name="InterractArea" parent="Level/Geoloc/AudioPoints" unique_id=670692781 instance=ExtResource("3_sugp2")]
+[node name="InterractArea" parent="Level/PhaseOne/AudioPoints" unique_id=670692781 instance=ExtResource("3_sugp2")]
 interract_type = "Entered"
 
+[node name="WindowSights" type="Node" parent="Level/PhaseOne" unique_id=865403160]
+
+[node name="Geoloc" type="Node" parent="Level/PhaseOne" unique_id=62120266]
+
+[node name="AreaGeoloc" parent="Level/PhaseOne/Geoloc" unique_id=1863945794 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35213518, -1.7872602, -16.399822)
+visible = false
+interract_type = "Entered"
+locked_by_facts = Array[String](["events/storm_happend", "geoloc_activated"])
+
+[node name="CollisionShape" parent="Level/PhaseOne/Geoloc/AreaGeoloc" index="0" unique_id=1971436032]
+shape = SubResource("SphereShape3D_ya4ey")
+
+[node name="AreaGeoloc2" parent="Level/PhaseOne/Geoloc" unique_id=1019318091 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.937962, -1.7872602, -9.010808)
+visible = false
+interract_type = "Wait"
+locked_by_facts = Array[String](["events/storm_happend", "geoloc_activated"])
+
+[node name="CollisionShape" parent="Level/PhaseOne/Geoloc/AreaGeoloc2" index="0" unique_id=1971436032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.152645, 0, 7.7116857)
+shape = SubResource("SphereShape3D_eb6dy")
+
+[node name="AreaGeoloc3" parent="Level/PhaseOne/Geoloc" unique_id=2134281181 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.148125, 6.9661093, -22.25585)
+visible = false
+interract_type = "Wait"
+locked_by_facts = Array[String](["events/storm_happend", "geoloc_activated"])
+
+[node name="CollisionShape" parent="Level/PhaseOne/Geoloc/AreaGeoloc3" index="0" unique_id=1971436032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.152645, 0, 7.7116857)
+shape = SubResource("SphereShape3D_eb6dy")
+
+[node name="Interractibles" type="Node" parent="Level" unique_id=1345375828]
+
 [node name="House" type="Node3D" parent="Level" unique_id=174867481]
+visible = false
 
 [node name="Floor" type="CSGBox3D" parent="Level/House" unique_id=287915530]
 transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, -0.89817435, -2.0746558, -8.833979)
@@ -444,6 +464,7 @@ material = SubResource("StandardMaterial3D_l2f18")
 [node name="Environment" type="Node" parent="." unique_id=1654604802]
 
 [node name="Mountains" type="Node3D" parent="Environment" unique_id=1499495946]
+visible = false
 
 [node name="Object29" type="CSGBox3D" parent="Environment/Mountains" unique_id=1394068111]
 transform = Transform3D(0.81038946, 0, 0.58589154, 0, 1, 0, -0.58589154, 0, 0.81038946, -1.5588648, -5.7156477, -6.0593324)
@@ -783,10 +804,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08237219, -8.473743)
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 73.15816, 289.19168, -423.3327)
 shadow_enabled = true
 
-[connection signal="timeout" from="Global/StormTimer" to="." method="_on_timer_timeout"]
-[connection signal="player_completed" from="Level/Geoloc/AudioPoints/InterractArea" to="Level/Geoloc/AudioPoints" method="_on_interract_area_player_completed"]
+[node name="House" parent="." unique_id=1508929104 instance=ExtResource("18_yc10j")]
 
-[editable path="Level/Geoloc/AreaGeoloc"]
-[editable path="Level/Geoloc/AreaGeoloc2"]
-[editable path="Level/Geoloc/AreaGeoloc3"]
-[editable path="Level/Geoloc/AudioPoints/InterractArea"]
+[connection signal="timeout" from="Global/StormTimer" to="." method="_on_timer_timeout"]
+[connection signal="player_completed" from="Level/PhaseOne/AudioPoints/InterractArea" to="Level/PhaseOne/AudioPoints" method="_on_interract_area_player_completed"]
+
+[editable path="Level/PhaseOne/AudioPoints/InterractArea"]
+[editable path="Level/PhaseOne/Geoloc/AreaGeoloc"]
+[editable path="Level/PhaseOne/Geoloc/AreaGeoloc2"]
+[editable path="Level/PhaseOne/Geoloc/AreaGeoloc3"]
