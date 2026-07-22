@@ -51,11 +51,71 @@ radius = 5.702407
 [sub_resource type="SphereShape3D" id="SphereShape3D_eb6dy"]
 radius = 9.668942
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxyfu"]
-albedo_color = Color(0.1148968, 0.11489681, 0.1148968, 1)
+[sub_resource type="Resource" id="Resource_og1vs"]
+script = ExtResource("13_0ld40")
+speaker_name = "Us:"
+text = "Shit ... It's getting darker by the minute. I think I might get stuck here."
+metadata/_custom_type_script = "uid://b73k7tiran3rj"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l2f18"]
-albedo_color = Color(0.6805224, 0.5903386, 0.2021581, 1)
+[sub_resource type="Resource" id="Resource_2wyq8"]
+script = ExtResource("14_gqmmt")
+dialogue_id = "Intro to the game"
+duration = 5.0
+entries = Array[ExtResource("13_0ld40")]([SubResource("Resource_og1vs")])
+metadata/_custom_type_script = "uid://dgkt1fcechioc"
+
+[sub_resource type="Resource" id="Resource_dp3eg"]
+script = ExtResource("13_0ld40")
+speaker_name = "First Responder:"
+text = "Try to find three points where the signal is strongest. This will allow us to triangulate your location."
+metadata/_custom_type_script = "uid://b73k7tiran3rj"
+
+[sub_resource type="Resource" id="Resource_0ld40"]
+script = ExtResource("14_gqmmt")
+dialogue_id = "Phase One Short Range "
+duration = 7.0
+entries = Array[ExtResource("13_0ld40")]([SubResource("Resource_dp3eg")])
+metadata/_custom_type_script = "uid://dgkt1fcechioc"
+
+[sub_resource type="Resource" id="Resource_gqmmt"]
+script = ExtResource("13_0ld40")
+speaker_name = "First Rescuer:"
+text = "Try to ... three points ... strongest ... will allow ... location."
+metadata/_custom_type_script = "uid://b73k7tiran3rj"
+
+[sub_resource type="Resource" id="Resource_yc10j"]
+script = ExtResource("14_gqmmt")
+dialogue_id = "Phase Two Mid Range"
+duration = 7.0
+entries = Array[ExtResource("13_0ld40")]([SubResource("Resource_gqmmt")])
+metadata/_custom_type_script = "uid://dgkt1fcechioc"
+
+[sub_resource type="Resource" id="Resource_pm3ni"]
+script = ExtResource("13_0ld40")
+speaker_name = "First Responder:"
+text = "Try ... three points ... location."
+metadata/_custom_type_script = "uid://b73k7tiran3rj"
+
+[sub_resource type="Resource" id="Resource_y6deb"]
+script = ExtResource("14_gqmmt")
+duration = 7.0
+entries = Array[ExtResource("13_0ld40")]([SubResource("Resource_pm3ni")])
+metadata/_custom_type_script = "uid://dgkt1fcechioc"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gqmmt"]
+radius = 1.4319531
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yc10j"]
+radius = 5.205635
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jscy8"]
+radius = 15.780549
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dp3eg"]
+radius = 7.476927
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0ld40"]
+radius = 15.780549
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4xr67"]
 albedo_color = Color(0.6805224, 0.5903386, 0.2021581, 1)
@@ -84,7 +144,7 @@ example_dialogue = ExtResource("13_exdlg")
 [node name="Global" type="Node" parent="." unique_id=1992404025]
 
 [node name="PlayerCharacter" parent="Global" unique_id=1913778194 instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68959403, 1.75739, 4.0902157)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68959403, 1.9453428, 4.0902157)
 camera_mode = 0
 
 [node name="StormTimer" type="Timer" parent="Global" unique_id=730841255]
@@ -166,14 +226,6 @@ script = ExtResource("12_dialoguemgr")
 script = ExtResource("12_dp3eg")
 dlg_phase_one = SubResource("Resource_jscy8")
 
-[node name="AudioPoints" type="Node" parent="Level/PhaseOne" unique_id=2105419458 node_paths=PackedStringArray("dialogue_manager")]
-script = ExtResource("13_a8y0u")
-dlg_phase_one = ExtResource("13_exdlg")
-dialogue_manager = NodePath("../../../Global/GameManager/DialogueManager")
-
-[node name="InterractArea" parent="Level/PhaseOne/AudioPoints" unique_id=670692781 instance=ExtResource("3_sugp2")]
-interract_type = "Entered"
-
 [node name="WindowSights" type="Node" parent="Level/PhaseOne" unique_id=865403160]
 
 [node name="Geoloc" type="Node" parent="Level/PhaseOne" unique_id=62120266]
@@ -187,7 +239,7 @@ locked_by_facts = Array[String](["events/storm_happend", "geoloc_activated"])
 [node name="CollisionShape" parent="Level/PhaseOne/Geoloc/AreaGeoloc" index="0" unique_id=1971436032]
 shape = SubResource("SphereShape3D_ya4ey")
 
-[node name="AreaGeoloc2" parent="Level/PhaseOne/Geoloc" unique_id=1019318091 instance=ExtResource("3_sugp2")]
+[node name="AreaGeoloc2" parent="Level/PhaseOne/Geoloc" unique_id=403828527 instance=ExtResource("3_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.937962, -1.7872602, -9.010808)
 visible = false
 interract_type = "Wait"
@@ -207,264 +259,93 @@ locked_by_facts = Array[String](["events/storm_happend", "geoloc_activated"])
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.152645, 0, 7.7116857)
 shape = SubResource("SphereShape3D_eb6dy")
 
-[node name="Interractibles" type="Node" parent="Level" unique_id=1345375828]
+[node name="AudioPoints" type="Node" parent="Level/PhaseOne" unique_id=162049499 node_paths=PackedStringArray("dialogue_manager")]
+script = ExtResource("13_a8y0u")
+dlg_intro = SubResource("Resource_2wyq8")
+dlg_phase_one_short_range = SubResource("Resource_0ld40")
+dlg_phase_one_mid_range = SubResource("Resource_yc10j")
+dlg_phase_one_long_range = SubResource("Resource_y6deb")
+dialogue_manager = NodePath("../../../Global/GameManager/DialogueManager")
 
-[node name="House" type="Node3D" parent="Level" unique_id=174867481]
-visible = false
+[node name="ShortRange" parent="Level/PhaseOne/AudioPoints" unique_id=50122330 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.517182, 5.8963737, -0.09028864)
+interract_type = "Entered"
 
-[node name="Floor" type="CSGBox3D" parent="Level/House" unique_id=287915530]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, -0.89817435, -2.0746558, -8.833979)
-use_collision = true
-size = Vector3(15, 0.5, 15)
-material = SubResource("StandardMaterial3D_nxyfu")
+[node name="CollisionShape" parent="Level/PhaseOne/AudioPoints/ShortRange" index="0" unique_id=1971436032]
+shape = SubResource("SphereShape3D_gqmmt")
 
-[node name="Floor8" type="CSGCylinder3D" parent="Level/House" unique_id=378867022]
-transform = Transform3D(-2.9802322e-08, 0.7972363, -0.6036673, 1, 3.8075996e-09, -3.5981373e-08, 2.980232e-08, -0.6036674, -0.7972363, -0.8981537, 12.346525, -8.833699)
-use_collision = true
-radius = 10.115
-height = 17.135742
-sides = 3
-smooth_faces = false
-material = SubResource("StandardMaterial3D_nxyfu")
+[node name="MidRange" parent="Level/PhaseOne/AudioPoints" unique_id=322102780 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.517182, 6.7361293, -0.09028864)
+interract_type = "Entered"
 
-[node name="Object2" type="CSGBox3D" parent="Level/House" unique_id=1939968055]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, -6.450666, -1.4352009, -4.6512055)
-use_collision = true
-size = Vector3(14.932129, 1, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
+[node name="CollisionShape" parent="Level/PhaseOne/AudioPoints/MidRange" index="0" unique_id=1971436032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6309786, 2.1614213, 0)
+shape = SubResource("SphereShape3D_yc10j")
 
-[node name="Object3" type="CSGBox3D" parent="Level/House" unique_id=718602629]
-transform = Transform3D(-0.540843, 0.26814747, 0.7972363, 0.44419742, 0.8959289, 0, -0.71426713, 0.35413033, -0.6036674, -4.1447344, -0.35065627, -4.544411)
-use_collision = true
-size = Vector3(13.248779, 1, 2.8330078)
-material = SubResource("StandardMaterial3D_l2f18")
+[node name="LongRange" parent="Level/PhaseOne/AudioPoints" unique_id=1693311682 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.517182, 5.8963737, -0.09028864)
+interract_type = "Entered"
 
-[node name="Object14" type="CSGBox3D" parent="Level/House" unique_id=470000648]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, -6.450666, 1.8815863, -4.6512055)
-use_collision = true
-size = Vector3(14.932129, 1.7254639, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
+[node name="CollisionShape" parent="Level/PhaseOne/AudioPoints/LongRange" index="0" unique_id=1971436032]
+shape = SubResource("SphereShape3D_jscy8")
 
-[node name="Object6" type="CSGBox3D" parent="Level/House" unique_id=1345938368]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, 4.887945, -1.4352009, -13.150993)
-use_collision = true
-size = Vector3(14.932129, 1, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
+[node name="PhaseTwo" type="Node" parent="Level" unique_id=972905351]
+script = ExtResource("12_dp3eg")
+dlg_phase_one = SubResource("Resource_jscy8")
 
-[node name="Object11" type="CSGBox3D" parent="Level/House" unique_id=1052209969]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, 4.887945, 2.261394, -13.150993)
-use_collision = true
-size = Vector3(14.932129, 1, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
+[node name="AudioPoints" type="Node" parent="Level/PhaseTwo" unique_id=2105419458 node_paths=PackedStringArray("dialogue_manager")]
+script = ExtResource("13_a8y0u")
+dialogue_manager = NodePath("../../../Global/GameManager/DialogueManager")
 
-[node name="Object8" type="CSGBox3D" parent="Level/House" unique_id=1771872052]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, 1.1814189, 0.26498914, -18.046036)
-use_collision = true
-size = Vector3(2.6520996, 3, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
+[node name="ShortRange" parent="Level/PhaseTwo/AudioPoints" unique_id=670692781 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2025032, 2.5239825, -4.0970497)
+interract_type = "Entered"
 
-[node name="Object9" type="CSGBox3D" parent="Level/House" unique_id=780918136]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, 4.6169205, 0.26498914, -13.694054)
-use_collision = true
-size = Vector3(2.6520996, 3, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
+[node name="MidRange" parent="Level/PhaseTwo/AudioPoints" unique_id=1019318091 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2025032, 2.5239825, -4.0970497)
+interract_type = "Entered"
 
-[node name="Object10" type="CSGBox3D" parent="Level/House" unique_id=825034280]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, 8.569396, 0.26498914, -8.209529)
-use_collision = true
-size = Vector3(2.6520996, 3, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
+[node name="CollisionShape" parent="Level/PhaseTwo/AudioPoints/MidRange" index="0" unique_id=1971436032]
+shape = SubResource("SphereShape3D_dp3eg")
 
-[node name="Object12" type="CSGBox3D" parent="Level/House" unique_id=2001396695]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, -9.178135, 0.26498914, -8.334304)
-use_collision = true
-size = Vector3(5.894409, 3, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
+[node name="LongRange" parent="Level/PhaseTwo/AudioPoints" unique_id=1671639877 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2025032, 2.5239825, -4.0970497)
+interract_type = "Entered"
 
-[node name="Object13" type="CSGBox3D" parent="Level/House" unique_id=1593333290]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, -3.9234047, 0.26498914, -1.3150812)
-use_collision = true
-size = Vector3(6.477417, 3, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
+[node name="CollisionShape" parent="Level/PhaseTwo/AudioPoints/LongRange" index="0" unique_id=1971436032]
+shape = SubResource("SphereShape3D_0ld40")
 
-[node name="Object4" type="CSGBox3D" parent="Level/House" unique_id=1131212245]
-transform = Transform3D(-0.797584, 0, -0.6032079, 0, 1, 0, 0.6032079, 0, -0.797584, -5.004046, -1.4352009, -14.386742)
-use_collision = true
-size = Vector3(14.932129, 1, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
+[node name="PhaseThree" type="Node" parent="Level" unique_id=1105790316]
+script = ExtResource("12_dp3eg")
+dlg_phase_one = SubResource("Resource_jscy8")
 
-[node name="Object17" type="CSGBox3D" parent="Level/House" unique_id=76490796]
-transform = Transform3D(-0.797584, 0, -0.6032079, 0, 1, 0, 0.6032079, 0, -0.797584, -5.004046, 2.2550118, -14.386742)
-use_collision = true
-size = Vector3(14.932129, 1, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
+[node name="AudioPoints" type="Node" parent="Level/PhaseThree" unique_id=1579709902 node_paths=PackedStringArray("dialogue_manager")]
+script = ExtResource("13_a8y0u")
+dialogue_manager = NodePath("../../../Global/GameManager/DialogueManager")
 
-[node name="Object15" type="CSGBox3D" parent="Level/House" unique_id=1343280092]
-transform = Transform3D(-0.797584, 0, -0.6032079, 0, 1, 0, 0.6032079, 0, -0.797584, -8.804886, 0.28161216, -11.51219)
-use_collision = true
-size = Vector3(5.401245, 3.4351807, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
+[node name="ShortRange" parent="Level/PhaseThree/AudioPoints" unique_id=1481125690 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7603054, 2.5239825, 3.6678934)
+interract_type = "Entered"
 
-[node name="Object16" type="CSGBox3D" parent="Level/House" unique_id=723364291]
-transform = Transform3D(-0.797584, 0, -0.6032079, 0, 1, 0, 0.6032079, 0, -0.797584, -1.471311, 0.28161216, -17.244713)
-use_collision = true
-size = Vector3(5.4056396, 3.4351807, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
+[node name="MidRange" parent="Level/PhaseThree/AudioPoints" unique_id=695308502 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7603054, 2.5239825, 3.6678934)
+interract_type = "Entered"
 
-[node name="Object5" type="CSGBox3D" parent="Level/House" unique_id=198944368]
-transform = Transform3D(-0.797584, 0, -0.6032079, 0, 1, 0, 0.6032079, 0, -0.797584, 6.0164304, 0.42557788, -5.236328)
-use_collision = true
-size = Vector3(8.313965, 4.7215576, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
+[node name="CollisionShape" parent="Level/PhaseThree/AudioPoints/MidRange" index="0" unique_id=1971436032]
+shape = SubResource("SphereShape3D_dp3eg")
 
-[node name="Object7" type="CSGBox3D" parent="Level/House" unique_id=649815401]
-transform = Transform3D(-0.797584, 0, -0.6032079, 0, 1, 0, 0.6032079, 0, -0.797584, -1.0445428, 0.38798022, 0.075495556)
-use_collision = true
-size = Vector3(4.3501587, 4.6463623, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
+[node name="LongRange" parent="Level/PhaseThree/AudioPoints" unique_id=1766382807 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7603054, 2.5239825, 3.6678934)
+interract_type = "Entered"
 
-[node name="Object18" type="CSGBox3D" parent="Level/House" unique_id=366255079]
-transform = Transform3D(-0.797584, 0, -0.6032079, 0, 1, 0, 0.6032079, 0, -0.797584, 1.6605501, 2.2246196, -1.9613515)
-use_collision = true
-size = Vector3(4.3501587, 0.9730835, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
+[node name="CollisionShape" parent="Level/PhaseThree/AudioPoints/LongRange" index="0" unique_id=1971436032]
+shape = SubResource("SphereShape3D_0ld40")
 
-[node name="Floor3" type="CSGBox3D" parent="Level/House" unique_id=1225824833]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, 0.7408703, 2.7304661, -10.075064)
-use_collision = true
-size = Vector3(15, 0.5, 10.888184)
-material = SubResource("StandardMaterial3D_nxyfu")
-
-[node name="Floor5" type="CSGBox3D" parent="Level/House" unique_id=1078924296]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, -1.3362594, 2.7304661, -0.9087093)
-use_collision = true
-size = Vector3(2.8922882, 0.5, 3.9483643)
-material = SubResource("StandardMaterial3D_nxyfu")
-
-[node name="Floor6" type="CSGBox3D" parent="Level/House" unique_id=770297150]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, -8.41515, 2.7682211, -10.045248)
-use_collision = true
-size = Vector3(2.6911926, 0.5, 3.9483643)
-material = SubResource("StandardMaterial3D_nxyfu")
-
-[node name="Floor4" type="CSGBox3D" parent="Level/House" unique_id=898807474]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, -0.89817435, 7.851506, -8.833979)
-use_collision = true
-size = Vector3(15, 0.5, 15)
-material = SubResource("StandardMaterial3D_nxyfu")
-
-[node name="Object19" type="CSGBox3D" parent="Level/House" unique_id=1127506553]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, 6.1218624, 2.9948714, -14.871193)
-use_collision = true
-size = Vector3(8.271484, 0.37109375, 2.9854126)
-material = SubResource("StandardMaterial3D_l2f18")
-
-[node name="Object20" type="CSGBox3D" parent="Level/House" unique_id=1637398576]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, -6.450666, 3.369921, -4.6512055)
-use_collision = true
-size = Vector3(14.932129, 1, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
-
-[node name="Object21" type="CSGBox3D" parent="Level/House" unique_id=1311271034]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, -6.450666, 6.6867085, -4.6512055)
-use_collision = true
-size = Vector3(14.932129, 1.7254639, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
-
-[node name="Object22" type="CSGBox3D" parent="Level/House" unique_id=1661204506]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, 4.887945, 2.6139374, -13.150993)
-use_collision = true
-size = Vector3(14.932129, 1, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
-
-[node name="Object23" type="CSGBox3D" parent="Level/House" unique_id=1915652050]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, 4.887945, 7.066516, -13.150993)
-use_collision = true
-size = Vector3(14.932129, 1, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
-
-[node name="Object24" type="CSGBox3D" parent="Level/House" unique_id=642564016]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, 1.1814189, 4.7976503, -18.046036)
-use_collision = true
-size = Vector3(2.6520996, 3.5449219, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
-
-[node name="Object25" type="CSGBox3D" parent="Level/House" unique_id=586282267]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, 4.9820538, 4.5686464, -13.349472)
-use_collision = true
-size = Vector3(0.30844116, 4.0029297, 0.6036682)
-material = SubResource("StandardMaterial3D_l2f18")
-
-[node name="Object26" type="CSGBox3D" parent="Level/House" unique_id=2092622389]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, 8.569396, 4.7664003, -8.209529)
-use_collision = true
-size = Vector3(2.6520996, 3.6074219, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
-
-[node name="Object27" type="CSGBox3D" parent="Level/House" unique_id=1324177602]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, -9.178135, 5.0701113, -8.334304)
-use_collision = true
-size = Vector3(5.894409, 3, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
-
-[node name="Object28" type="CSGBox3D" parent="Level/House" unique_id=264192975]
-transform = Transform3D(-0.6036673, 0, 0.7972363, 0, 1, 0, -0.7972363, 0, -0.6036673, -3.9234047, 5.0701113, -1.3150812)
-use_collision = true
-size = Vector3(6.477417, 3, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
-
-[node name="Object29" type="CSGBox3D" parent="Level/House" unique_id=552230528]
-transform = Transform3D(-0.797584, 0, -0.6032079, 0, 1, 0, 0.6032079, 0, -0.797584, -5.004046, 3.369921, -14.386742)
-use_collision = true
-size = Vector3(14.932129, 1, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
-
-[node name="Object30" type="CSGBox3D" parent="Level/House" unique_id=1982802172]
-transform = Transform3D(-0.797584, 0, -0.6032079, 0, 1, 0, 0.6032079, 0, -0.797584, -5.004046, 7.060134, -14.386742)
-use_collision = true
-size = Vector3(14.932129, 1, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
-
-[node name="Object31" type="CSGBox3D" parent="Level/House" unique_id=1679283658]
-transform = Transform3D(-0.797584, 0, -0.6032079, 0, 1, 0, 0.6032079, 0, -0.797584, -8.804886, 5.086734, -11.51219)
-use_collision = true
-size = Vector3(5.401245, 3.4351807, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
-
-[node name="Object32" type="CSGBox3D" parent="Level/House" unique_id=1126121290]
-transform = Transform3D(-0.797584, 0, -0.6032079, 0, 1, 0, 0.6032079, 0, -0.797584, -1.471311, 5.086734, -17.244713)
-use_collision = true
-size = Vector3(5.4056396, 3.4351807, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
-
-[node name="Object33" type="CSGBox3D" parent="Level/House" unique_id=1688833986]
-transform = Transform3D(-0.797584, 0, -0.6032079, 0, 1, 0, 0.6032079, 0, -0.797584, 8.086624, 5.2306995, -6.802003)
-use_collision = true
-size = Vector3(3.1228027, 4.7215576, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
-
-[node name="Object34" type="CSGBox3D" parent="Level/House" unique_id=1023047909]
-transform = Transform3D(-0.797584, 0, -0.6032079, 0, 1, 0, 0.6032079, 0, -0.797584, 0.8494575, 5.193102, -1.3569252)
-use_collision = true
-size = Vector3(9.099503, 4.6463623, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
-
-[node name="Object35" type="CSGBox3D" parent="Level/House" unique_id=2049482312]
-transform = Transform3D(-0.797584, 0, -0.6032079, 0, 1, 0, 0.6032079, 0, -0.797584, 4.3756533, 7.0297413, -4.014767)
-use_collision = true
-size = Vector3(11.158478, 0.9730835, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
-
-[node name="Object36" type="CSGBox3D" parent="Level/House" unique_id=1540631148]
-transform = Transform3D(-0.797584, 0, -0.6032079, 0, 1, 0, 0.6032079, 0, -0.797584, 4.3756533, 2.9498606, -4.014767)
-use_collision = true
-size = Vector3(11.158478, 0.9730835, 1.0440674)
-material = SubResource("StandardMaterial3D_l2f18")
+[node name="House" parent="." unique_id=1508929104 instance=ExtResource("18_yc10j")]
 
 [node name="Environment" type="Node" parent="." unique_id=1654604802]
 
 [node name="Mountains" type="Node3D" parent="Environment" unique_id=1499495946]
-visible = false
 
 [node name="Object29" type="CSGBox3D" parent="Environment/Mountains" unique_id=1394068111]
 transform = Transform3D(0.81038946, 0, 0.58589154, 0, 1, 0, -0.58589154, 0, 0.81038946, -1.5588648, -5.7156477, -6.0593324)
@@ -804,12 +685,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08237219, -8.473743)
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 73.15816, 289.19168, -423.3327)
 shadow_enabled = true
 
-[node name="House" parent="." unique_id=1508929104 instance=ExtResource("18_yc10j")]
-
 [connection signal="timeout" from="Global/StormTimer" to="." method="_on_timer_timeout"]
-[connection signal="player_completed" from="Level/PhaseOne/AudioPoints/InterractArea" to="Level/PhaseOne/AudioPoints" method="_on_interract_area_player_completed"]
+[connection signal="player_completed" from="Level/PhaseOne/AudioPoints/ShortRange" to="Level/PhaseOne" method="_on_short_range_player_completed"]
+[connection signal="player_completed" from="Level/PhaseOne/AudioPoints/ShortRange" to="Level/PhaseOne/AudioPoints" method="_on_short_range_player_completed"]
+[connection signal="player_completed" from="Level/PhaseOne/AudioPoints/MidRange" to="Level/PhaseOne/AudioPoints" method="_on_mid_range_player_completed"]
+[connection signal="player_completed" from="Level/PhaseOne/AudioPoints/LongRange" to="Level/PhaseOne/AudioPoints" method="_on_long_range_player_completed"]
 
-[editable path="Level/PhaseOne/AudioPoints/InterractArea"]
 [editable path="Level/PhaseOne/Geoloc/AreaGeoloc"]
 [editable path="Level/PhaseOne/Geoloc/AreaGeoloc2"]
 [editable path="Level/PhaseOne/Geoloc/AreaGeoloc3"]
+[editable path="Level/PhaseOne/AudioPoints/ShortRange"]
+[editable path="Level/PhaseOne/AudioPoints/MidRange"]
+[editable path="Level/PhaseOne/AudioPoints/LongRange"]
+[editable path="Level/PhaseTwo/AudioPoints/ShortRange"]
+[editable path="Level/PhaseTwo/AudioPoints/MidRange"]
+[editable path="Level/PhaseTwo/AudioPoints/LongRange"]
+[editable path="Level/PhaseThree/AudioPoints/ShortRange"]
+[editable path="Level/PhaseThree/AudioPoints/MidRange"]
+[editable path="Level/PhaseThree/AudioPoints/LongRange"]

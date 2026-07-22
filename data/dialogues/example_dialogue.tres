@@ -5,23 +5,19 @@
 
 [sub_resource type="Resource" id="Resource_entry1"]
 script = ExtResource("2_entry")
-speaker_name = "Narrateur"
-text = "Bienvenue dans la vallée. Une tempête approche à l'horizon."
+speaker_name = "Us"
+text = "It's getting chilly outside. I should find something to warm myself up. "
 
-[sub_resource type="Resource" id="Resource_entry2"]
+[sub_resource type="Resource" id="Resource_7iv0a"]
 script = ExtResource("2_entry")
-speaker_name = "Alice"
-timecode = 3.0
-text = "On ferait mieux de rentrer avant qu'elle n'arrive."
+metadata/_custom_type_script = "uid://b73k7tiran3rj"
 
-[sub_resource type="Resource" id="Resource_entry3"]
+[sub_resource type="Resource" id="Resource_5tr43"]
 script = ExtResource("2_entry")
-speaker_name = "Bob"
-timecode = 6.0
-text = "T'inquiète, on a le temps."
+metadata/_custom_type_script = "uid://b73k7tiran3rj"
 
 [resource]
 script = ExtResource("1_dlg")
 dialogue_id = "intro"
 duration = 9.0
-entries = Array[ExtResource("2_entry")]([SubResource("Resource_entry1"), SubResource("Resource_entry2"), SubResource("Resource_entry3")])
+entries = Array[ExtResource("2_entry")]([SubResource("Resource_entry1"), SubResource("Resource_7iv0a"), SubResource("Resource_5tr43")])

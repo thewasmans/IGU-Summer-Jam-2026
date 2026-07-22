@@ -1,7 +1,17 @@
 [gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://bxmmcaq3fkqsx"]
 
+[ext_resource type="Script" uid="uid://b73k7tiran3rj" path="res://scripts/data/dialogue_entry.gd" id="1_n3143"]
 [ext_resource type="Script" uid="uid://dgkt1fcechioc" path="res://scripts/data/dialogue.gd" id="1_q4uwo"]
+
+[sub_resource type="Resource" id="Resource_7d3su"]
+script = ExtResource("1_n3143")
+speaker_name = "First Responder :"
+text = "Try ... three points ... location."
+metadata/_custom_type_script = "uid://b73k7tiran3rj"
 
 [resource]
 script = ExtResource("1_q4uwo")
+dialogue_id = "Low Signal Phase One"
+duration = 3.0
+entries = Array[ExtResource("1_n3143")]([SubResource("Resource_7d3su")])
 metadata/_custom_type_script = "uid://dgkt1fcechioc"

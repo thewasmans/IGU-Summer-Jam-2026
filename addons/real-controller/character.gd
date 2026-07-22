@@ -28,7 +28,7 @@ enum CameraMode {
 ## Speed multiplier when sprinting. Should be higher than normal speed.
 @export_range(0.1, 30.0, 0.1, "or_greater") var sprint_speed: float = 8.0
 ## Vertical velocity applied when jumping.
-##@export_range(1.0, 20.0, 0.1) var jump_velocity: float = 4.5
+@export_range(1.0, 20.0, 0.1) var jump_velocity: float = 4.5
 @export var can_walk: bool = true
 
 ## Camera Settings
@@ -79,7 +79,7 @@ var input_strength: float = 0.0
 var direction: Vector3 = Vector3.ZERO
 var is_sprinting: bool = false
 var is_walking: bool = false
-##var is_jumping: bool = false
+var is_jumping: bool = false
 
 # Freeze the character. It may be useful when you want to pause the character.
 var frozen: bool = false
@@ -97,7 +97,7 @@ func _ready() -> void:
 	%AnimationTree.active = true
 
 func _physics_process(delta: float) -> void:
-	##_handle_gravity_and_jump(delta)
+	_handle_gravity_and_jump(delta)
 	_handle_camera_transition(delta)
 	_handle_controller_camera(delta)
 	_apply_camera_shake(delta)
@@ -121,16 +121,16 @@ func handle_frozen_movement() -> void:
 	is_walking = false
 
 ## Handles gravity application and jump mechanics.
-##func _handle_gravity_and_jump(delta: float) -> void:
-	##if not is_on_floor():
-		##velocity += get_gravity() * delta
-		##is_jumping = velocity.y > 0
-	##else:
-		##is_jumping = false
+func _handle_gravity_and_jump(delta: float) -> void:
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+		is_jumping = velocity.y > 0
+	else:
+		is_jumping = false
 
-##	if not frozen and Input.is_action_just_pressed("jump") and is_on_floor():
-		##velocity.y = jump_velocity
-		##is_jumping = true
+	if not frozen and Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = jump_velocity
+		is_jumping = true
 
 ## Processes movement input and calculates movement direction relative to camera.
 func _handle_movement_input() -> void:

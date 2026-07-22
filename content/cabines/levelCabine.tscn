@@ -264,7 +264,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.5513363, 3)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -1.5105515, 1.535023, 2.8287969)
 
 [node name="cheminey" parent="interractible" unique_id=1222840615 instance=ExtResource("12_8x5ro")]
-transform = Transform3D(-2.1855694e-08, 0, -0.25, 0, 0.5, 0, 0.5, 0, -1.0927847e-08, 3.6270895, 0.74874985, 0.29671526)
+transform = Transform3D(-2.1855694e-08, 0, -0.25, 0, 0.5, 0, 0.5, 0, -1.0927847e-08, 3.7013636, 0.74874985, 0.29671526)
 
 [node name="door_2a" parent="interractible" unique_id=1220266129 instance=ExtResource("10_km402")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1.2, 0, -1, 0, -4.371139e-08, -6.4068913, 1.7801716, 0)
@@ -317,7 +317,7 @@ metadata/_custom_type_script = "uid://ktr6g66bx3rb"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9133816, 0.7386009, 2.1973367)
 
 [node name="logs" type="Node3D" parent="." unique_id=319731606]
-transform = Transform3D(0.06975651, 0, 0.9975641, 0, 1, 0, -0.9975641, 0, 0.06975651, -1.0137596, -0.068258345, -5.263819)
+transform = Transform3D(0.06975651, 0, 0.9975641, 0, 1, 0, -0.9975641, 0, 0.06975651, -0.7868905, -0.068258345, -5.263819)
 
 [node name="log_2b" parent="logs" unique_id=264168379 instance=ExtResource("9_gykgp")]
 transform = Transform3D(0.5675921, 0, 0.09200102, 0, 0.575, 0, -0.09200102, 0, 0.5675921, -2.835832, 0.9355909, 4.488059)
@@ -401,7 +401,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.15, 0, 0.3813973, -0.41209757)
 transform = Transform3D(0.11320324, 0, -1.1426077, 0, 0.75, 0, 0.9935719, 0, 0.13018373, 0, -0.091833115, 0.15793031)
 
 [node name="cardboardMix2" type="Node3D" parent="." unique_id=420088739]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -4.102611, 0.9353125, -1.4034977)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -4.2557755, 0.9353125, -1.9600443)
 
 [node name="cardboard_box2" parent="cardboardMix2" unique_id=1184556244 instance=ExtResource("25_dkio3")]
 transform = Transform3D(0.9512257, 0, 0.7732097, 0, 1.5, 0, -1.1598146, 0, 0.63415045, -0.001101017, 0.0034503937, -0.38488817)
