@@ -1,0 +1,236 @@
+[gd_scene format=3 uid="uid://bilbs6sia8q7"]
+
+[ext_resource type="PackedScene" uid="uid://dnommavuf8agg" path="res://content/cabines/levelCabineSecondFloor.tscn" id="1_l2pt1"]
+[ext_resource type="PackedScene" uid="uid://b40roipepjvt0" path="res://content/cabines/levelCabine.tscn" id="2_384ki"]
+[ext_resource type="Script" uid="uid://ktr6g66bx3rb" path="res://scripts/interract_area.gd" id="3_384ki"]
+[ext_resource type="Script" uid="uid://dio5cq40sjdic" path="res://scenes/phase_one.gd" id="3_saj5v"]
+[ext_resource type="Script" uid="uid://b73k7tiran3rj" path="res://scripts/data/dialogue_entry.gd" id="4_ot4k5"]
+[ext_resource type="PackedScene" uid="uid://d4ns6gu2nax6j" path="res://content/prefabs/interract_area.tscn" id="4_saj5v"]
+[ext_resource type="Script" uid="uid://dgkt1fcechioc" path="res://scripts/data/dialogue.gd" id="5_sk8ot"]
+
+[sub_resource type="Resource" id="Resource_xj671"]
+script = ExtResource("5_sk8ot")
+metadata/_custom_type_script = "uid://dgkt1fcechioc"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vgdrb"]
+radius = 0.9760721
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sk8ot"]
+
+[node name="House" type="Node3D" unique_id=1508929104]
+
+[node name="levelCabineSecondFloor" parent="." unique_id=679240696 instance=ExtResource("1_l2pt1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013208866, -0.2952168, -0.008959293)
+
+[node name="cabin_Floor2" parent="levelCabineSecondFloor/floor" parent_id_path=PackedInt32Array(679240696, 219154543) index="0" unique_id=583591123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.9774748)
+
+[node name="cabin_Floor6" parent="levelCabineSecondFloor/floor" parent_id_path=PackedInt32Array(679240696, 219154543) index="1" unique_id=793758269]
+transform = Transform3D(0.4, 0, 0, 0, 1, 0, 0, 0, 1, -3.8226166, 0.5, -5.645841)
+
+[node name="cabin_Floor7" parent="levelCabineSecondFloor/floor" parent_id_path=PackedInt32Array(679240696, 219154543) index="2" unique_id=320767919]
+transform = Transform3D(0.4, 0, 0, 0, 1, 0, 0, 0, 1, 4.1646442, 0.5, -5.6510015)
+
+[node name="cabin_Floor3" parent="levelCabineSecondFloor/floor" parent_id_path=PackedInt32Array(679240696, 219154543) index="3" unique_id=1186060360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005, 0.5, 1.695)
+
+[node name="cabin_Floor4" parent="levelCabineSecondFloor/floor" parent_id_path=PackedInt32Array(679240696, 219154543) index="5" unique_id=920239729]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.018, 0.5, 5.3613615)
+
+[node name="walls" parent="levelCabineSecondFloor" index="1" unique_id=41390895]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 3.2981825, 0)
+
+[node name="wood_wall8" parent="levelCabineSecondFloor/walls" index="7" unique_id=970553919]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.75, 0.7595396, 3.7250004)
+
+[node name="wood_wall9" parent="levelCabineSecondFloor/walls" index="8" unique_id=1800647400]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.75, 0.7581351, -3.6742911)
+
+[node name="Rack" parent="levelCabineSecondFloor" index="3" unique_id=1188715162]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0.16447473, 4.179539, -3.5955834)
+
+[node name="cardboard_box" parent="levelCabineSecondFloor/cardboardAlignment3" parent_id_path=PackedInt32Array(679240696, 1566421242) index="1" unique_id=426611501]
+transform = Transform3D(-0.29561895, 0, 1.9780322, 0, 2, 0, -1.9780322, 0, -0.29561895, -1.095964, -0.036552906, 1.2644495)
+
+[node name="cardboard_box3" parent="levelCabineSecondFloor/cardboardAlignment3" parent_id_path=PackedInt32Array(679240696, 1566421242) index="4" unique_id=156621517]
+transform = Transform3D(0.47595716, 0, 1.4224858, 0, 1.5, 0, -1.4224858, 0, 0.47595716, -1.1594076, 0.48108912, 1.1845435)
+
+[node name="cabin_Floor3" parent="levelCabineSecondFloor/ceiling" parent_id_path=PackedInt32Array(679240696, 450298207) index="2" unique_id=1996003052]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005, 0.5, 2.847)
+
+[node name="LevelCabine" parent="." unique_id=1393006050 instance=ExtResource("2_384ki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27008188, 0)
+
+[node name="stairs" parent="LevelCabine" index="1" unique_id=586754996]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.75, -2.6207204, 0.71483994, -4.8490267)
+
+[node name="CollisionShape3D" parent="LevelCabine/stairs/StaticBody3D" parent_id_path=PackedInt32Array(1393006050, 687140569) index="0" unique_id=1593409236]
+transform = Transform3D(7.4605837, -0.0013757441, 0, 0.25674915, 0.039976332, 0, 0, 0, 1.9500002, -0.050046206, 0.08167219, 0)
+
+[node name="wood_wall4" parent="LevelCabine/walls" parent_id_path=PackedInt32Array(1393006050, 1822209895) index="3" unique_id=282136507]
+transform = Transform3D(0.9999936, -0.002532952, -0.0025075958, 0.002526786, 0.99999374, -0.0024590313, 0.002513809, 0.0024526794, 0.9999938, 1.9987874, 0.7355201, 5.9750004)
+
+[node name="sofa2" parent="LevelCabine/cabin_Decoration" parent_id_path=PackedInt32Array(1393006050, 231096210) index="5" unique_id=1649351831]
+transform = Transform3D(-4.371139e-08, 0, 1.2, 0, 1.2, 0, -1, 0, -5.2453668e-08, 0.63592005, 1.2650001, 0.24780452)
+
+[node name="mirror" parent="LevelCabine/interractible" parent_id_path=PackedInt32Array(1393006050, 975462014) index="2" unique_id=1739704568]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3680831, 3.9391742, 5.1474366)
+
+[node name="matches" parent="LevelCabine/interractible" parent_id_path=PackedInt32Array(1393006050, 975462014) index="3" unique_id=2134449503]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 3.6091776, 3)
+
+[node name="matches_p2" parent="LevelCabine/interractible" parent_id_path=PackedInt32Array(1393006050, 975462014) index="4" unique_id=1927892405]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -1.5105515, 3.5928645, 2.8287969)
+
+[node name="cheminey" parent="LevelCabine/interractible" parent_id_path=PackedInt32Array(1393006050, 975462014) index="5" unique_id=1222840615]
+transform = Transform3D(-2.1855694e-08, 0, -0.25, 0, 0.5, 0, 0.5, 0, -1.0927847e-08, 3.6270895, 0.74874985, 0.43381298)
+
+[node name="cabin_Floor" parent="LevelCabine/floor" parent_id_path=PackedInt32Array(1393006050, 1181123491) index="0" unique_id=1288370707]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -4.468711)
+
+[node name="cabin_Floor2" parent="LevelCabine/floor" parent_id_path=PackedInt32Array(1393006050, 1181123491) index="1" unique_id=553008735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.8235294)
+
+[node name="cabin_Window5" parent="LevelCabine/eventProp" parent_id_path=PackedInt32Array(1393006050, 1593482381) index="3" unique_id=1202105973]
+transform = Transform3D(-4.371137e-08, 0, -0.63499963, 0, 0.9999997, 0, 1.5748024, 0, -4.3711367e-08, 5.4999986, -0.23552, 5.156916)
+
+[node name="Level" type="Node" parent="." unique_id=2022086980]
+
+[node name="Interractibles" type="Node" parent="Level" unique_id=2124512252]
+
+[node name="PhaseOne" type="Node" parent="Level" unique_id=1455944390]
+script = ExtResource("3_saj5v")
+dlg_phase_one = SubResource("Resource_xj671")
+
+[node name="AudioPoints" type="Node" parent="Level/PhaseOne" unique_id=2051541520]
+
+[node name="SmallPoint" type="Area3D" parent="Level/PhaseOne/AudioPoints" unique_id=304728493 groups=["AreaInterract"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0038416, -0.6044216)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_384ki")
+interract_type = "Wait"
+stay_time = 1.0
+locked_by_facts = Array[String]([""])
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Level/PhaseOne/AudioPoints/SmallPoint" unique_id=1619143247]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 2.5718572, -0.037020206, -3.6302752)
+shape = SubResource("SphereShape3D_vgdrb")
+
+[node name="Timer" type="Timer" parent="Level/PhaseOne/AudioPoints/SmallPoint" unique_id=1532183154]
+one_shot = true
+
+[node name="MediumPoint" type="Area3D" parent="Level/PhaseOne/AudioPoints" unique_id=121857722 groups=["AreaInterract"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0038416, -0.6044216)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_384ki")
+interract_type = "Wait"
+stay_time = 1.0
+locked_by_facts = Array[String]([""])
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Level/PhaseOne/AudioPoints/MediumPoint" unique_id=1527038126]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, 2.5718572, -0.037020206, -3.6302752)
+shape = SubResource("SphereShape3D_vgdrb")
+
+[node name="Timer" type="Timer" parent="Level/PhaseOne/AudioPoints/MediumPoint" unique_id=1495394034]
+one_shot = true
+
+[node name="LargePoint" type="Area3D" parent="Level/PhaseOne/AudioPoints" unique_id=1115301982 groups=["AreaInterract"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0038416, -0.6044216)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_384ki")
+interract_type = "Entered"
+stay_time = 1.0
+locked_by_facts = Array[String]([""])
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Level/PhaseOne/AudioPoints/LargePoint" unique_id=1571234331]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 2.5718572, -0.037020206, -3.6302752)
+shape = SubResource("SphereShape3D_vgdrb")
+
+[node name="Timer" type="Timer" parent="Level/PhaseOne/AudioPoints/LargePoint" unique_id=1196036027]
+one_shot = true
+
+[node name="InterractArea" parent="Level/PhaseOne/AudioPoints" unique_id=1019318091 instance=ExtResource("4_saj5v")]
+
+[node name="CollisionShape" parent="Level/PhaseOne/AudioPoints/InterractArea" index="0" unique_id=1971436032]
+shape = SubResource("SphereShape3D_sk8ot")
+
+[node name="WindowSights" type="Node" parent="Level/PhaseOne" unique_id=660698417]
+
+[node name="Geoloc" type="Node" parent="Level/PhaseOne" unique_id=1622928985]
+
+[node name="Geoloc1" type="Area3D" parent="Level/PhaseOne/Geoloc" unique_id=1355837278 groups=["AreaInterract"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37196004, 1.7838125, 7.812746)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_384ki")
+interract_type = "Wait"
+stay_time = 1.0
+locked_by_facts = Array[String]([""])
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Level/PhaseOne/Geoloc/Geoloc1" unique_id=1726953592]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 2.5718572, -0.037020206, -3.6302752)
+shape = SubResource("SphereShape3D_vgdrb")
+
+[node name="Timer" type="Timer" parent="Level/PhaseOne/Geoloc/Geoloc1" unique_id=213144638]
+one_shot = true
+
+[node name="Geoloc2" type="Area3D" parent="Level/PhaseOne/Geoloc" unique_id=254676518 groups=["AreaInterract"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.799463, 6.7757096)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_384ki")
+interract_type = "Wait"
+stay_time = 1.0
+locked_by_facts = Array[String]([""])
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Level/PhaseOne/Geoloc/Geoloc2" unique_id=1167241281]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 2.5718572, -0.037020206, -3.6302752)
+shape = SubResource("SphereShape3D_vgdrb")
+
+[node name="Timer" type="Timer" parent="Level/PhaseOne/Geoloc/Geoloc2" unique_id=1293499788]
+one_shot = true
+
+[node name="Geoloc3" type="Area3D" parent="Level/PhaseOne/Geoloc" unique_id=969864796 groups=["AreaInterract"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0038416, -0.6044216)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_384ki")
+interract_type = "Wait"
+stay_time = 1.0
+locked_by_facts = Array[String]([""])
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Level/PhaseOne/Geoloc/Geoloc3" unique_id=739974352]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 2.5718572, -0.037020206, -3.6302752)
+shape = SubResource("SphereShape3D_vgdrb")
+
+[node name="Timer" type="Timer" parent="Level/PhaseOne/Geoloc/Geoloc3" unique_id=158979067]
+one_shot = true
+
+[connection signal="body_entered" from="Level/PhaseOne/AudioPoints/SmallPoint" to="Level/PhaseOne/AudioPoints/SmallPoint" method="_on_body_entered"]
+[connection signal="body_exited" from="Level/PhaseOne/AudioPoints/SmallPoint" to="Level/PhaseOne/AudioPoints/SmallPoint" method="_on_body_exited"]
+[connection signal="timeout" from="Level/PhaseOne/AudioPoints/SmallPoint/Timer" to="Level/PhaseOne/AudioPoints/SmallPoint" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Level/PhaseOne/AudioPoints/MediumPoint" to="Level/PhaseOne/AudioPoints/MediumPoint" method="_on_body_entered"]
+[connection signal="body_exited" from="Level/PhaseOne/AudioPoints/MediumPoint" to="Level/PhaseOne/AudioPoints/MediumPoint" method="_on_body_exited"]
+[connection signal="timeout" from="Level/PhaseOne/AudioPoints/MediumPoint/Timer" to="Level/PhaseOne/AudioPoints/MediumPoint" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Level/PhaseOne/AudioPoints/LargePoint" to="Level/PhaseOne/AudioPoints/LargePoint" method="_on_body_entered"]
+[connection signal="body_exited" from="Level/PhaseOne/AudioPoints/LargePoint" to="Level/PhaseOne/AudioPoints/LargePoint" method="_on_body_exited"]
+[connection signal="player_entered" from="Level/PhaseOne/AudioPoints/LargePoint" to="Level/PhaseOne" method="_on_large_point_player_entered"]
+[connection signal="timeout" from="Level/PhaseOne/AudioPoints/LargePoint/Timer" to="Level/PhaseOne/AudioPoints/LargePoint" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Level/PhaseOne/Geoloc/Geoloc1" to="Level/PhaseOne/Geoloc/Geoloc1" method="_on_body_entered"]
+[connection signal="body_exited" from="Level/PhaseOne/Geoloc/Geoloc1" to="Level/PhaseOne/Geoloc/Geoloc1" method="_on_body_exited"]
+[connection signal="timeout" from="Level/PhaseOne/Geoloc/Geoloc1/Timer" to="Level/PhaseOne/Geoloc/Geoloc1" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Level/PhaseOne/Geoloc/Geoloc2" to="Level/PhaseOne/Geoloc/Geoloc2" method="_on_body_entered"]
+[connection signal="body_exited" from="Level/PhaseOne/Geoloc/Geoloc2" to="Level/PhaseOne/Geoloc/Geoloc2" method="_on_body_exited"]
+[connection signal="timeout" from="Level/PhaseOne/Geoloc/Geoloc2/Timer" to="Level/PhaseOne/Geoloc/Geoloc2" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Level/PhaseOne/Geoloc/Geoloc3" to="Level/PhaseOne/Geoloc/Geoloc3" method="_on_body_entered"]
+[connection signal="body_exited" from="Level/PhaseOne/Geoloc/Geoloc3" to="Level/PhaseOne/Geoloc/Geoloc3" method="_on_body_exited"]
+[connection signal="timeout" from="Level/PhaseOne/Geoloc/Geoloc3/Timer" to="Level/PhaseOne/Geoloc/Geoloc3" method="_on_timer_timeout"]
+
+[editable path="levelCabineSecondFloor"]
+[editable path="levelCabineSecondFloor/walls/wood_wall"]
+[editable path="LevelCabine"]
+[editable path="LevelCabine/walls/wood_wall"]
+[editable path="Level/PhaseOne/AudioPoints/InterractArea"]

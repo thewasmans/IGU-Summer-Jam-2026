@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://scripts/managers/phone_manager.gd" id="10_phonemgr"]
 [ext_resource type="PackedScene" uid="uid://dhdv3e54beb3k" path="res://content/prefabs/ui/phone.tscn" id="11_phonescn"]
 [ext_resource type="Script" uid="uid://c7q2eyvtg62ib" path="res://scripts/managers/dialogue_manager.gd" id="12_dialoguemgr"]
+[ext_resource type="Script" uid="uid://l2ivlccydw7q" path="res://scenes/audio_points.gd" id="13_a8y0u"]
 [ext_resource type="Resource" uid="uid://qvyo21uafyv4" path="res://data/dialogues/example_dialogue.tres" id="13_exdlg"]
 
 [sub_resource type="Curve" id="Curve_choun"]
@@ -157,7 +158,7 @@ script = ExtResource("12_dialoguemgr")
 
 [node name="AreaGeoloc" parent="Level/Geoloc" unique_id=1863945794 instance=ExtResource("3_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35213518, -1.7872602, -16.399822)
-interract_type = "Wait"
+interract_type = "Entered"
 locked_by_facts = Array[String](["events/storm_happend", "geoloc_activated"])
 
 [node name="CollisionShape" parent="Level/Geoloc/AreaGeoloc" index="0" unique_id=1971436032]
@@ -180,6 +181,14 @@ locked_by_facts = Array[String](["events/storm_happend", "geoloc_activated"])
 [node name="CollisionShape" parent="Level/Geoloc/AreaGeoloc3" index="0" unique_id=1971436032]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.152645, 0, 7.7116857)
 shape = SubResource("SphereShape3D_eb6dy")
+
+[node name="AudioPoints" type="Node" parent="Level/Geoloc" unique_id=2105419458 node_paths=PackedStringArray("dialogue_manager")]
+script = ExtResource("13_a8y0u")
+dlg_phase_one = ExtResource("13_exdlg")
+dialogue_manager = NodePath("../../../Global/GameManager/DialogueManager")
+
+[node name="InterractArea" parent="Level/Geoloc/AudioPoints" unique_id=670692781 instance=ExtResource("3_sugp2")]
+interract_type = "Entered"
 
 [node name="House" type="Node3D" parent="Level" unique_id=174867481]
 
@@ -775,7 +784,9 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [connection signal="timeout" from="Global/StormTimer" to="." method="_on_timer_timeout"]
+[connection signal="player_completed" from="Level/Geoloc/AudioPoints/InterractArea" to="Level/Geoloc/AudioPoints" method="_on_interract_area_player_completed"]
 
 [editable path="Level/Geoloc/AreaGeoloc"]
 [editable path="Level/Geoloc/AreaGeoloc2"]
 [editable path="Level/Geoloc/AreaGeoloc3"]
+[editable path="Level/Geoloc/AudioPoints/InterractArea"]
