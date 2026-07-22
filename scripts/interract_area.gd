@@ -45,14 +45,16 @@ func _unhandled_input(event: InputEvent) -> void:
 			%Timer.start(stay_time)
 
 func _on_body_entered(_body):
-	can_interract = true
-	player_entered.emit()
+	if not area_locked_by_fact():
+		can_interract = true
+		player_entered.emit()
 
 func _on_body_exited(_body):
-	can_interract = false
-	interract_started = false
-	%Timer.stop()
-	player_exited.emit()
+	if not area_locked_by_fact():
+		can_interract = false
+		interract_started = false
+		%Timer.stop()
+		player_exited.emit()
 
 func _on_timer_timeout():
 	_complete_interract()
@@ -65,6 +67,6 @@ func _complete_interract():
 func area_locked_by_fact() -> bool:
 	for fact in locked_by_facts:
 		var test: Variant = Facts.get_fact(fact)
-		if test == false:
+		if not test:
 			return true
 	return false
