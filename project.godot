@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Facts="*res://scripts/autoload/facts.gd"
 DebugFactsPanel="*res://scripts/autoload/debug_facts_panel.gd"
+DialogueManager="*res://scripts/autoload/dialogue_manager.gd"
 
 [dotnet]
 
