@@ -462,12 +462,12 @@ dlg_phase_one = SubResource("Resource_jscy8")
 [node name="AudioPointsPhaseThree" type="Node" parent="Level/PhaseThree" unique_id=1579709902]
 
 [node name="ShortRange" parent="Level/PhaseThree/AudioPointsPhaseThree" unique_id=1481125690 instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7603054, 2.5239825, 3.6678934)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2879772, 5.4779487, 3.6678934)
 interract_type = "Entered"
 locked_by_facts = Array[String](["events/phase_two_completed"])
 
 [node name="MidRange" parent="Level/PhaseThree/AudioPointsPhaseThree" unique_id=695308502 instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7603054, 2.5239825, 3.6678934)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2879772, 5.4779487, 3.6678934)
 interract_type = "Entered"
 locked_by_facts = Array[String](["events/phase_two_completed"])
 
@@ -475,7 +475,7 @@ locked_by_facts = Array[String](["events/phase_two_completed"])
 shape = SubResource("SphereShape3D_dp3eg")
 
 [node name="LongRange" parent="Level/PhaseThree/AudioPointsPhaseThree" unique_id=1766382807 instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7603054, 2.5239825, 3.6678934)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2879772, 5.4779487, 3.6678934)
 interract_type = "Entered"
 locked_by_facts = Array[String](["events/phase_two_completed"])
 
