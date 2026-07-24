@@ -270,6 +270,9 @@ level = NodePath("../../../Level")
 
 [node name="Level" type="Node" parent="." unique_id=1175036900]
 
+[node name="House" parent="Level" unique_id=1508929104 instance=ExtResource("18_yc10j")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.011666954, -0.0026800632, 0.034430742)
+
 [node name="PhaseOne" type="Node" parent="Level" unique_id=1477848284]
 script = ExtResource("12_dp3eg")
 dlg_phase_one = SubResource("Resource_jscy8")
@@ -495,9 +498,6 @@ locked_by_facts = Array[String](["events/phase_two_completed"])
 
 [node name="InterractArea" parent="Level/PhaseThree/PlaceMirror" unique_id=2091978469 instance=ExtResource("3_sugp2")]
 locked_by_facts = Array[String](["events/phase_two_completed", "mirror_found"])
-
-[node name="House" parent="." unique_id=1508929104 instance=ExtResource("18_yc10j")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.011666954, -0.0026800632, 0.034430742)
 
 [node name="Environment" type="Node" parent="." unique_id=1654604802]
 
