@@ -1,5 +1,4 @@
-class_name DialogueManager
-extends Manager
+extends Node
 
 signal dialogue_started(dialogue: Dialogue)
 signal entry_started(dialogue: Dialogue, entry: DialogueEntry, entry_index: int)
@@ -9,8 +8,7 @@ signal dialogue_completed(dialogue: Dialogue)
 var _current_dialogue: Dialogue
 var _timer: Timer
 
-func initialize(game_manager: GameManager) -> void:
-	super.initialize(game_manager)
+func _ready() -> void:
 	_timer = Timer.new()
 	_timer.one_shot = true
 	add_child(_timer)

@@ -4,7 +4,6 @@ extends Node
 @export var game_manager: GameManager
 @export var player_character: Character
 
-## Camera shake trauma applied when the storm timer fires. 1.0 = maximum "earthquake" shake.
 @export_range(0.0, 1.0, 0.01) var storm_shake_trauma: float = 1.0
 
 @export var particles: Array[GPUParticles3D]
@@ -15,7 +14,6 @@ func _ready() -> void:
 	game_manager.initialize()
 	for part in particles:
 		part.emitting = false
-	##game_manager.dialogue_manager.play_dialogue(example_dialogue)
 
 func _on_timer_timeout() -> void:
 	if player_character:
