@@ -15,7 +15,6 @@
 [ext_resource type="Script" uid="uid://dio5cq40sjdic" path="res://scenes/phase_one.gd" id="12_dp3eg"]
 [ext_resource type="Script" path="res://scripts/data/dialogue_entry.gd" id="13_0ld40"]
 [ext_resource type="Script" uid="uid://l2ivlccydw7q" path="res://scenes/audio_points.gd" id="13_a8y0u"]
-[ext_resource type="Resource" uid="uid://qvyo21uafyv4" path="res://data/dialogues/example_dialogue.tres" id="13_exdlg"]
 [ext_resource type="Script" uid="uid://dgkt1fcechioc" path="res://scripts/data/dialogue.gd" id="14_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://bia87jkwlhl87" path="res://content/prefabs/network_area.tscn" id="18_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://bmqa3h84afi1" path="res://content/assetpackage/pandazale_lowpoly_asset_bundle/matches.glb" id="18_jscy8"]
@@ -24,31 +23,40 @@
 [ext_resource type="PackedScene" uid="uid://bqbhdejealmmw" path="res://content/vfx/FireParticles.tscn" id="18_y6deb"]
 [ext_resource type="PackedScene" uid="uid://bilbs6sia8q7" path="res://scenes/fullCabine.tscn" id="18_yc10j"]
 [ext_resource type="PackedScene" uid="uid://ctvff3w1ldouo" path="res://content/assetpackage/pandazale_lowpoly_asset_bundle/matches_p1.glb" id="19_pm3ni"]
-
-[sub_resource type="Curve" id="Curve_choun"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_ya4ey"]
-curve = SubResource("Curve_choun")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_eb6dy"]
-emission_shape = 3
-emission_box_extents = Vector3(7.305, 6.04, 1)
-spread = 8.6
-initial_velocity_min = 18.5
-initial_velocity_max = 18.5
-scale_curve = SubResource("CurveTexture_ya4ey")
-turbulence_enabled = true
-turbulence_influence_min = 0.0
-turbulence_influence_max = 0.102000006
-
-[sub_resource type="SphereMesh" id="SphereMesh_trceg"]
-radial_segments = 4
-rings = 1
+[ext_resource type="PackedScene" uid="uid://ow4rk36a52ye" path="res://content/models_3d/radio.glb" id="24_og1vs"]
 
 [sub_resource type="Resource" id="Resource_jscy8"]
 script = ExtResource("14_gqmmt")
+metadata/_custom_type_script = "uid://dgkt1fcechioc"
+
+[sub_resource type="Resource" id="Resource_5q0nq"]
+script = ExtResource("13_0ld40")
+speaker_name = "Radio"
+text = "Bonjour à tous. Bon, aujourd'hui, c'est la totale : grisaille, vent violent et chutes de neige à gogo."
+
+[sub_resource type="Resource" id="Resource_dgi5k"]
+script = ExtResource("13_0ld40")
+speaker_name = "Radio"
+timecode = 5.0
+text = "Mais attention surtout : le danger d'avalanche est maximal, au niveau 4 sur 5."
+
+[sub_resource type="Resource" id="Resource_j8jky"]
+script = ExtResource("13_0ld40")
+speaker_name = "Radio"
+timecode = 8.0
+text = "La neige ne tient pas. Un seul pas hors-piste peut tout faire sauter. Aujourd'hui, on ne joue pas les héros : interdiction de sortir des pistes balisées."
+
+[sub_resource type="Resource" id="Resource_kmb1v"]
+script = ExtResource("13_0ld40")
+speaker_name = "Radio"
+timecode = 15.0
+text = "Restez au chaud, soyez prudents, à vous l'antenne !"
+
+[sub_resource type="Resource" id="Resource_fuf3a"]
+script = ExtResource("14_gqmmt")
+dialogue_id = "radio_weather"
+duration = 20.0
+entries = Array[ExtResource("13_0ld40")]([SubResource("Resource_5q0nq"), SubResource("Resource_dgi5k"), SubResource("Resource_j8jky"), SubResource("Resource_kmb1v")])
 metadata/_custom_type_script = "uid://dgkt1fcechioc"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pm3ni"]
@@ -123,6 +131,28 @@ radius = 5.205635
 [sub_resource type="SphereShape3D" id="SphereShape3D_jscy8"]
 radius = 15.780549
 
+[sub_resource type="Curve" id="Curve_choun"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ya4ey"]
+curve = SubResource("Curve_choun")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_eb6dy"]
+emission_shape = 3
+emission_box_extents = Vector3(7.305, 6.04, 1)
+spread = 8.6
+initial_velocity_min = 18.5
+initial_velocity_max = 18.5
+scale_curve = SubResource("CurveTexture_ya4ey")
+turbulence_enabled = true
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.102000006
+
+[sub_resource type="SphereMesh" id="SphereMesh_trceg"]
+radial_segments = 4
+rings = 1
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_fv21b"]
 
 [sub_resource type="Resource" id="Resource_yq6so"]
@@ -181,65 +211,15 @@ tonemap_mode = 2
 ssr_enabled = true
 glow_enabled = true
 
-[node name="Main" type="Node" unique_id=813424586 node_paths=PackedStringArray("game_manager", "player_character", "particles")]
+[node name="Main" type="Node" unique_id=813424586 node_paths=PackedStringArray("game_manager")]
 script = ExtResource("1_sugp2")
 game_manager = NodePath("Global/GameManager")
-player_character = NodePath("Global/PlayerCharacter")
-particles = [NodePath("Global/StormTimer/GPUParticles3D"), NodePath("Global/StormTimer/GPUParticles3D4"), NodePath("Global/StormTimer/GPUParticles3D5"), NodePath("Global/StormTimer/GPUParticles3D6"), NodePath("Global/StormTimer/GPUParticles3D2"), NodePath("Global/StormTimer/GPUParticles3D3")]
-example_dialogue = ExtResource("13_exdlg")
 
 [node name="Global" type="Node" parent="." unique_id=1992404025]
 
 [node name="PlayerCharacter" parent="Global" unique_id=1913778194 instance=ExtResource("1_o5qli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68959403, 1.9453428, 4.0902157)
 camera_mode = 0
-
-[node name="StormTimer" type="Timer" parent="Global" unique_id=730841255]
-wait_time = 5.0
-one_shot = true
-autostart = true
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="Global/StormTimer" unique_id=1619829034]
-transform = Transform3D(0.827365, 0, 0.5616647, 0, 1, 0, -0.5616647, 0, 0.827365, 2.4485483, 0, 2.0066245)
-emitting = false
-amount = 100
-process_material = SubResource("ParticleProcessMaterial_eb6dy")
-draw_pass_1 = SubResource("SphereMesh_trceg")
-
-[node name="GPUParticles3D4" type="GPUParticles3D" parent="Global/StormTimer" unique_id=1496694472]
-transform = Transform3D(0.58830756, 0, 0.80863726, 0, 1, 0, -0.80863726, 0, 0.58830756, -11.276096, 0, -14.162981)
-emitting = false
-amount = 100
-process_material = SubResource("ParticleProcessMaterial_eb6dy")
-draw_pass_1 = SubResource("SphereMesh_trceg")
-
-[node name="GPUParticles3D5" type="GPUParticles3D" parent="Global/StormTimer" unique_id=1395490529]
-transform = Transform3D(0.6222824, 0, -0.7827928, 0, 1, 0, 0.7827928, 0, 0.6222824, 1.5744419, 0, -21.237537)
-emitting = false
-amount = 100
-process_material = SubResource("ParticleProcessMaterial_eb6dy")
-draw_pass_1 = SubResource("SphereMesh_trceg")
-
-[node name="GPUParticles3D6" type="GPUParticles3D" parent="Global/StormTimer" unique_id=5543414]
-transform = Transform3D(0.6222824, 0, -0.7827928, 0, 1, 0, 0.7827928, 0, 0.6222824, 7.5991344, 0, -14.698486)
-emitting = false
-amount = 100
-process_material = SubResource("ParticleProcessMaterial_eb6dy")
-draw_pass_1 = SubResource("SphereMesh_trceg")
-
-[node name="GPUParticles3D2" type="GPUParticles3D" parent="Global/StormTimer" unique_id=1980461826]
-transform = Transform3D(0.60948116, 0, -0.7928006, 0, 1, 0, 0.7928006, 0, 0.60948116, -10.705525, 2.2704606, -2.3222606)
-emitting = false
-amount = 100
-process_material = SubResource("ParticleProcessMaterial_eb6dy")
-draw_pass_1 = SubResource("SphereMesh_trceg")
-
-[node name="GPUParticles3D3" type="GPUParticles3D" parent="Global/StormTimer" unique_id=382349736]
-transform = Transform3D(0.60948116, 0, -0.7928006, 0, 1, 0, 0.7928006, 0, 0.60948116, -13.211453, 2.2704606, -6.0388374)
-emitting = false
-amount = 100
-process_material = SubResource("ParticleProcessMaterial_eb6dy")
-draw_pass_1 = SubResource("SphereMesh_trceg")
 
 [node name="GameManager" type="Node" parent="Global" unique_id=1036846449 node_paths=PackedStringArray("game_ui_manager", "area_interract_manager", "phone_manager", "network_area_manager")]
 script = ExtResource("3_tipki")
@@ -273,9 +253,12 @@ level = NodePath("../../../Level")
 [node name="House" parent="Level" unique_id=1508929104 instance=ExtResource("18_yc10j")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.011666954, -0.0026800632, 0.034430742)
 
-[node name="PhaseOne" type="Node" parent="Level" unique_id=1477848284]
+[node name="PhaseOne" type="Node" parent="Level" unique_id=1477848284 node_paths=PackedStringArray("player_character", "particles")]
 script = ExtResource("12_dp3eg")
 dlg_phase_one = SubResource("Resource_jscy8")
+dlg_radio_weather = SubResource("Resource_fuf3a")
+player_character = NodePath("../../Global/PlayerCharacter")
+particles = [NodePath("StormVFX/GPUParticles3D"), NodePath("StormVFX/GPUParticles3D4"), NodePath("StormVFX/GPUParticles3D5"), NodePath("StormVFX/GPUParticles3D6"), NodePath("StormVFX/GPUParticles3D2"), NodePath("StormVFX/GPUParticles3D3")]
 
 [node name="WindowSights" type="Node" parent="Level/PhaseOne" unique_id=865403160]
 
@@ -371,6 +354,50 @@ locked_by_facts = Array[String](["events/storm_happend"])
 [node name="CollisionShape" parent="Level/PhaseOne/AudioPointsPhaseOne/LongRange" index="0" unique_id=1971436032]
 shape = SubResource("SphereShape3D_jscy8")
 
+[node name="StormVFX" type="Node" parent="Level/PhaseOne" unique_id=1531798003]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Level/PhaseOne/StormVFX" unique_id=1619829034]
+transform = Transform3D(0.827365, 0, 0.5616647, 0, 1, 0, -0.5616647, 0, 0.827365, 2.4485483, 0, 2.0066245)
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_eb6dy")
+draw_pass_1 = SubResource("SphereMesh_trceg")
+
+[node name="GPUParticles3D4" type="GPUParticles3D" parent="Level/PhaseOne/StormVFX" unique_id=1496694472]
+transform = Transform3D(0.58830756, 0, 0.80863726, 0, 1, 0, -0.80863726, 0, 0.58830756, -11.276096, 0, -14.162981)
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_eb6dy")
+draw_pass_1 = SubResource("SphereMesh_trceg")
+
+[node name="GPUParticles3D5" type="GPUParticles3D" parent="Level/PhaseOne/StormVFX" unique_id=1395490529]
+transform = Transform3D(0.6222824, 0, -0.7827928, 0, 1, 0, 0.7827928, 0, 0.6222824, 1.5744419, 0, -21.237537)
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_eb6dy")
+draw_pass_1 = SubResource("SphereMesh_trceg")
+
+[node name="GPUParticles3D6" type="GPUParticles3D" parent="Level/PhaseOne/StormVFX" unique_id=5543414]
+transform = Transform3D(0.6222824, 0, -0.7827928, 0, 1, 0, 0.7827928, 0, 0.6222824, 7.5991344, 0, -14.698486)
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_eb6dy")
+draw_pass_1 = SubResource("SphereMesh_trceg")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Level/PhaseOne/StormVFX" unique_id=1980461826]
+transform = Transform3D(0.60948116, 0, -0.7928006, 0, 1, 0, 0.7928006, 0, 0.60948116, -10.705525, 2.2704606, -2.3222606)
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_eb6dy")
+draw_pass_1 = SubResource("SphereMesh_trceg")
+
+[node name="GPUParticles3D3" type="GPUParticles3D" parent="Level/PhaseOne/StormVFX" unique_id=382349736]
+transform = Transform3D(0.60948116, 0, -0.7928006, 0, 1, 0, 0.7928006, 0, 0.60948116, -13.211453, 2.2704606, -6.0388374)
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_eb6dy")
+draw_pass_1 = SubResource("SphereMesh_trceg")
+
 [node name="NetworkArea" parent="Level" unique_id=484343088 instance=ExtResource("18_2wyq8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6165469, 1.5174468, 0)
 
@@ -378,8 +405,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6165469, 1.5174468, 0)
 shape = SubResource("SphereShape3D_fv21b")
 
 [node name="PhaseTwo" type="Node" parent="Level" unique_id=972905351]
-script = ExtResource("12_dp3eg")
-dlg_phase_one = SubResource("Resource_jscy8")
 
 [node name="AudioPointsPhaseTwo" type="Node" parent="Level/PhaseTwo" unique_id=2105419458]
 script = ExtResource("18_og1vs")
@@ -451,8 +476,6 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.94072676, 0.34154153,
 visible = false
 
 [node name="PhaseThree" type="Node" parent="Level" unique_id=1105790316]
-script = ExtResource("12_dp3eg")
-dlg_phase_one = SubResource("Resource_jscy8")
 
 [node name="AudioPointsPhaseThree" type="Node" parent="Level/PhaseThree" unique_id=1579709902]
 
@@ -498,6 +521,9 @@ locked_by_facts = Array[String](["events/phase_two_completed"])
 
 [node name="InterractArea" parent="Level/PhaseThree/PlaceMirror" unique_id=2091978469 instance=ExtResource("3_sugp2")]
 locked_by_facts = Array[String](["events/phase_two_completed", "mirror_found"])
+
+[node name="radio" parent="Level" unique_id=1545592246 instance=ExtResource("24_og1vs")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.654536, 1.921848, 2.6618385)
 
 [node name="Environment" type="Node" parent="." unique_id=1654604802]
 
@@ -841,7 +867,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08237219, -8.473743)
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 73.15816, 289.19168, -423.3327)
 shadow_enabled = true
 
-[connection signal="timeout" from="Global/StormTimer" to="." method="_on_timer_timeout"]
 [connection signal="player_completed" from="Level/PhaseOne/AudioPointsPhaseOne/ShortRange" to="Level/PhaseOne" method="_on_short_range_player_completed"]
 [connection signal="player_completed" from="Level/PhaseOne/AudioPointsPhaseOne/ShortRange" to="Level/PhaseOne/AudioPointsPhaseOne" method="_on_short_range_player_completed"]
 [connection signal="player_completed" from="Level/PhaseOne/AudioPointsPhaseOne/MidRange" to="Level/PhaseOne/AudioPointsPhaseOne" method="_on_mid_range_player_completed"]
