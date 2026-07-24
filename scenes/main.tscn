@@ -357,42 +357,42 @@ shape = SubResource("SphereShape3D_jscy8")
 [node name="StormVFX" type="Node" parent="Level/PhaseOne" unique_id=1531798003]
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Level/PhaseOne/StormVFX" unique_id=1619829034]
-transform = Transform3D(0.827365, 0, 0.5616647, 0, 1, 0, -0.5616647, 0, 0.827365, 2.4485483, 0, 2.0066245)
+transform = Transform3D(-0.1001707, 0, 0.99497026, 0, 1, 0, -0.99497026, 0, -0.1001707, 9.089035, 0, 3.6146178)
 emitting = false
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_eb6dy")
 draw_pass_1 = SubResource("SphereMesh_trceg")
 
 [node name="GPUParticles3D4" type="GPUParticles3D" parent="Level/PhaseOne/StormVFX" unique_id=1496694472]
-transform = Transform3D(0.58830756, 0, 0.80863726, 0, 1, 0, -0.80863726, 0, 0.58830756, -11.276096, 0, -14.162981)
+transform = Transform3D(0.58830756, 0, 0.80863726, 0, 1, 0, -0.80863726, 0, 0.58830756, -19.067625, 0, 2.3223476)
 emitting = false
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_eb6dy")
 draw_pass_1 = SubResource("SphereMesh_trceg")
 
 [node name="GPUParticles3D5" type="GPUParticles3D" parent="Level/PhaseOne/StormVFX" unique_id=1395490529]
-transform = Transform3D(0.6222824, 0, -0.7827928, 0, 1, 0, 0.7827928, 0, 0.6222824, 1.5744419, 0, -21.237537)
+transform = Transform3D(0.6222824, 0, -0.7827928, 0, 1, 0, 0.7827928, 0, 0.6222824, 20.48979, 0, -17.986633)
 emitting = false
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_eb6dy")
 draw_pass_1 = SubResource("SphereMesh_trceg")
 
 [node name="GPUParticles3D6" type="GPUParticles3D" parent="Level/PhaseOne/StormVFX" unique_id=5543414]
-transform = Transform3D(0.6222824, 0, -0.7827928, 0, 1, 0, 0.7827928, 0, 0.6222824, 7.5991344, 0, -14.698486)
+transform = Transform3D(0.6222824, 0, -0.7827928, 0, 1, 0, 0.7827928, 0, 0.6222824, 30.40847, 0, 2.0322914)
 emitting = false
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_eb6dy")
 draw_pass_1 = SubResource("SphereMesh_trceg")
 
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="Level/PhaseOne/StormVFX" unique_id=1980461826]
-transform = Transform3D(0.60948116, 0, -0.7928006, 0, 1, 0, 0.7928006, 0, 0.60948116, -10.705525, 2.2704606, -2.3222606)
+transform = Transform3D(0.60948116, 0, -0.7928006, 0, 1, 0, 0.7928006, 0, 0.60948116, -3.1497555, 2.2704606, -33.430553)
 emitting = false
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_eb6dy")
 draw_pass_1 = SubResource("SphereMesh_trceg")
 
 [node name="GPUParticles3D3" type="GPUParticles3D" parent="Level/PhaseOne/StormVFX" unique_id=382349736]
-transform = Transform3D(0.60948116, 0, -0.7928006, 0, 1, 0, 0.7928006, 0, 0.60948116, -13.211453, 2.2704606, -6.0388374)
+transform = Transform3D(0.060090274, 0, -0.998193, 0, 1, 0, 0.998193, 0, 0.060090274, -11.039707, 2.2704601, -6.194117)
 emitting = false
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_eb6dy")
