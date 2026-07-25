@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://bqbhdejealmmw" path="res://content/vfx/FireParticles.tscn" id="18_y6deb"]
 [ext_resource type="PackedScene" uid="uid://bilbs6sia8q7" path="res://scenes/fullCabine.tscn" id="18_yc10j"]
 [ext_resource type="PackedScene" uid="uid://ctvff3w1ldouo" path="res://content/assetpackage/pandazale_lowpoly_asset_bundle/matches_p1.glb" id="19_pm3ni"]
+[ext_resource type="AudioStream" uid="uid://c4vr41218a2qi" path="res://content/audio/ambiant_radiot.mp3" id="20_2f3dj"]
 [ext_resource type="AudioStream" uid="uid://dcmtr67wskkkd" path="res://content/audio/ambiant_noise.mp3" id="24_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://ow4rk36a52ye" path="res://content/models_3d/radio.glb" id="24_og1vs"]
 [ext_resource type="AudioStream" uid="uid://k5yqnnfpkey6" path="res://content/audio/vfx_explosion.wav" id="25_og1vs"]
@@ -40,25 +41,25 @@ text = "Bonjour à tous. Bon, aujourd'hui, c'est la totale : grisaille, vent vio
 [sub_resource type="Resource" id="Resource_dgi5k"]
 script = ExtResource("13_0ld40")
 speaker_name = "Radio"
-timecode = 5.0
+timecode = 10.0
 text = "Mais attention surtout : le danger d'avalanche est maximal, au niveau 4 sur 5."
 
 [sub_resource type="Resource" id="Resource_j8jky"]
 script = ExtResource("13_0ld40")
 speaker_name = "Radio"
-timecode = 8.0
+timecode = 16.0
 text = "La neige ne tient pas. Un seul pas hors-piste peut tout faire sauter. Aujourd'hui, on ne joue pas les héros : interdiction de sortir des pistes balisées."
 
 [sub_resource type="Resource" id="Resource_kmb1v"]
 script = ExtResource("13_0ld40")
 speaker_name = "Radio"
-timecode = 15.0
+timecode = 30.0
 text = "Restez au chaud, soyez prudents, à vous l'antenne !"
 
 [sub_resource type="Resource" id="Resource_fuf3a"]
 script = ExtResource("14_gqmmt")
 dialogue_id = "radio_weather"
-duration = 20.0
+duration = 40.0
 entries = Array[ExtResource("13_0ld40")]([SubResource("Resource_5q0nq"), SubResource("Resource_dgi5k"), SubResource("Resource_j8jky"), SubResource("Resource_kmb1v")])
 metadata/_custom_type_script = "uid://dgkt1fcechioc"
 
@@ -281,6 +282,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4120919, 1.2605098, 0.1218
 stream = ExtResource("17_og1vs")
 attenuation_model = 3
 volume_db = -20.0
+
+[node name="AmbiantRadiot" type="AudioStreamPlayer3D" parent="Level/PhaseOne" unique_id=1716246260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.663208, 1.9351356, 2.5693972)
+stream = ExtResource("20_2f3dj")
+volume_db = -20.93
+autoplay = true
 
 [node name="WindowSights" type="Node" parent="Level/PhaseOne" unique_id=865403160]
 

@@ -13,7 +13,7 @@ func _ready():
 		part.emitting = false
 	Facts.listen_fact("dialogues/radio_weather/entry_1_completed", _on_radio_entry_1_completed)
 	Facts.listen_fact("dialogues/radio_weather/entry_2_completed", _on_radio_entry_2_completed)
-	await get_tree().create_timer(.1).timeout
+	await get_tree().create_timer(3.0).timeout
 	DialogueManager.play_dialogue(dlg_radio_weather)
 
 func _on_large_point_player_entered():
@@ -40,6 +40,6 @@ func _play_storm_vfx() -> void:
 func _on_radio_entry_1_completed(_val: Variant, _prev: Variant):
 	ambiant_avalanche.play()
 	create_tween()\
-		.tween_property(ambiant_avalanche, "volume_db", 10.0, 10)\
+		.tween_property(ambiant_avalanche, "volume_db", 15.0, 15)\
 		.set_ease(Tween.EASE_IN)\
 		.set_trans(Tween.TRANS_EXPO)
