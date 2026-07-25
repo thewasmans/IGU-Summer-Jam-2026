@@ -1,25 +1,13 @@
-extends Node2D
+extends Node
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+@export_file("*.tscn") var main_scene: String
+@export_file("*.tscn") var option_menu: String
 
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
-
-
+	get_tree().change_scene_to_file(main_scene)
 
 func _on_options_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
-	
-
+	get_tree().change_scene_to_file(option_menu)
 
 func _on_quit_pressed():
 	get_tree().quit()
