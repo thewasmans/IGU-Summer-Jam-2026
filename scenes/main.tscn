@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://scripts/data/dialogue_entry.gd" id="13_0ld40"]
 [ext_resource type="Script" uid="uid://l2ivlccydw7q" path="res://scenes/audio_points.gd" id="13_a8y0u"]
 [ext_resource type="Script" uid="uid://dgkt1fcechioc" path="res://scripts/data/dialogue.gd" id="14_gqmmt"]
+[ext_resource type="AudioStream" uid="uid://mnemql44w5n1" path="res://content/audio/ambiant_avalanche.mp3" id="17_og1vs"]
 [ext_resource type="PackedScene" uid="uid://bia87jkwlhl87" path="res://content/prefabs/network_area.tscn" id="18_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://bmqa3h84afi1" path="res://content/assetpackage/pandazale_lowpoly_asset_bundle/matches.glb" id="18_jscy8"]
 [ext_resource type="Script" uid="uid://c253ox7r2df7u" path="res://scenes/audio_points_phase_two.gd" id="18_og1vs"]
@@ -23,7 +24,10 @@
 [ext_resource type="PackedScene" uid="uid://bqbhdejealmmw" path="res://content/vfx/FireParticles.tscn" id="18_y6deb"]
 [ext_resource type="PackedScene" uid="uid://bilbs6sia8q7" path="res://scenes/fullCabine.tscn" id="18_yc10j"]
 [ext_resource type="PackedScene" uid="uid://ctvff3w1ldouo" path="res://content/assetpackage/pandazale_lowpoly_asset_bundle/matches_p1.glb" id="19_pm3ni"]
+[ext_resource type="AudioStream" uid="uid://c4vr41218a2qi" path="res://content/audio/ambiant_radiot.mp3" id="20_2f3dj"]
+[ext_resource type="AudioStream" uid="uid://dcmtr67wskkkd" path="res://content/audio/ambiant_noise.mp3" id="24_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://ow4rk36a52ye" path="res://content/models_3d/radio.glb" id="24_og1vs"]
+[ext_resource type="AudioStream" uid="uid://k5yqnnfpkey6" path="res://content/audio/vfx_explosion.wav" id="25_og1vs"]
 
 [sub_resource type="Resource" id="Resource_jscy8"]
 script = ExtResource("14_gqmmt")
@@ -37,25 +41,25 @@ text = "Bonjour à tous. Bon, aujourd'hui, c'est la totale : grisaille, vent vio
 [sub_resource type="Resource" id="Resource_dgi5k"]
 script = ExtResource("13_0ld40")
 speaker_name = "Radio"
-timecode = 5.0
+timecode = 10.0
 text = "Mais attention surtout : le danger d'avalanche est maximal, au niveau 4 sur 5."
 
 [sub_resource type="Resource" id="Resource_j8jky"]
 script = ExtResource("13_0ld40")
 speaker_name = "Radio"
-timecode = 8.0
+timecode = 16.0
 text = "La neige ne tient pas. Un seul pas hors-piste peut tout faire sauter. Aujourd'hui, on ne joue pas les héros : interdiction de sortir des pistes balisées."
 
 [sub_resource type="Resource" id="Resource_kmb1v"]
 script = ExtResource("13_0ld40")
 speaker_name = "Radio"
-timecode = 15.0
+timecode = 30.0
 text = "Restez au chaud, soyez prudents, à vous l'antenne !"
 
 [sub_resource type="Resource" id="Resource_fuf3a"]
 script = ExtResource("14_gqmmt")
 dialogue_id = "radio_weather"
-duration = 20.0
+duration = 40.0
 entries = Array[ExtResource("13_0ld40")]([SubResource("Resource_5q0nq"), SubResource("Resource_dgi5k"), SubResource("Resource_j8jky"), SubResource("Resource_kmb1v")])
 metadata/_custom_type_script = "uid://dgkt1fcechioc"
 
@@ -250,15 +254,40 @@ level = NodePath("../../../Level")
 
 [node name="Level" type="Node" parent="." unique_id=1175036900]
 
+[node name="AmbiantNoise" type="AudioStreamPlayer3D" parent="Level" unique_id=679697847]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8347106, 1.3594182, -0.3940897)
+stream = ExtResource("24_2wyq8")
+attenuation_model = 3
+volume_db = 7.0
+autoplay = true
+
 [node name="House" parent="Level" unique_id=1508929104 instance=ExtResource("18_yc10j")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.011666954, -0.0026800632, 0.034430742)
 
-[node name="PhaseOne" type="Node" parent="Level" unique_id=1477848284 node_paths=PackedStringArray("player_character", "particles")]
+[node name="PhaseOne" type="Node" parent="Level" unique_id=1477848284 node_paths=PackedStringArray("player_character", "particles", "sfx_avalanche_impact", "ambiant_avalanche")]
 script = ExtResource("12_dp3eg")
 dlg_phase_one = SubResource("Resource_jscy8")
 dlg_radio_weather = SubResource("Resource_fuf3a")
 player_character = NodePath("../../Global/PlayerCharacter")
 particles = [NodePath("StormVFX/GPUParticles3D"), NodePath("StormVFX/GPUParticles3D4"), NodePath("StormVFX/GPUParticles3D5"), NodePath("StormVFX/GPUParticles3D6"), NodePath("StormVFX/GPUParticles3D2"), NodePath("StormVFX/GPUParticles3D3")]
+sfx_avalanche_impact = NodePath("VfxExplosion")
+ambiant_avalanche = NodePath("AmbiantAvalanche")
+
+[node name="VfxExplosion" type="AudioStreamPlayer3D" parent="Level/PhaseOne" unique_id=128819128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.225298, 2.0471776, 0.41537762)
+stream = ExtResource("25_og1vs")
+
+[node name="AmbiantAvalanche" type="AudioStreamPlayer3D" parent="Level/PhaseOne" unique_id=1540624874]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4120919, 1.2605098, 0.12187417)
+stream = ExtResource("17_og1vs")
+attenuation_model = 3
+volume_db = -20.0
+
+[node name="AmbiantRadiot" type="AudioStreamPlayer3D" parent="Level/PhaseOne" unique_id=1716246260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.663208, 1.9351356, 2.5693972)
+stream = ExtResource("20_2f3dj")
+volume_db = -20.93
+autoplay = true
 
 [node name="WindowSights" type="Node" parent="Level/PhaseOne" unique_id=865403160]
 

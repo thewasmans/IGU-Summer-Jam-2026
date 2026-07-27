@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://b85x4ov83epnh"]
+
+[ext_resource type="Script" uid="uid://d1sx27h42y4u1" path="res://scripts/managers/main_menu_manager.gd" id="1_qkhwq"]
+[ext_resource type="FontFile" uid="uid://dbvd7pv3flv4k" path="res://fonts/AveriaLibre-Bold.ttf" id="2_3d1i7"]
+
+[sub_resource type="FontVariation" id="FontVariation_3d1i7"]
+spacing_glyph = 2
+
+[node name="MainMenu" type="Control" unique_id=1511684066]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qkhwq")
+main_scene = "uid://dvcnlm1psogpu"
+option_menu = "uid://b85x4ov83epnh"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1165583043]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -18.0
+offset_right = 12.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 21
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=752774414]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = SubResource("FontVariation_3d1i7")
+theme_override_font_sizes/font_size = 23
+text = "WAITING RESCUE"
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=1604551846]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_3d1i7")
+text = "Start"
+
+[node name="Options" type="Button" parent="VBoxContainer" unique_id=1401324163]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_3d1i7")
+disabled = true
+text = "Options"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1347502624]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_3d1i7")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
